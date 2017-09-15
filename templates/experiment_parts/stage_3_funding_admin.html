@@ -1,0 +1,48 @@
+<button v-if="isUserAdmin" type="button" class="button secondary right" @click="initializeFundingEditor()">
+    <i class="fi-pencil medium">&nbsp;</i>
+</button>
+<h2 v-if="isUserAdmin" class="left">Rahoitusvaihe</h2>
+
+<div v-show="editExperimentFunding">
+    <form @submit.prevent="updateExperimentGoals(apiUrl, experiment.experiment_id)">
+        <label>Goal:</label>
+        <input name="funding_goal" type="number" v-model="experimentFunding.goal" v-validate data-vv-rules="min_value:1" data-vv-as="funding goal">
+        <div v-if="errors.has('funding_goal') && showFundingErrors" class="input-group-addon alert-danger">
+            <span>{{ errors.first('funding_goal') }}</span>
+        </div>
+        <label>Currency:</label>
+        <select v-model="experimentFunding.currency">
+            <option value="EUR" :selected="experimentFunding.currency == 'EUR'">
+                EUR
+            </option>
+        </select>
+        <label>Organizations raised:</label>
+        <input name="organizations_raised" type="number" v-model="experimentFunding.sources.organizations.raised" v-validate data-vv-rules="min_value:0" data-vv-as="organizations raised">
+        <div v-if="errors.has('organizations_raised') && showFundingErrors" class="input-group-addon alert-danger">
+            <span>{{ errors.first('organizations_raised') }}</span>
+        </div>
+        <label>State raised:</label>
+        <input name="state_raised" type="number" v-model="experimentFunding.sources.state.raised" v-validate data-vv-rules="min_value:0" data-vv-as="state raised">
+        <div v-if="errors.has('state_raised') && showFundingErrors" class="input-group-addon alert-danger">
+            <span>{{ errors.first('state_raised') }}</span>
+        </div>
+        <h3>Crowdfunding</h3>
+        <label>Platform:</label>
+        <select name="api_url" v-model="experimentFunding.sources.crowd.api">
+            <option value="https://agitator-mesenaatti.karolina.io/agitator" :selected="experimentFunding.sources.crowd.api == 'https://agitator-mesenaatti.karolina.io/agitator'">
+                Mesenaatti.me
+            </option>
+        </select>
+        <div v-if="errors.has('api_url') && showFundingErrors" class="input-group-addon alert-danger">
+            <span>{{ errors.first('api_url') }}</span>
+        </div>
+        <label>Campaign ID:</label>
+        <input type="text" v-model="experimentFunding.sources.crowd.campaign_id"/>
+
+        <button type="submit" class="button" :disabled="!experimentFundingModified" :class="{success: experimentFundingModified ,secondary: !experimentFundingModified}">
+            <i class="fi-check medium">&nbsp;</i>
+            Save funding</button>
+        <button type="button" class="button alert" @click="resetFunding()">
+            <i class="fi-x medium">&nbsp;</i>Cancel</button>
+    </form>
+</div>

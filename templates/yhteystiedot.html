@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- MAIN CONTENT -->
+    <div class="large-8 medium-8 small-12 columns">
+        <div class="primary callout info">
+            <div class="maincontent">
+                <h1><img src="/img/proses.png" alt=""/></h1>
+                <h1>Yhteystiedot</h1>
+                <p>Palvelun tarjoaa ensi vaiheessa Valtioneuvoston kansliaan sijoitettu Kokeileva Suomi -tiimi
+                    <a href="http://kokeilevasuomi.fi/ota-yhteytta">http://kokeilevasuomi.fi/ota-yhteytta</a>. Palvelun tuottaa joukkorahoituksen suomalainen uranuurtaja
+                    <a href="https://mesenaatti.me">Mesenaatti.me</a>
+                    Oy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SMALL COL -->
+    <div class="large-4 medium-4 small-12 columns">
+
+        <div class="primary callout similar">
+            <h1>Info</h1>
+            <h3>
+                <a class="active" :href="rootUrl + '${lang}/info/'">Mikä on Kokeilun paikka</a>
+            </h3>
+            <h3>
+                <a :href="rootUrl + '${lang}/yhteystiedot/'">Yhteystiedot</a>
+            </h3>
+
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<h4>Tavoite
+    <span class="notch">{{ experiment.funding.goal }}
+        €</span>
+</h4>
+
+<div class="funding_block">
+    <h5 v-if="experiment.funding.goal">Yhteensä:
+        {{ experimentRaised }}
+        € /
+        {{ experiment.funding.goal }}
+        € ({{ raisedPercent }}%)</h5>
+    <h5 v-else>Yhteensä: 0 of 0 (0%)</h5>
+    <h6>{{ organizationsRaised() }}
+        <span class="notch">Säätiöiden rahoitus</span>
+    </h6>
+    <h6>{{ stateRaised() }}
+        <span class="notch">Valtion rahoitus</span>
+    </h6>
+    <h6>{{ crowdRaised() }}
+        <span class="notch">Joukkorahoitus</span>
+    </h6>
+    <button v-if="experimentFundingCrowdStage == 2" class="button success fund" @click="openFundingPage('https://mesenaatti.me/campaign/?id=', experiment.funding.sources.crowd.campaign_id, '#single/view_pledges')">Rahoita</button>
+</div>

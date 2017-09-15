@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="${lang}" dir="ltr">
+
+    ${include('head.html')}
+
+    <body>
+        ${include('crawlers.html')}
+
+        <div id="app" v-cloak>
+
+            <div class="row">
+
+                <!-- NAVIGATION -->
+                <div class="title-bar" data-responsive-toggle="experimentMenu" data-hide-for="small">
+                    <button class="menu-icon" type="button" data-toggle></button>
+                    <div class="title-bar-title">Menu</div>
+                </div>
+                <div class="top-bar" id="experimentMenu">
+                    <div class="large-9 small-12 columns">
+
+                        <div class="top-bar-left">
+                            <ul class="menu">
+                                <li class="menu-text">
+                                    <a :href="rootUrl + '${lang}/'">${'placeofexperiment'|trans}</a>
+                                </li>
+                                <li>
+                                    <a :href="rootUrl + '${lang}/page/kokeilun-paikka-kehittyy/'">${'gettoknow'|trans}</a>
+                                </li>
+                                <li>
+                                    <a :href="rootUrl + '${lang}/haku/'">${'browse_exp'|trans}</a>
+                                </li>
+                                <li>
+                                    <a :href="rootUrl + '${lang}/aloita/'">Aloita kokeilu</a>
+                                </li>
+                                <li>
+                                    <a :href="rootUrl + '${lang}/kayttajia/'">Selaa käyttäjiä</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="large-3 columns small-12 right">
+
+                        <div class="large-12 columns small-12 right">
+
+                            <ul class="menu" style="list-style-type: none;">
+
+                                <div class="langmenu" style="float:right;">
+
+                                    {% if lang == 'fi' %}
+                                        FI
+                                    {% else %}
+                                        <a href="${current_page|langurl(lang, 'fi')}">FI</a>
+                                    {% endif %}
+                                    {% if lang == 'sv' %}
+                                        SV
+                                    {% else %}
+                                        <a href="${current_page|langurl(lang, 'sv')}">SV</a>
+                                    {% endif %}
+                                    {% if lang == 'en' %}
+                                        EN
+                                    {% else %}
+                                        <a href="${current_page|langurl(lang, 'en')}">EN</a>
+                                    {% endif %}
+
+                                </div>
+
+                                <li style="float:right;">
+                                    <form>
+                                        <div class="large-12 columns search">
+                                            <input type="text" placeholder="Haku"/>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li style="float:right;">
+                                    <navbar inline-template>
+                                        <div class="custom-button">
+                                            <button id="nav-profile" v-if="isUserAuthenticated" class="form-control btn btn-xs" @click="openUrl('/${lang}/profile/me')">{{ userFirstName }}</button>
+                                            <button id="nav-logout" v-if="isUserAuthenticated" class="form-control btn btn-xs" @click="$root.eventBus.$emit('showModal', 'sign-out', true)">${'logout'|trans}</button>
+                                            <button id="nav-login" v-if="!isUserAuthenticated" class="form-control btn btn-xs" @click="$root.eventBus.$emit('showModal', 'sign-in', true)">${'login'|trans}
+                                            </button>
+                                            <button id="nav-register" v-if="!isUserAuthenticated" class="form-control btn btn-xs" @click="$root.eventBus.$emit('showModal', 'sign-up', true)">
+                                                ${'register'|trans}</button>
+                                        </div>
+                                    </navbar>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 columns">
+
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+
+            <authorization inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}">
+                <notification-message status="wrong_credentials">
+                    <slot>Email or password is wrong or this user is not registered.</slot>
+                </notification-message>
+            </authorization>
+
+            ${include('modals.html')}
+
+            <!--
+            <embed v-if="isUserAuthenticated" src="http://kokeilunpaikka.discoursehosting.net/session/sso" style="height:0px;width:0px;visibility: none;"></embed>
+            -->
+            <notification-message status="error">
+                <slot>Error: Action failed.</slot>
+            </notification-message>
+        </div>
+
+        ${include('script_imports.html')}
+
+    </body>
+
+</html>

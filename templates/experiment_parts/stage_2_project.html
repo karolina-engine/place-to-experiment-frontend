@@ -1,0 +1,467 @@
+<div v-if="!isUserEditor" class="content-short-description">
+     <span v-if="getLanguage('0_short_description')">
+    <h4>Minkä ongelman haluat ratkaista?</h4>
+    <p>{{ getLanguage('0_short_description') }}</p>
+    </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('0_short_description')" format="plaintext" language-key="0_short_description" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+        </div>
+
+        <h4>Minkä ongelman haluat ratkaista?</h4>
+
+        <div class="content-short-description">
+
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i></i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="large-12 columns" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Syötä teksti" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</experiment-language>
+     <div v-if="!isUserEditor" class="content-short-description">
+      <span v-if="getLanguage('1_short_description')">
+   <h4>Miten ideasi ratkaisee ongelman?</h4>
+    <p>{{ getLanguage('1_short_description') }}</p><hr>
+     </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('1_short_description')" format="plaintext" language-key="1_short_description" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+        </div>
+
+        <h4>Miten ideasi ratkaisee ongelman?</h4>
+
+        <div class="content-short-description">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Syötä teksti" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+   <div v-if="!isUserEditor" class="2_what">
+
+   <span v-if="getLanguage('2_what')">
+    <h4>Miten testaan ideaasi? Mitä käytännössä kokeillaan?</h4>
+
+    <p>{{ getLanguage('2_what') }}</p></span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_what')" format="plaintext" language-key="2_what" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Kysymys</button>
+        </div>
+
+        <h4>Miten testaat ideaasi? Mitä käytännössä kokeillaan?</h4>
+
+        <div class="2_what">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="2_point_of_exp">
+	<span v-if="getLanguage('2_point_of_exp')">
+    <h4>Mikä on kokeilun tavoite?</h4>
+    <p>{{ getLanguage('2_point_of_exp') }}</p>
+    </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_point_of_exp')" format="plaintext" language-key="2_point_of_exp" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Kysymys</button>
+        </div>
+
+        <h4>Mikä on kokeilun tavoite?</h4>
+
+        <div class="2_point_of_exp">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="2_who">
+	<span v-if="getLanguage('2_who')">
+    <h4>Kuka kokeilun toteuttaa?</h4>
+    <p>{{ getLanguage('2_who') }}</p>
+    </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_who')" format="plaintext" language-key="2_who" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Kysymys</button>
+        </div>
+
+        <h4>Kuka kokeilun toteuttaa?</h4>
+
+        <div class="2_who">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="content-short-description">
+    <span v-if="getLanguage('3_short_description')">
+    <h4>Mikä on kokeilun budjetti</h4>
+     <p>{{ getLanguage('3_short_description') }}</p>
+     </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('3_short_description')" format="plaintext" language-key="3_short_description" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+        </div>
+
+        <h4>Mikä on kokeilun budjetti</h4>
+
+        <div class="content-short-description">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastausksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="content-short-description">
+      <span v-if="getLanguage('2_skills')">
+     <h4>Mitä osaamista tai rahoitusta tiimillä jo on kokeilun toteuttamiseen?</h4>
+     <p>{{ getLanguage('2_skills') }}</p>
+     </span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_skills')" format="plaintext" language-key="2_skills" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+        </div>
+
+        <h4>Mitä osaamista tai rahoitusta tiimillä jo on kokeilun toteuttamiseen?</h4>
+
+        <div class="content-short-description">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="content-short-description">
+    <span v-if="getLanguage('4_short_description')">
+     <h4>Mikä on kokeilun kaavailtu ajankohta?</h4>
+     <p>{{ getLanguage('4_short_description') }}</p>
+   			</span>
+        <span v-else>
+        <i></i>
+    </span>
+</div>
+
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_when')" format="plaintext" language-key="2_when" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Ajankohta</button>
+        </div>
+
+        <h4>Mikä on kokeilun kaavailtu ajankohta?</h4>
+
+        <div class="2_when">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor" class="content-short-description">
+    <span v-if="getLanguage('2_what2learn')">
+       <h4>Mitä kokeilusta halutaan oppia?</h4>
+     <p>{{ getLanguage('2_what2learn') }}</p><hr>
+   			</span>
+        <span v-else>
+        <i></i><hr>
+    </span>
+</div>
+
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('2_what2learn')" format="plaintext" language-key="2_what2learn" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Mitä halutaan oppia?</button>
+        </div>
+
+        <h4>Mitä kokeilusta halutaan oppia?</h4>
+
+        <div class="2_what2learn">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastauksesi</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</experiment-language>
+
+<div v-if="!isUserEditor">
+    <div>
+        <div v-html="getLanguage('2_long_description')"></div>
+    </div>
+</div>
+<experiment-language
+    v-if="isUserEditor"
+    inline-template
+    :language="language"
+    :common="common"
+    :value="getLanguage('2_long_description')"
+    format="html"
+    language-key="2_long_description"
+    editor="Quill"
+    :editor-config="{bounds:'#quill-editor'}"
+    @experiment-language-updated="experimentLanguageUpdated">
+    <div class="content-description">
+        <div>
+            <div class="panel clearfix">
+                <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                    <i class="fi-pencil medium">&nbsp;</i>Lisää pitkä kuvausteksti ja kuvat</button>
+            </div>
+        </div>
+        <div v-if="showEditor">
+            <quill-editor id="quill-editor" class="quill-editor" ref="quillEditorRef" :content="value" :config="quillEditorConfig" @change="onQuillEditorChange($event)"></quill-editor>
+            <br/>
+            <form action="#" @submit.prevent="updateText()">
+                <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                    <i class="fi-check medium">&nbsp;</i>Tallenna pitkä kuvaus</button>
+                <button type="button" class="button alert" @click="collapseEditor">
+                    <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+            </form>
+        </div>
+        <div v-show="!showEditor">
+            <div>
+                <div v-html="value"></div>
+            </div>
+        </div>
+    </div>
+</experiment-language>

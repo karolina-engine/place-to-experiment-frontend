@@ -1,0 +1,128 @@
+<modal inline-template modal-id="sign-in">
+    <transition name="modal" v-if="showModal">
+        <div class="modal-mask" @click="setShowModal(false)">
+            <div class="modal-wrapper">
+                <div class="modal-container modal-dialog primary callout login" @click.stop>
+                    <sign-in inline-template @close="setShowModal(false)" :redirect-path="redirectPath">
+                        <form action="#" @submit.prevent="validateForm()">
+                            <div class="modal-header">
+                                <h2>Kirjautuminen</h2>
+                                <h3>Anna tiedosi</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="email" name="email" class="form-control" placeholder="Sähköpostiosoite" v-model="credentials.email" v-validate.initial data-vv-rules="required|email">
+                                        <div class="input-group-addon alert-danger" v-if="errors.has('email') && showErrors">
+                                            <span>{{ errors.first('email') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="password" name="password" class="form-control" placeholder="Anna salasanasi" v-model="credentials.password" v-validate.initial data-vv-rules="required">
+                                        <div class="input-group-addon alert-danger" v-if="errors.has('password') && showErrors">
+                                            <span>{{ errors.first('password') }}</span>
+                                        </div>
+                                        <a :href="rootUrl + '${lang}/password-reset/'">Unohdin salasanani</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-login-submit" class="btn btn-md btn-default login col-xs-5 pull-right submit" type="submit">KIRJAUDU</button>
+                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">SULJE</button>
+                            </div>
+                        </form>
+                    </sign-in>
+                </div>
+            </div>
+        </div>
+    </transition>
+</modal>
+
+<modal inline-template modal-id="sign-out">
+    <transition name="modal" v-if="showModal">
+        <div class="modal-mask" @click="setShowModal(false)">
+            <div class="modal-wrapper">
+                <div class="modal-container modal-dialog  primary callout login" @click.stop>
+                    <sign-out inline-template @close="setShowModal(false)">
+                        <form action="#" @submit.prevent="validateForm()">
+                            <div class="modal-header">
+                                <h2>Kirjaudu ulos</h2>
+                                <h3>Haluatko varmasti kirjautua ulos?</h3>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-logout-submit" class="btn btn-md btn-default logout col-xs-5 pull-right" type="submit">Kirjaudu ulos</button>
+                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">SULJE</button>
+                            </div>
+                        </form>
+                    </sign-out>
+                </div>
+            </div>
+        </div>
+    </transition>
+</modal>
+<modal inline-template modal-id="sign-up">
+    <transition name="modal" v-if="showModal">
+        <div class="modal-mask" @click="setShowModal(false)">
+            <div class="modal-wrapper">
+                <div class="modal-container modal-dialog  primary callout login" @click.stop>
+                    <sign-up inline-template @close="setShowModal(false)">
+                        <form action="#" @submit.prevent="validateForm()">
+                            <div class="modal-header">
+                                <h2>Rekisteröidy</h2>
+                                <h3>Anna tietosi</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="text" name="first_name" class="form-control" placeholder="Etunimi" v-model="credentials.first_name" v-validate.initial data-vv-rules="required|min:2" data-vv-as="first name">
+                                        <div v-if="errors.has('first_name') && showErrors" class="input-group-addon alert-danger">
+                                            <span>{{ errors.first('first_name') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="text" class="form-control" placeholder="Sukunimi" name="last_name" v-model="credentials.last_name" v-validate.initial data-vv-rules="required|min:2" data-vv-as="last name">
+                                        <div v-if="errors.has('last_name') && showErrors" class="input-group-addon alert-danger">
+                                            <span>{{ errors.first('last_name') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="email" name="email" class="form-control" placeholder="Sähköpostiosoite" v-model="credentials.email" v-validate.initial data-vv-rules="required|email">
+                                        <div class="input-group-addon alert-danger" v-if="errors.has('email') && showErrors">
+                                            <span>{{ errors.first('email') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="password" name="password" class="form-control" placeholder="Keksi salasana (väh 6 merkkiä)" v-model="credentials.password" v-validate.initial data-vv-rules="required|min:6">
+                                        <div class="input-group-addon alert-danger" v-if="errors.has('password') && showErrors">
+                                            <span>{{ errors.first('password') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <input type="password" name="retype_password" class="form-control" placeholder="Toista salasana" v-model="retype_password" v-validate.initial data-vv-rules="required|confirmed:password" data-vv-as="repeat password">
+                                        <div class="input-group-addon alert-danger" v-if="errors.has('retype_password') && showErrors">
+                                            <span>{{ errors.first('retype_password') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="modal-register-submit" class="btn btn-md btn-default login col-xs-5 pull-right" type="submit">Kirjaudu</button>
+                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">Sulje</button>
+                            </div>
+                        </form>
+                    </sign-up>
+                </div>
+            </div>
+        </div>
+    </transition>
+</modal>

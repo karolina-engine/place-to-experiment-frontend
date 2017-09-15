@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <leiki-testbed inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}">
+        <div class="wrapper">
+
+            <div v-if="!isUserAuthenticated" class="large-12 columns">
+                <div class="primary callout info">
+                    <h2>Not allowed</h2>
+                    <p>
+                        Sorry, you need to be logged in to access this page.
+                    </p>
+                </div>
+            </div>
+
+            <div v-if="isUserAuthenticated" class="large-12 columns">
+                <div class="primary callout info">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h2>Search autocomplete categories</h2>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input @keyup="searchCategories" v-model="searchTermCategories" type="text" class="form-control" placeholder="Type to search categories">
+                                </div>
+                                <div class="large-12 columns">
+                                    <ul v-if="categories">
+                                        <li v-for="category in categories">
+                                            {{ category.categoryName }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Search results</h2>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input @keyup="searchResults" v-model="searchTermResults" type="text" class="form-control" placeholder="Type to search results">
+                                </div>
+                                <div class="large-12 columns">
+                                    <ul v-if="results">
+                                        <li v-for="result in results">
+                                            <a :href="result.link">{{ result.title }}</a>, relevance:
+                                            {{ result.relevance }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Search tags</h2>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input v-model="targetUrl" type="text" class="form-control" placeholder="Input target URL">
+                                    <button @click="searchTags" class="button primary" type="button">Search tags</button>
+                                </div>
+                                <div class="large-12 columns">
+                                    <ul v-if="tags">
+                                        <li v-for="tag in tags">
+                                            {{ tag.title }}, relevance:
+                                            {{ tag.relevance }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Widgets</h2>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input v-model="testEnv" type="checkbox" class="form-control"/>
+                                    <label>test URL</label>
+                                    <input v-model="testUrl" type="text" class="form-control" placeholder="Input test URL">
+                                    <br/>
+                                    <button @click="getPersonalWidget" class="button primary" type="button">Show Personal Widget</button>
+                                    <button @click="getContextualWidget" class="button primary" type="button">Show Contextual Widget</button>
+                                </div>
+                                <div class="large-12 columns">
+                                    <h2>Personal widget</h2>
+                                    <ul v-if="personalTabs">
+                                        <template v-if="personalTabs[0]">
+                                            <li v-for="tab in personalTabs[0].items">
+                                                <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                    <h2>Contextual widget</h2>
+                                    <ul v-if="contextualTabs">
+                                        <h4>Samankaltaisia kokeiluja:</h4>
+                                        <template v-if="contextualTabs[0]">
+                                            <li v-for="tab in contextualTabs[0].items">
+                                                <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
+                                            </li>
+                                        </template>
+                                        <h4>Lisää aiheesta muualla:</h4>
+                                        <template v-if="contextualTabs[1]">
+                                            <li v-for="tab in contextualTabs[1].items">
+                                                <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </leiki-testbed>
+
+{% endblock %}

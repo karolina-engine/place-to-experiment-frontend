@@ -1,0 +1,65 @@
+class_name: AcceptanceTester
+modules:
+   enabled:
+     - WebDriver:
+         url: http://dev.kokeilunpaikka.fi/
+         browser: chrome
+         window_size: maximize
+     - \Helper\Acceptance
+env:
+    firefox:
+        modules:
+            config:
+                WebDriver:
+                    browser: firefox
+    ie:
+        modules:
+            config:
+                WebDriver:
+                    browser: internet explorer
+                    capabilities:
+                        # This fixes the garbled input text
+                        nativeEvents: false
+                        # This deletes saved data (such as the token in local storage)
+                        ie.ensureCleanSession: true
+
+    edge:
+        modules:
+            config:
+                WebDriver:
+                    browser: MicrosoftEdge
+    safari:
+        modules:
+            config:
+                WebDriver:
+                    browser: safari
+    
+    local-chrome:
+        modules:
+            config:
+                WebDriver:
+                    url: http://kokeilunpaikka.dev/
+    local-firefox:
+        modules:
+            config:
+                WebDriver:
+                    url: http://kokeilunpaikka.dev/
+                    browser: firefox
+    local-ie:
+        modules:
+            config:
+                WebDriver:
+                    url: http://kokeilunpaikka.dev/
+                    browser: internet explorer
+                    capabilities:
+                        # This fixes the garbled input text
+                        nativeEvents: false
+                        # This deletes saved data (such as the token in local storage)
+                        ie.ensureCleanSession: true
+
+    local-edge:
+        modules:
+            config:
+                WebDriver:
+                    url: http://kokeilunpaikka.dev/
+                    browser: MicrosoftEdge

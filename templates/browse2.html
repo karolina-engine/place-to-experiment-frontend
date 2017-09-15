@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <experiment-index
+        inline-template
+        :common="{placeholders: placeholders}"
+        api-url="${agitator_url}"
+        language="${lang}"
+        placeholder-image-url="/img/placeholder.jpg"
+        get-place="index"
+        show-limit="0"
+        :sort-experiments-object="[{key:'likes',name:'Suosituimmat ensin',initial:true}, {key:'alphabetical', name:'Aakkosjärjestyksessä', initial:false}, {key:'id', name:'Uusimmat ensin', initial:false}]">
+        <div class="wrapper browse">
+
+            <!-- sorting -->
+            <div v-if="sortOptionsObject" class="large-12 columns">
+                <h3 class="searchfield">Selaa hakusanan mukaan</h3>
+                <template v-for="(option, index) in sortOptionsObject">
+                    <input type="radio" :id="'sort_' + index" :value="option.key" v-model="currentSortOptionKey" @click="triggerSort(option)">
+                    <label :for="'sort_' + index">{{ option.name }}</label>
+                </template>
+            </div>
+
+            <div class="large-3 columns">
+                <input @keyup="searchExperiments" v-model="searchTerm" type="text" class="form-control filter" placeholder="Kirjoita hakusana etsiäksesi kokeiluja">
+                <!--Type to search experiments-->
+            </div>
+
+            <div class="row">
+                <div class="large-12 columns">
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/0'">
+                            <h3>Haasteet</h3>
+                            <!--Challenges-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '0') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/1'">
+                            <h3>Ideat</h3>
+                            <!--Ideas-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '1') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/2'">
+                            <h3>Ehdotukset</h3>
+                            <!--Suggestions-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '2') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/3'">
+                            <h3>Rahoitukset</h3>
+                            <!--Funding-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '3') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/4'">
+                            <h3>Kokeilut</h3>
+                            <!--Experiments-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '4') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                    <div class="large-2 medium-2 small-4 vertical columns">
+                        <a :href="rootUrl + '${lang}/haku/stage/5'">
+                            <h3>Opit</h3>
+                            <!--Archive-->
+                        </a>
+
+                        <div class="row" v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '5') , 0, showLimit), searchTerm))">
+
+                            ${include('experiment_index_parts/experiment_card.html')}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </experiment-index>
+
+{% endblock %}

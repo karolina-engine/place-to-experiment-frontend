@@ -1,0 +1,17 @@
+<reward-index inline-template :common="common" :api-url="experiment.funding.sources.crowd.api" :language="language" :campaign-id="experiment.funding.sources.crowd.campaign_id">
+    <div class="wrapper">
+        <div v-for="reward in rewards" style="cursor:pointer;" @click="openRewardUrl('https://mesenaatti.me/campaign/?id=' + campaignId + '#' + campaignId + '/reward/' + reward.reward_id + '/view', true)">
+            <div class="panel-heading">
+                <img v-if="getRewardPicUrl(null, reward.image, 1, 1)" :src="getRewardPicUrl(placeholderImage, reward.image, 200, 335)" class="img-responsive" :alt="reward.title">
+                <h2 class="panel-title" style="padding-top:20px;">
+                    <span>€{{ reward.amount }}</span>
+                </h2>
+                <h3 class="panel-title">{{ reward.title }}</h3>
+            </div>
+            <div class="panel-body">
+                {{ reward.description }}
+            </div>
+            <br/>
+        </div>
+    </div>
+</reward-index>

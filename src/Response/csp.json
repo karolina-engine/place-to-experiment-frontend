@@ -1,0 +1,18 @@
+{
+    "img-src": {
+        "self": true,
+        "data": true
+    },
+    "connect-src": {
+        "self": true
+    },
+    "script-src": {
+        "self": true,
+        "data": true,
+        "unsafe-eval": true
+    },
+    "style-src": {
+        "self": true,
+        "unsafe-inline": true
+    }
+}

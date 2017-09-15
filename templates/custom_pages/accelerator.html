@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- MAIN CONTENT -->
+    <div class="large-12 medium-12 small-12 columns page">
+    <div class="primary callout accelerator">
+            <div class="maincontent">
+                           <div class="row">
+
+                    <div class="large-4 medium-4 small-12 columns side">
+            <h2>Kiertotalous </h2>
+            <h3><a href="#ruoka">Ruoka</a></h3>
+            <h3><a href="#asuminen">Asuminen</a></h3>
+            <h3><a href="#liikkuminen">Liikkuminen</a></h3>
+          </div>
+                         <div class="large-8 medium-8 small-12 columns main">
+
+                <h1>${title|raw}</h1>
+
+                <div>${content|raw}</div>
+							 <a class="button" href="https://keskustelu.kokeilunpaikka.fi/t/kokeiluhaku-kiertotalous/270">Kysy ja keskustele kokeiluhausta</a>
+            </div>
+            
+                                 <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.jpg" show-experiment-ids="53, 132, 129, 126, 140, 157, 162, 165, 166, 167, 169, 172, 178, 180, 133, 163, 182, 184, 186, 189, 190,  191, 192, 194, 196, 198, 200, 201, 203, 309, 308, 307, 304, 303, 302, 301, 300, 299, 298, 297, 296, 295, 294, 293, 292, 291, 290, 289, 288, 287, 286, 283, 282, 281, 280, 279, 278, 277, 275, 274, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 256, 255, 253, 252, 251, 250, 249, 247, 246, 245, 244, 243, 242, 241, 240, 239, 238, 235, 234, 231, 230, 224, 223, 222, 221, 218, 216, 215, 214, 213, 212, 211, 210, 209, 208, 207, 205, 204, 202, 201, 197, 188, 187, 185, 184, 183, 182, 181, 179, 175, 174, 173, 168, 164, 163, 161, 153, 147, 139">
+        <div class="wrapper browse">
+            
+            <h3>Hakuun liittyvät kokeilut</h3>
+            
+            
+
+            <div class="large-12 columns">
+                <!--Challenges-->
+            </div>
+            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), showStages) , 0, showLimit), searchTerm))">
+
+                ${include('experiment_index_parts/experiment_card.html')}
+
+            </div>
+
+        </div>
+    </experiment-index>
+            
+             </div>
+             
+
+             
+        </div>
+        
+
+        
+    </div>
+
+    <!-- SMALL COL -->
+
+
+{% endblock %}
+	

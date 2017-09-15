@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="large-12 columns">
+        <create-experiment inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" experiment-stage="${experimentStage}" experiment-tag="${experimentTag}" redirect-path="/${lang}/experiment">
+            <div class="wrapper">
+                <div class="info callout" :class="'color-' + experimentStage">
+                    <div class="maincontent">
+                        <span v-if="!isUserAuthenticated">Sinun täytyy kirjautua voidaksesi aloittaa kokeilun</span>
+                        <!--You need to be logged in to start an experiment-->
+                        <div v-if="isUserAuthenticated" class="content-div">
+                            <div class="content-title">
+
+                                <h1 v-if="experimentStage == 0">Aloita haaste</h1>
+                                <!--Start an challenge-->
+                                <h1 v-if="experimentStage == 1">Aloita idea</h1>
+                                <!--Start an idea-->
+                                <h1 v-if="experimentStage == 2">Aloita ehdotus</h1>
+                                <!--Start an suggestion-->
+                                <h1 v-if="experimentStage == 5">Aloita oppi</h1>
+                                <!--Start an archive-->
+                            </div>
+                            <div>
+                                <form action="#" @submit.prevent="createExperiment(apiUrl, language)">
+                                    <div class="form-group">
+                                        <label>Otsikko:</label>
+                                        <!--Experiment title:-->
+                                        <div class="input-group" style="width:100%;">
+                                            <input type="text" name="title" class="form-control" placeholder="Syötä otsikko" v-model="experimentTitle" v-validate.initial data-vv-rules="required">
+                                            <div class="input-group-addon alert-danger" v-if="errors.has('title') && showErrors">
+                                                <span>{{ errors.first('title') }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Lyhyt kuvaus</label>
+                                        <!--Experiment short description:-->
+                                        <div class="input-group" style="width:100%;">
+                                            <input type="text" name="short_description" class="form-control" placeholder="Syötä lyhyt kuvausteksti" v-model="experimentShortDescription" v-validate.initial data-vv-rules="required" data-vv-as="short description">
+                                            <div class="input-group-addon alert-danger" v-if="errors.has('short_description') && showErrors">
+                                                <span>{{ errors.first('short_description') }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nimi (Henkilö tai organisaatio)</label>
+                                        <!--Experiment owner name:-->
+                                        <div class="input-group" style="width:100%;">
+                                            <input type="text" name="owner_name" class="form-control" placeholder="Nimi" v-model="experimentOwnerName" v-validate.initial data-vv-rules="required" data-vv-as="owner name">
+                                            <div class="input-group-addon alert-danger" v-if="errors.has('owner_name') && showErrors">
+                                                <span>{{ errors.first('owner_name') }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        id="new-experiment-submit"
+                                        type="submit"
+                                        class="button"
+                                        :class="{success: experimentShortDescription != '' && experimentTitle != '' && experimentOwnerName != '', secondary: experimentShortDescription == '' || experimentTitle == '' || experimentOwnerName == ''}"
+                                        :disabled="experimentShortDescription == '' || experimentTitle == '' || experimentOwnerName == ''">
+                                        <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                                    <!--Start this experiment-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </create-experiment>
+    </div>
+
+{% endblock %}

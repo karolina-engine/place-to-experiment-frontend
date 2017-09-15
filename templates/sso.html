@@ -1,0 +1,9 @@
+<div id="app" v-cloak>
+        <discourse-sso inline-template inline-template :common="{placeholders: placeholders}" discourse-url="https://keskustelu.kokeilunpaikka.fi" api-url="${agitator_url}" login-redirect="/${lang}/logintodiscourse">
+            <div>
+                <p>Please wait ...</>
+            </div>
+        </discourse-sso>
+</div>
+
+${include('script_imports.html')}

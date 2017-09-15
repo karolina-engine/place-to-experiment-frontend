@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- MAIN CONTENT -->
+    <div class="large-8 medium-8 small-12 columns">
+        <div class="primary callout info">
+            <div class="maincontent">
+                <h1><img src="/img/kaari.gif" alt=""/></h1>
+
+                <h1>Kokeilun paikka kehittyy</h1>
+                <p class="ingress">Nyt voit luoda palveluun käyttäjäprofiilin ja heittää tänne ensimmäiset ideat tai haasteet. Keräämme palveluun myös oppeja jo tehdyistä kokeiluista.</p>
+                <h2>Mikä on Kokeilun paikka?</h2>
+                <p>Kokeilun paikka on palvelu, jossa me kaikki voimme ideoida ja kehittää yhteisiä kokeiluja. Seuraavassa vaiheessa voimme hakea niille rahoitusta. Kokeilun paikassa edetään ideasta / haasteesta kokeiluehdotukseen, mahdolliseen rahoitukseen ja toteutukseen asti. Tiedot kokeilun eri vaiheista ja tuloksista tallentuvat tänne kaikkien hyödynnettäviksi.
+              </p>
+                <h2>Yhteystiedot</h2>
+                <p>Palvelun tarjoaa ensi vaiheessa valtioneuvoston kansliaan sijoitettu Kokeileva Suomi -tiimi
+                    <a href="http://kokeilevasuomi.fi/ota-yhteytta">kokeilevasuomi.fi/ota-yhteytta</a>. Palvelun tuottaa joukkorahoituksen suomalainen uranuurtaja <a href="https://mesenaatti.me">Mesenaatti.me Oy</a>.</p>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- SMALL COL -->
+    <div class="large-4 medium-4 small-12 columns">
+
+        <div class="primary callout similar">
+            <h1>Info</h1>
+            <h3>
+                <a class="active" :href="rootUrl + '${lang}/info/'">Mikä on Kokeilun paikka</a>
+            </h3>
+            <h3>
+                <a :href="rootUrl + '${lang}/yhteystiedot/'">Yhteystiedot</a>
+            </h3>
+
+        </div>
+      <div class="primary callout similar">
+
+            <h1>Blogi</h1>
+
+            {% for post in posts %}
+                <a :href="rootUrl + '${lang}/post/${post.id}/${post.slug}/'">
+                    <h2>${post.title|raw}</h2>
+                    <p>
+                        <b>${post.date_formatted}</b>
+                        <br>
+                        ${post.excerpt|length > 150 ? post.excerpt|slice(0, 150) ~ '...' : post.excerpt}</p>
+                </a>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

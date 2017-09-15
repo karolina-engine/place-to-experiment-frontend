@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <admin inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" :items-per-page="20">
+        <div class="wrapper">
+
+            <div v-if="!isUserAuthenticated" class="large-12 columns">
+                <div class="primary callout info">
+                    <h2>Not allowed</h2>
+                    <p>
+                        Sorry, you need to be logged in to access this page. Do you want to
+                        <a :href="rootUrl + '${lang}/haku'">browse</a>
+                        experiments?
+                    </p>
+                </div>
+            </div>
+
+            <div v-if="isUserAuthenticated" class="large-12 columns">
+                <div class="primary callout info">
+                    <h2>Experiments</h2>
+                    <div class="large-12 columns">
+                        <div class="row">
+                            <div class="large-10 columns">
+                                <input @keyup="searchExperiments" v-model="searchTerm" type="text" class="form-control" placeholder="Type to search experiments">
+                            </div>
+                            <div class="large-2 columns">
+                                <div class="large-6 columns">
+                                    <h5>Show:</h5>
+                                </div>
+                                <div class="large-6 columns">
+                                    <select v-model="selectedItemsPerPage">
+                                        <option value="10" :selected="perPage == 10">
+                                            10
+                                        </option>
+                                        <option value="20" :selected="perPage == 20">
+                                            20
+                                        </option>
+                                        <option value="50" :selected="perPage == 50">
+                                            50
+                                        </option>
+                                        <option value="100" :selected="perPage == 100">
+                                            100
+                                        </option>
+                                        <option value="all" :selected="perPage == pagination.total">
+                                            all
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <table v-if="experiments" class="vuetable">
+                            <thead>
+                                <tr>
+                                    <th v-for="field in fields" :class="{sortable: field.sortable}" @click="sortData(field)">
+                                        {{ field.text }}&nbsp;<i v-show="field.name == sortField.name && sortField.direction == 'asc'" class="fi-arrow-up"></i>
+                                        <i v-show="field.name == sortField.name && sortField.direction == 'desc'" class="fi-arrow-down"></i>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody v-if="experiments">
+                                <tr v-for="experiment in currentPage">
+                                    <td>{{ experiment.experiment_id }}</td>
+                                    <td>
+                                        <a :href="rootUrl + '${lang}/experiment/' + experiment.experiment_id">{{ experiment.title }}</a>
+                                    </td>
+                                    <td>{{ experiment.short_description }}</td>
+                                    <td>{{ experiment.owner_name }}</td>
+                                    <td>
+                                        <ul>
+                                            <li v-for="showIn in getObjectKeys(experiment.show_in)">
+                                                {{ showIn }}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a :href="rootUrl + '${lang}/experiment/' + experiment.experiment_id">View</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- table -->
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div>Displaying
+                                {{ pagination.from }}
+                                to
+                                {{ pagination.to }}
+                                of
+                                {{ pagination.total }}
+                                items
+                            </div>
+                        </div>
+                        <div class="large-6 columns">
+                            <ul class="pagination">
+                                <li class="arrow" :class="{unavailable: pagination.current_page <= 1}">
+                                    <a @click="doPagination(pagination.current_page - 1)">&laquo;</a>
+                                </li>
+                                <li v-for="page in pagination.last_page" :class="{current: page == pagination.current_page}">
+                                    <a @click="doPagination(page)">{{ page }}</a>
+                                </li>
+                                <li class="arrow" :class="{unavailable: pagination.current_page >= pagination.last_page}">
+                                    <a @click="doPagination(pagination.current_page + 1)">&raquo;</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </admin>
+{% endblock %}

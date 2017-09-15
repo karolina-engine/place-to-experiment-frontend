@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+ <div class="large-12 columns process">
+            <div class="primary callout info submenu start front">
+                <h2>Kokeilun kaari</h2>
+                <div class="row">
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/0'">
+                            <p>• Minkä ongelman haluaisit ratkaista?</p>
+                            <div class="callout color-0 proc">Ratkaistava HAASTE<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/1'">
+                            <p>• Kerro idea joka ratkaisisi ongelman</p>
+                            <div class="callout color-1 proc">Ratkaisun IDEA<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/2'">
+                            <p>• Kerro miten voit testata toimisiko ratkaisusi</p>
+                            <div class="callout color-2 proc">Ehdotus KOKEILUKSI<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <p>Päästäksesi rahoitus-<br>
+                            vaiheeseen tee ensin ehdotus</p>
+                        <div class="callout color-3 proc">Kokeilun RAHOITUS</div>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <p>Päästäksesi toteutus-<br>
+                            vaiheeseen tee ensin ehdotus</p>
+                        <div class="callout color-4 proc">Toteutettava KOKEILU</div>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/5'">
+                            <p>• Talleta kokeilusi Kokeilun paikan oppeihin</p>
+                            <div class="callout color-5 proc">Kokeilun OPIT<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

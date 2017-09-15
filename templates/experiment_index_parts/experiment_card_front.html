@@ -1,0 +1,36 @@
+<div class="large-4 medium-4 small-12 columns">
+    <div class="callout" :class="'color-' + experiment.stage">
+        <div>
+            <a :href="rootUrl + 'experiment/' + experiment.experiment_id">
+                <h2 v-if="experiment.stage == 0">Haaste</h2>
+                <h2 v-if="experiment.stage == 1">Idea</h2>
+                <h2 v-if="experiment.stage == 2">Ehdotus</h2>
+                <h2 v-if="experiment.stage == 3">Rahoitus</h2>
+                <h2 v-if="experiment.stage == 4">Toteutus</h2>
+                <h2 v-if="experiment.stage == 5">Opit</h2>
+                <div class="owner">
+                    <p>{{ experiment.owner_name | truncate(25, '...') }}</p>
+                </div>
+                <img :src="getExperimentPreviewPicUrl(placeholderImage, experiment.image, 220, 327)" class="img-responsive" :alt="experiment.title"></a>
+        </div>
+        <div>
+            <p class="ingress">
+                <a :href="rootUrl + 'experiment/' + experiment.experiment_id">{{ experiment.title | truncate(50, '...') }}</a>
+            </p>
+
+            <!--
+            <div v-if="experiment.stage == 3" class="data">
+                <ul>
+                    <li class="goal">
+                        <span class="first">Tavoite 10 000 €</li>
+                    <li class="funded">Saavutettu 3 290 €</span>
+                    </li>
+                    <li class="ends">
+                        <span class="last">Sulkeutuu<br>23.5.2017</span>
+                    </li>
+                </ul>
+            </div>
+            -->
+        </div>
+    </div>
+</div>

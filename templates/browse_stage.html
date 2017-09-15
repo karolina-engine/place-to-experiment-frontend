@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" get-place="index" get-stage="${stage}" show-limit="12" placeholder-image-url="/img/placeholder.jpg">
+        <div class="wrapper browse">
+
+            <div class="large-12 columns">
+                <input @keyup="searchExperiments" v-model="searchTerm" type="text" class="form-control filter" placeholder="Kirjoita hakusana etsiäksesi kokeiluja">
+                <!--Type to search experiments-->
+            </div>
+
+            <div class="large-12 columns">
+                <!--Challenges-->
+            </div>
+            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), showStages) , 0, showLimit), searchTerm))">
+
+                ${include('experiment_index_parts/experiment_card.html')}
+
+            </div>
+
+        </div>
+    </experiment-index>
+
+{% endblock %}

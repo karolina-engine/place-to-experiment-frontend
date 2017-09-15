@@ -1,0 +1,3 @@
+*.xml
+tests/_output/*
+*vendor/*

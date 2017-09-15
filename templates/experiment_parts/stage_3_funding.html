@@ -1,0 +1,88 @@
+<div v-if="!isUserEditor" class="content-short-description">
+   <span v-if="getLanguage('3_short_description')">
+   <h4>Mikä on kokeilun budjetti</h4>
+    <p>{{ getLanguage('3_short_description') }}</p>
+	</span>
+    <span v-else>
+        <i></i>
+    </span>
+</div>
+<experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('3_short_description')" format="plaintext" language-key="3_short_description" @experiment-language-updated="experimentLanguageUpdated">
+    <div class="wrapper">
+        <div>
+            <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+        </div>
+
+        <h4>Mikä on kokeilun budjetti</h4>
+
+        <div class="content-short-description">
+            <p v-if="value">{{ value }}</p>
+            <span v-else>
+                <i>Vastaus tähän</i>
+            </span>
+        </div>
+        <div class="row">
+            <div class="col-md-12" v-show="showEditor">
+                <div class="collapse" style="padding: 20px;">
+                    <form action="#" @submit.prevent="updateText()">
+                        <div class="form-group">
+                            <div class="input-group" style="width:100%;">
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Enter the text" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
+                                    <span>{{ errors.first('custom_text') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                        <button type="button" class="button alert" @click="collapseEditor">
+                            <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+</experiment-language>
+<div v-if="!isUserEditor">
+    <div>
+        <div v-html="getLanguage('3_long_description')"></div>
+    </div>
+</div>
+<experiment-language
+    v-if="isUserEditor"
+    inline-template
+    :language="language"
+    :common="common"
+    :value="getLanguage('3_long_description')"
+    format="html"
+    language-key="3_long_description"
+    editor="Quill"
+    :editor-config="{bounds:'#quill-editor'}"
+    @experiment-language-updated="experimentLanguageUpdated">
+    <div class="content-description">
+        <div>
+            <div class="panel clearfix">
+                <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
+                    <i class="fi-pencil medium">&nbsp;</i>Lisää pitkä kuvausteksti ja kuvat</button>
+            </div>
+        </div>
+        <div v-if="showEditor">
+            <quill-editor id="quill-editor" class="quill-editor" ref="quillEditorRef" :content="value" :config="quillEditorConfig" @change="onQuillEditorChange($event)"></quill-editor>
+            <br/>
+            <form action="#" @submit.prevent="updateText()">
+                <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
+                    <i class="fi-check medium">&nbsp;</i>Tallenna pitkä kuvaus</button>
+                <button type="button" class="button alert" @click="collapseEditor">
+                    <i class="fi-x medium">&nbsp;</i>Tallenna</button>
+            </form>
+        </div>
+        <div v-show="!showEditor">
+            <div>
+                <div v-html="value"></div>
+            </div>
+        </div>
+    </div>
+</experiment-language>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="large-12 columns">
+        <div v-if="!isUserAuthenticated" class="primary callout info">
+            <h2>Please log in</h2>
+            <p>
+                Sorry, you need to be logged in to access this page. Please
+                <a @click="$root.eventBus.$emit('showModal', 'sign-in', true)">login</a>
+                or
+                <a @click="$root.eventBus.$emit('showModal', 'sign-up', true)">register</a>
+                to continue
+            </p>
+        </div>
+        <div v-else class="primary callout info">
+            <p>
+                Redirecting to discourse ...
+            </p>
+            {{ openUrl('${redirectUrl}') }}
+        </div>
+    </div>
+
+{% endblock %}

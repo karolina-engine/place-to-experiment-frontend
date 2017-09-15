@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="large-12 medium-12 small-12 columns">
+
+    <div class="primary">
+        <profile-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" placeholder-image-url="/img/placeholder_small.jpg" limit="1000" profile-ids="all">
+            <div class="wrapper">
+                <div class="large-12 columns">
+                    <input @keyup="searchProfiles" v-model="searchTerm" type="text" class="form-control filter" placeholder="Kirjoita nimi etsiäksesi käyttäjiä">
+                </div>
+
+                <div v-for="profile in nameDescriptionFilter(sliceProfiles(filterById(profiles, userIds), 0, limit), searchTerm)">
+                    <div class="large-3 columns">
+                        <div class="primary info callout users">
+                            <!-- name and description -->
+                            <div class="small-12 columns">
+                               <div class="row">
+                                <p class="ingress user">
+                                    <a :href="rootUrl + '${lang}/profile/' + profile.user_id">{{ getUserName(profile) | truncate(20, '') }}</a>
+                                </p></div>
+                                <div class="row name_pic">
+                                <div class="small-6 columns left">
+                                    <p class="user_description">{{ profile.short_description | truncate(50, '...') }}</p>
+                                </div>
+                                 <div class="small-6 columns right">
+                                <a :href="rootUrl + '${lang}/profile/' + profile.user_id">
+                                    <img :src="getProfilePreviewPicUrl(placeholderImage, profile, 110, 95)" class="img-responsive" :alt="getUserName(profile)">
+                                </a>
+                            </div> </div>
+                            </div>
+                            <!-- image -->
+
+                            <!-- links -->
+                            <div class="small-12 columns">
+                                <div v-if="profile.links">
+                                    <links inline-template :links="profile.links" facebook-icon-path="/img/fb.png" twitter-icon-path="/img/twit.png" instagram-icon-path="/img/instag.png" linkedin-icon-path="/img/in.png" email-icon-path="/img/mail.png" www-icon-path="/img/www.png">
+                                        <div class="row social-icon-bar">
+                                            <span v-for="link in links">
+                                                <a :href="link.url" :class="getLinkClass(link)" :style="{'background-image':'url(' + getBackgroundImage(link) + ')'}"></a>
+                                            </span>
+                                        </div>
+                                    </links>
+                                </div>
+                            </div>
+                            <!-- tags -->
+                            <div class="small-12 columns tags">
+                                <div class="row" v-show="profile.tags">
+                                    <div style="padding:0px;max-height:6em;overflow:hidden;">
+                                        <p>Kiinnostukset</p><span class="label tag" v-for="tag in profile.tags">
+                                            {{ tag.label }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- skills -->
+                            <div class="small-12 columns tags">
+                                <div class="row" v-show="profile.skills">
+                                    <div style="padding:0px;max-height:6em;overflow:hidden;">
+										<p>Osaamisalueet</p> <span class="label tag" v-for="skill in profile.skills">
+                                            {{ skill }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </profile-index>
+
+    </div>
+</div>
+<div class="large-4 medium-4 small-12 columns"></div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+php:
+  version: '7.0.9'
+java:
+  java_version: java-8-openjdk
+hooks:
+  package_setup: |
+    set -e # Exit on error
+    composer.phar install
+    # Has the selenium jar file been provided by the cache?
+    if [ ! -f $HOME/usercache/selenium-server-standalone-3.4.0.jar ]; then
+      mkdir -p $HOME/usercache
+      curl -o $HOME/usercache/selenium-server-standalone-3.4.0.jar \
+        -O https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+    fi
+  pre_setup: echo "not needed"
+  worker_setup: |
+    set -e # Exit on error
+    # Start selenium in the background per-worker and attach its logs to the build page
+    # See http://docs.solanolabs.com/Setup/interacting-with-build-environment/
+    java -jar $HOME/usercache/selenium-server-standalone-3.4.0.jar \
+      > $HOME/results/$TDDIUM_SESSION_ID/session/selenium-${TDDIUM_TID}.log 2>&1 &
+    sleep 20 # Give selenium a couple seconds to start
+  post_setup: echo "Package assets or otherwise prepare to run tests"
+  post_build: echo "Deploy to application server here"
+cache:
+  key_paths:
+    - composer.json
+    - composer.lock
+  save_paths:
+    - vendor
+    - HOME/usercache # Where Selenium's jar file is stored
+test_pattern: 'none'
+tests:
+  - ./vendor/codeception/codeception/codecept run acceptance --debug

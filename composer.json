@@ -1,0 +1,36 @@
+{
+    "name": "karolina-engine/place-to-experiment-frontend",
+    "version": "1.0.0",
+    "description": "Place to experiment front end, created by Karolina fund",
+    "authors": [{
+        "name": "Dani Planinc",
+        "email": "dani.planinc@gmail.com"
+    }, {
+        "name": "Arnar Sigurdsson",
+        "email": "arnar@karolinafund.com"
+    }, {
+        "name": "Marko Tanninen",
+        "email": "marko@mesenaatti.me"
+    }],
+    "license": "MIT",
+    "homepage": "https://github.com/karolina-engine/place-to-experiment-frontend",
+    "require": {
+        "silex/silex": "^2.0",
+        "twig/twig": "^1.30",
+        "paragonie/csp-builder": "^1.3",
+        "guzzlehttp/guzzle": "^6.2",
+        "respect/validation": "^1.1",
+        "kevinrob/guzzle-cache-middleware": "^1.5",
+        "Doctrine/Cache": "^1.6",
+        "vlucas/phpdotenv": "^2.4",
+        "symfony/translation": "^3.2",
+        "symfony/twig-bridge": "^3.2",
+        "symfony/yaml": "^3.2",
+        "codeception/codeception": "^2.3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Karolina\\": "src/"
+        }
+    }
+}
