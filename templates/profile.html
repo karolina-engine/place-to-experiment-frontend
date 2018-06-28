@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="large-12 medium-12 small-12 columns">
-        <profile-page inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" placeholder-image-url="/img/placeholder.jpg" user-id="${userId}" language="${lang}" logout-redirect-path="/${lang}/profile/">
+        <profile-page inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" placeholder-image-url="/img/placeholder.png" user-id="${userId}" language="${lang}" logout-redirect-path="/${lang}/profile/">
             <div class="wrapper info primary callout profile">
 
                 <h2>{{ userName }}</h2>
@@ -44,10 +44,10 @@
                     <!-- tags -->
                     <div class="row" v-show="profile.tags">
                         <div class="small-7 columns tags">
-                            <h3>Kiinnostukset</h3>
+                            <h3>${'Interests'|trans}</h3>
 
                             <div style="max-height:15em;overflow:hidden;">
-                                <span class="label tag" v-for="tag in profile.tags">
+                                <span class="label tag pointer" v-for="tag in profile.tags" @click="openUrl('/${lang}/kayttajia/tag/' + tag.id)">
                                     {{ tag.label }}
                                 </span>
                             </div>
@@ -56,7 +56,7 @@
                     <!-- skills -->
                     <div class="row" v-show="profile.skills">
                         <div class="small-7 columns tags">
-                            <h3>Osaamisalueet</h3>
+                            <h3>${'Skills'|trans}</h3>
                             <div style="max-height:15em;overflow:hidden;">
                                 <span class="label tag" v-for="skill in profile.skills">
                                     {{ skill }}
@@ -73,7 +73,7 @@
 
                         <button v-if="isEditable" type="button" class="button secondary right" @click="initializeProfileEditor()">
                             <i class="fi-pencil medium">&nbsp;</i>
-                            Muokkaa perustietoja
+                            ${'Edit personal details'|trans}
                         </button>
                     </div>
                     <div class="row" v-show="showProfileEditor">
@@ -81,25 +81,25 @@
                             <div>
                                 <form action="#" @submit.prevent="updateProfile(apiUrl)" data-vv-scope="update-profile-form">
                                     <div class="form-group">
-                                        <label>Etunimi:</label>
+                                        <label>${'First name'|trans}</label>
                                         <div class="input-group" style="width:100%">
-                                            <input ref="profileInputRef" type="text" name="first_name" class="form-control" placeholder="Kirjoita etunimesi" :value="profile.first_name" v-model="profileFirstName" v-validate data-vv-rules="required|min:2" data-vv-as="first name">
+                                            <input ref="profileInputRef" type="text" name="first_name" class="form-control" placeholder="${'First name'|trans}" :value="profile.first_name" v-model="profileFirstName" v-validate data-vv-rules="required|min:2" data-vv-as="first name">
                                             <div v-if="errors.has('first_name', 'update-profile-form') && showProfileErrors" class="input-group-addon alert-danger">
                                                 <span>{{ errors.first('first_name', 'update-profile-form') }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Sukunimi:</label>
+                                        <label>${'Last name'|trans}</label>
                                         <div class="input-group" style="width:100%">
-                                            <input type="text" class="form-control" placeholder="Kirjoita sukunimesi" name="last_name" :value="profile.last_name" v-model="profileLastName" v-validate data-vv-rules="required|min:2" data-vv-as="last name">
+                                            <input type="text" class="form-control" placeholder="${'Edit personal details'|trans}" name="last_name" :value="profile.last_name" v-model="profileLastName" v-validate data-vv-rules="required|min:2" data-vv-as="last name">
                                             <div v-if="errors.has('last_name', 'update-profile-form') && showProfileErrors" class="input-group-addon alert-danger">
                                                 <span>{{ errors.first('last_name', 'update-profile-form') }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label>Lyhyt kuvaus itsestäsi:</label>
+                                        <label>${'About me'|trans}</label>
                                         <div class="input-group" style="width:100%;">
                                             <textarea class="form-control" name="short_description" v-model="profileShortDescription" v-validate data-vv-rules="required|max:300" data-vv-as="short description" rows="5" maxlength="300"></textarea>
                                             <div v-if="errors.has('short_description', 'update-profile-form') && showProfileErrors" class="input-group-addon alert-danger">
@@ -110,15 +110,15 @@
                                     <div class="form-group">
                                         <image-upload ref="imageUploadRef" inline-template @set-image="setImage">
                                             <div id="image">
-                                                <label>Profiilikuva:</label>
+                                                <label>${'Profile picture'|trans}</label>
                                                 <input ref="imageInputRef" type="file" name="image" v-validate data-vv-rules="image|size:2048" accept="image/gif, image/jpeg, image/jpg, image/png" @change="verifyImage">
                                             </div>
                                         </image-upload>
                                     </div>
                                     <button type="submit" class="button" :class="{success:isProfileModified, secondary:!isProfileModified}" :disabled="!isProfileModified">
-                                        <i class="fi-check medium">&nbsp;</i>Päivitä profiili</button>
+                                        <i class="fi-check medium">&nbsp;</i>${'Update profile'|trans}</button>
                                     <button type="button" class="button alert" @click="resetProfileEditor()">
-                                        <i class="fi-x medium">&nbsp;</i>peruuta</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </form>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                     <!-- links editor -->
                     <div class="row">
                         <button v-if="isEditable" type="button" class="button secondary password right" @click="initializeLinksEditor()">
-                            <i class="fi-pencil medium">&nbsp;</i>Muokkaa SoMe-linkkejä
+                            <i class="fi-pencil medium">&nbsp;</i>${'Edit social media links'|trans}
                         </button>
                     </div>
                     <div class="row" v-show="showLinksEditor">
@@ -143,20 +143,20 @@
                                             </div>
                                             <div class="large-6 medium-6 small-12 columns">
                                                 <a @click="removeLinkField(index)">
-                                                    <i class="fi-x medium">&nbsp;</i>poista linkki
+                                                    <i class="fi-x medium">&nbsp;</i>${'Remove link'|trans}
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                     <a @click="addLinkField">
-                                        <i class="fi-plus medium">&nbsp;</i>Lisää uusi linkki
+                                        <i class="fi-plus medium">&nbsp;</i>${'Add new link'|trans}
                                     </a>
                                     <br/>
                                     <br/>
                                     <button type="submit" class="button" :class="{success:areLinksModified, secondary:!areLinksModified}" :disabled="!areLinksModified">
-                                        <i class="fi-check medium">&nbsp;</i>Tallenna linkit</button>
+                                        <i class="fi-check medium">&nbsp;</i>${'Save links'|trans}</button>
                                     <button type="button" class="button alert" @click="resetLinksEditor()">
-                                        <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </form>
                             </div>
                         </div>
@@ -166,13 +166,13 @@
                         <div class="wrapper">
                             <div class="row">
                                 <button type="button" class="button secondary password right" @click="initializeEditor">
-                                    <i class="fi-pencil medium">&nbsp;</i>Muokkaa kiinnostuksen kohteita
+                                    <i class="fi-pencil medium">&nbsp;</i>${'Edit interests'|trans}
                                 </button>
                             </div>
                             <div class="row" v-show="showEditor">
                                 <div class="large-9 medium-12 small-12 columns">
                                     <div class="large-12 medium-12 small-12 columns">
-                                        <h6>Aihealueet</h6>
+                                        <h6>${'Subjects / tags'|trans}</h6>
                                     </div>
                                     <input ref="searchInputRef" @keyup="searchTags" v-model="searchTerm" type="text" class="form-control" placeholder="Type to search for tags">
                                     <div class="large-12 medium-12 small-12 columns" style="padding:10px;margin-bottom:20px;max-height:15em;overflow:scroll;">
@@ -184,7 +184,7 @@
                                     </div>
                                     <br/>
                                     <div class="large-12 medium-12 small-12 columns">
-                                        <h6>Valitut kohteet</h6>
+                                        <h6>${'Chosen subjects'|trans}</h6>
                                     </div>
                                     <div class="large-12 medium-12 small-12 columns" style="padding:10px;max-height:15em;overflow:hidden;">
                                         <span class="tag label" @click="removeTag(tag.id)" v-for="tag in selectedTags" style="cursor:pointer;">
@@ -195,9 +195,9 @@
                                     <div class="large-12 medium-12 small-12 columns" style="padding:10px;">
                                         <form action="#" @submit.prevent="saveTags()">
                                             <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                                                <i class="fi-check medium">&nbsp;</i>Tallenna aihealueet</button>
+                                                <i class="fi-check medium">&nbsp;</i>${'Save chosen tags'|trans}</button>
                                             <button type="button" class="button alert" @click="resetTags()">
-                                                <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                                                <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                         </form>
                                     </div>
                                 </div>
@@ -210,20 +210,20 @@
                             <div class="row">
                                 <button type="button" class="button secondary password right" @click="initializeSkillsEditor">
                                     <i class="fi-pencil medium">&nbsp;</i>
-                                    Muokkaa osaamisalueita
+                                    ${'Edit skills'|trans}
                                 </button>
                             </div>
                             <div class="row" v-show="showSkillsEditor">
                                 <div class="large-9 medium-12 small-12 columns">
                                     <div class="large-12 medium-12 small-12 columns">
-                                        <h6>Lisää osaamisalue</h6>
+                                        <h6>${'Add a skill'|trans}</h6>
                                     </div>
                                     <input v-model="newSkill" type="text" class="form-control" placeholder="Type the name of the skill">
                                     <button @click="addNewSkill" type="button" :disabled="!isNewSkillModified" class="button" :class="{success:isNewSkillModified, secondary:!isNewSkillModified}">
-                                        <i class="fi-plus medium">&nbsp;</i>Lisää osaamisalue</button>
+                                        <i class="fi-plus medium">&nbsp;</i>${'Add a skill'|trans}</button>
                                     <br/>
                                     <div class="large-12 medium-12 small-12 columns">
-                                        <h6>Nykyiset osaamisalueet</h6>
+                                        <h6>${'Present skills'|trans}</h6>
                                     </div>
                                     <div class="large-12 medium-12 small-12 columns" style="padding:10px;max-height:15em;overflow:hidden;">
                                         <span class="tag label" @click="removeSkill(index)" v-for="(skill, index) in selectedSkills" style="cursor:pointer;">
@@ -234,9 +234,9 @@
                                     <div class="large-12 medium-12 small-12 columns" style="padding:10px;">
                                         <form action="#" @submit.prevent="setSkillsForUser(apiUrl)">
                                             <button type="submit" :disabled="!areSkillsModified" class="button" :class="{success:areSkillsModified, secondary:!areSkillsModified}">
-                                                <i class="fi-check medium">&nbsp;</i>Tallenna osaamisalueet</button>
+                                                <i class="fi-check medium">&nbsp;</i>${'Save skills'|trans}</button>
                                             <button type="button" class="button alert" @click="resetSkillsEditor">
-                                                <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                                                <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                         </form>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                     <div class="row">
                         <button v-if="isEditable" type="button" class="button secondary password right" @click="initializePasswordEditor()">
                             <i class="fi-pencil medium">&nbsp;</i>
-                            Vaihda salasana
+                            ${'Change password'|trans}
                         </button>
                     </div>
                     <div class="row" v-show="showPasswordEditor">
@@ -256,8 +256,8 @@
                                 <form action="#" @submit.prevent="updateMyPassword(apiUrl)" data-vv-scope="update-password-form">
                                     <div class="form-group">
                                         <div class="input-group" style="width:100%">
-                                            <label>Nykyinen salasana:</label>
-                                            <input ref="passwordInputRef" type="password" name="old_password" class="form-control" placeholder="Syötä nykyinen salasanasi" v-model="credentials.oldPassword" v-validate data-vv-rules="required|min:6" data-vv-as="current password">
+                                            <label>${'Current password'|trans}</label>
+                                            <input ref="passwordInputRef" type="password" name="old_password" class="form-control" placeholder="${'Enter your current password'|trans}" v-model="credentials.oldPassword" v-validate data-vv-rules="required|min:6" data-vv-as="current password">
                                             <div class="input-group-addon alert-danger" v-if="errors.has('old_password', 'update-password-form') && showPasswordErrors">
                                                 <span>{{ errors.first('old_password', 'update-password-form') }}</span>
                                             </div>
@@ -265,8 +265,8 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group" style="width:100%">
-                                            <label>Uusi salasana:</label>
-                                            <input type="password" name="new_password" class="form-control" placeholder="Valitse uusi salasanad" v-model="credentials.newPassword" v-validate data-vv-rules="required|min:6" data-vv-as="new password">
+                                            <label>${'New password'|trans}</label>
+                                            <input type="password" name="new_password" class="form-control" placeholder="${'Choose a new password'|trans}" v-model="credentials.newPassword" v-validate data-vv-rules="required|min:6" data-vv-as="new password">
                                             <div class="input-group-addon alert-danger" v-if="errors.has('new_password', 'update-password-form') && showPasswordErrors">
                                                 <span>{{ errors.first('new_password', 'update-password-form') }}</span>
                                             </div>
@@ -274,17 +274,17 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group" style="width:100%">
-                                            <label>Toista uusi salasana:</label>
-                                            <input type="password" name="retype_password" class="form-control" placeholder="Toista uusi salasana" v-model="retypePassword" v-validate data-vv-rules="required|confirmed:new_password" data-vv-as="repeat new password">
+                                            <label>${'Repeat new password'|trans}</label>
+                                            <input type="password" name="retype_password" class="form-control" placeholder="${'Repeat the new password'|trans}" v-model="retypePassword" v-validate data-vv-rules="required|confirmed:new_password" data-vv-as="repeat new password">
                                             <div class="input-group-addon alert-danger" v-if="errors.has('retype_password', 'update-password-form') && showPasswordErrors">
                                                 <span>{{ errors.first('retype_password', 'update-password-form') }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <button type="submit" class="button" :class="{success:isPasswordModified, secondary:!isPasswordModified}" :disabled="!isPasswordModified">
-                                        <i class="fi-check medium">&nbsp;</i>Vaihda salasana</button>
+                                        <i class="fi-check medium">&nbsp;</i>${'Set new password'|trans}</button>
                                     <button type="button" class="button alert" @click="resetPasswordEditor()">
-                                        <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </form>
                             </div>
                         </div>
@@ -292,19 +292,19 @@
                 </div>
                 <br/>
                 <!-- user's experiments -->
-                <div class="row">
-                    <h3>Kokeilut</h3>
+                <div class="row experiment_listing">
+                    <h3>${'experiments'|trans}</h3>
                     <div v-for="experiment in profile.experiments">
                         <div class="large-3 medium-4 small-6 columns panels hide-for-small-only">
                             <div class="callout" :class="'color-' + experiment.stage">
                                 <div>
                                     <a :href="rootUrl + '${lang}/experiment/' + experiment.experiment_id">
-                                        <h2 v-if="experiment.stage == 0">Haaste</h2>
-                                        <h2 v-if="experiment.stage == 1">Idea</h2>
-                                        <h2 v-if="experiment.stage == 2">Ehdotus</h2>
-                                        <h2 v-if="experiment.stage == 3">Rahoitus</h2>
-                                        <h2 v-if="experiment.stage == 4">Toteutus</h2>
-                                        <h2 v-if="experiment.stage == 5">Opit</h2>
+                                        <h2 v-if="experiment.stage == 0">${'Challenge'|trans}</h2>
+                                        <h2 v-if="experiment.stage == 1">${'Idea'|trans}</h2>
+                                        <h2 v-if="experiment.stage == 2">${'Suggestion'|trans}</h2>
+                                        <h2 v-if="experiment.stage == 3">${'Funding'|trans}</h2>
+                                        <h2 v-if="experiment.stage == 4">${'Experiment'|trans}</h2>
+                                        <h2 v-if="experiment.stage == 5">${'archive'|trans}</h2>
                                         <div class="owner">
                                             <p>{{ experiment.owner_name | truncate(25, '...') }}</p>
                                         </div>

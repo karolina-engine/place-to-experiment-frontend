@@ -11,10 +11,10 @@
             <div class="row">
                 <div class="large-12 medium-12 columns">
 
-                    <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" placeholder-image-url="/img/placeholder.jpg" show-experiment-ids="${experimentId}" show-limit="1">
+                    <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" placeholder-image-url="/img/placeholder.png" show-experiment-ids="${experimentId}" show-limit="1">
                         <div>
 
-                            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), 'all') , 0, showLimit), searchTerm))">
+                            <div v-for="experiment in sliceExperiments(filterById(experiments, showExperimentIds), 0, showLimit)">
 
                                 ${include('experiment_index_parts/experiment_card.html')}
 

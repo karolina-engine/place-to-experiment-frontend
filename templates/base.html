@@ -9,6 +9,7 @@
         <div id="app" v-cloak>
 
             <div class="row">
+				<a id="back"></a>
 
                 <!-- NAVIGATION -->
                 <div class="title-bar" data-responsive-toggle="experimentMenu" data-hide-for="small">
@@ -30,11 +31,16 @@
                                     <a :href="rootUrl + '${lang}/haku/'">${'browse_exp'|trans}</a>
                                 </li>
                                 <li>
-                                    <a :href="rootUrl + '${lang}/aloita/'">Aloita kokeilu</a>
+                                    <a :href="rootUrl + '${lang}/aloita/'">${'start_exp'|trans}</a>
                                 </li>
                                 <li>
-                                    <a :href="rootUrl + '${lang}/kayttajia/'">Selaa käyttäjiä</a>
+                                    <a :href="rootUrl + '${lang}/kayttajia/'">${'browse_users'|trans}</a>
                                 </li>
+								
+								<li>
+                                    <a class="disc_link" href="https://keskustelu.kokeilunpaikka.fi"  data-tooltip tabindex="1" title="${'Discuss or comment'|trans}" data-position="top" data-alignment="right" ></a>
+                                </li>
+								
                             </ul>
                         </div>
 
@@ -45,7 +51,7 @@
 
                             <ul class="menu" style="list-style-type: none;">
 
-                                <div class="langmenu" style="float:right;">
+                                <div class="langmenu">
 
                                     {% if lang == 'fi' %}
                                         FI
@@ -55,7 +61,7 @@
                                     {% if lang == 'sv' %}
                                         SV
                                     {% else %}
-                                        <a href="${current_page|langurl(lang, 'sv')}">SV</a>
+                                        <a class="swedish" href="${current_page|langurl(lang, 'sv')}">SV</a>
                                     {% endif %}
                                     {% if lang == 'en' %}
                                         EN
@@ -88,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="large-12 medium-12 columns">
@@ -98,7 +105,7 @@
 
             <authorization inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}">
                 <notification-message status="wrong_credentials">
-                    <slot>Email or password is wrong or this user is not registered.</slot>
+                    <slot>${'discl_not_register'|trans}</slot>
                 </notification-message>
             </authorization>
 
@@ -108,9 +115,11 @@
             <embed v-if="isUserAuthenticated" src="http://kokeilunpaikka.discoursehosting.net/session/sso" style="height:0px;width:0px;visibility: none;"></embed>
             -->
             <notification-message status="error">
-                <slot>Error: Action failed.</slot>
+                <slot>${'error'|trans}</slot>
             </notification-message>
         </div>
+
+		<div class="back-to-top"><a href="#back"><i class="ion-ios-arrow-up"></i></a></div>
 
         ${include('script_imports.html')}
 

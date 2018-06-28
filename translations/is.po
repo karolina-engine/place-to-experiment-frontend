@@ -1,0 +1,689 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kokeilun paikka\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Marko Tanninen\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "register"
+msgstr "Nýskrá"
+
+msgid "login"
+msgstr "innskrá"
+
+msgid "logout"
+msgstr "útskráning"
+
+msgid "email"
+msgstr "Email"
+
+msgid "insert_info"
+msgstr "insert info"
+
+msgid "placeofexperiment"
+msgstr "Place of experiment"
+
+msgid "gettoknow"
+msgstr "About the service"
+
+msgid "browse_exp"
+msgstr "Browse the experiments"
+
+msgid "start_exp"
+msgstr "Start an experiment"
+
+msgid "browse_users"
+msgstr "Browse users"
+
+msgid "search"
+msgstr "leita"
+
+msgid "discl_not_register"
+msgstr "Email or password is wrong or this user is not registered."
+
+msgid "error"
+msgstr "Villa"
+
+msgid "not_allowed"
+msgstr "ekki leyft"
+
+msgid "sorry_access1"
+msgstr "Sorry, you need to be logged in to access this page. Do you want to"
+
+msgid "sorry_access2"
+msgstr "experiments?"
+
+msgid "experiments"
+msgstr "Experiments"
+
+msgid "browse"
+msgstr "Vafraðu"
+
+msgid "type_to_search"
+msgstr "Type to search experiments"
+
+msgid "show"
+msgstr "Sýna"
+
+msgid "view"
+msgstr "Skoða"
+
+msgid "browse_by_keyword"
+msgstr "Browse by keyword"
+
+msgid "move_to_next_stage"
+msgstr ""
+
+msgid "challenges"
+msgstr "Tæki og verkefni"
+
+msgid "Challenge"
+msgstr "Áskorun"
+
+msgid "ideas"
+msgstr "Hugmyndir og frumvinnsla"
+
+msgid "Idea"
+msgstr "Hugmynd"
+
+msgid "suggestions"
+msgstr "Forsýn:"
+
+msgid "Suggestion"
+msgstr "Virkja tillögu"
+
+msgid "fundings"
+msgstr "Fundings"
+
+msgid "Funding"
+msgstr "Greiðsla inn á reikninginn þinn"
+
+msgid "Experiment"
+msgstr "Tilraun"
+
+msgid "archives"
+msgstr ""
+
+msgid "archive"
+msgstr "Leita:"
+
+# accerator.html ///
+msgid "Circular economy"
+msgstr "Hringur"
+
+msgid "Food"
+msgstr "Matur"
+
+msgid "Living"
+msgstr "Stærð stofu"
+
+msgid "Transportation"
+msgstr "(Flutningur og geymsla)"
+
+msgid "ask_and_discuss"
+msgstr "Ask and discuss about this idea search"
+
+msgid "experiments_related"
+msgstr "Experiments related to this idea search"
+
+# index.html ///
+msgid "What do you want to do?"
+msgstr "Hvað viltu gera?"
+
+msgid "To challenge"
+msgstr "Challenge"
+
+msgid "Suggest an idea"
+msgstr "Slík hugmynd er henni viðurstyggileg."
+
+msgid "Start an experiment"
+msgstr "Start an experiment"
+
+msgid "Apply funding"
+msgstr "Sækja um"
+
+msgid "Learn from previous experiments"
+msgstr "Meðmæli koma oftast frá fyrri vinnuveitendum."
+
+msgid "An arc of experiments"
+msgstr "Bæta við boga"
+
+msgid "What problem would you like to solve?"
+msgstr "Hvernig miðil viltu spila?"
+
+msgid "CHALLENGE to solve"
+msgstr "Ég verð að leysa vandamálið á eigin spýtur."
+
+msgid "Come up with an idea that would solve the problem"
+msgstr "Come up with an idea that would solve the problem"
+
+msgid "A solving IDEA?"
+msgstr "A solving IDEA?"
+
+msgid "How would you test whether you idea might work?"
+msgstr "Hvernig myndir þú lýsa sjálfum þér sem starfsmanni?"
+
+msgid "Start with a suggestion in order to get funding"
+msgstr ""
+"Þú þarft aðeins að svara nokkrum grundvallarspurningum til þess að geta "
+"byrjað."
+
+msgid "Start with a suggestion in order to experiment"
+msgstr "Byrja með ákveðna Kontact einingu"
+
+msgid "FUNDING an experiment"
+msgstr "FUNDING an experiment"
+
+msgid "Suggestion for an EXPERIMENT"
+msgstr "Undirbúningur fyrir viðtal."
+
+msgid "EXPERIMENT in paractice"
+msgstr "EXPERIMENT in paractice"
+
+msgid "Save your experiment to the archive"
+msgstr "Bæta skrám við í skjalasafn"
+
+msgid "Experiment ARCHIVE"
+msgstr "Skjalasafn"
+
+msgid "Experiment search"
+msgstr "Leita"
+
+msgid "Blog"
+msgstr "Fréttir"
+
+msgid "Follow us on the Facebok page of Kokeilun Paikka"
+msgstr "Fylgstu með okkur á"
+
+msgid ""
+"The Place of experiment is a service where we can all think and develop "
+"common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding "
+"and implementation."
+msgstr ""
+"The Place of experiment is a service where we can all think and develop "
+"common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding "
+"and implementation."
+
+msgid "Is your idea any good? You'll find out by experimenting"
+msgstr ""
+
+msgid "Please log in"
+msgstr "Innskrá"
+
+msgid "Sorry, you need to be logged in to access this page. Please"
+msgstr "Þú verður að vera innskráð(ur) til að nýta þennan eiginleika."
+
+msgid "or"
+msgstr "eða"
+
+msgid "Redirecting to discourse..."
+msgstr "Sendi þig áfram til öryggissíðu..."
+
+msgid "Logging in"
+msgstr "Skráist inn..."
+
+msgid "Provide your information"
+msgstr "Vinsamlegast settu inn upplýsingar þínar"
+
+msgid "I forgot my password"
+msgstr "Týnt lykilorð"
+
+msgid "close"
+msgstr "loka"
+
+msgid "Are you sure you want to log out?"
+msgstr "Ertu viss um að þú viljir skrá þig út?"
+
+msgid "You need to be logged in to start an experiment"
+msgstr "Þú verður að vera innskráð(ur) til að nýta þennan eiginleika."
+
+msgid "Start a challenge"
+msgstr "Hef fyrirspurn"
+
+msgid "Start an idea"
+msgstr "Slík hugmynd er henni viðurstyggileg."
+
+msgid "Start a suggestion"
+msgstr "Hef fyrirspurn"
+
+msgid "Start an archive"
+msgstr "Opin &apos;safnskrá&apos;"
+
+msgid "Experiment title"
+msgstr "Titill"
+
+msgid "Experiment short description"
+msgstr "Experiment short description"
+
+msgid "Name (person or organization)"
+msgstr "Name (person or organization)"
+
+msgid "Save"
+msgstr "vista"
+
+msgid "Insert heading here"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Write a short description (Max 300 characters)"
+msgstr ""
+
+msgid "Experiment owner"
+msgstr "Eigandi"
+
+msgid "Enter your email address and choose a new password."
+msgstr "Vinsamlegast sláðu inn netfangið þitt."
+
+msgid "New password"
+msgstr "Nýtt lykilorð"
+
+msgid "Pepeat new password"
+msgstr "Nýtt lykilorð"
+
+msgid "Set new password"
+msgstr "Breyta lykilorði"
+
+msgid "The password was modified successfully. Please"
+msgstr ""
+"Annað hvort notandanafn eða lykilorð virðast vera röng, leiðréttu þetta og "
+"reyndu svo aftur. Last. fm: errorMessage"
+
+msgid "Log in"
+msgstr ""
+
+msgid "using the new password."
+msgstr "Nýtt lykilorð"
+
+msgid "This token has already been used. Please resend reset password email."
+msgstr "This token has already been used. Please resend reset password email."
+
+msgid "There was an error, you may need to start the"
+msgstr "Það kom upp villa að reyna að hlaða upp skránni."
+
+msgid "reset process"
+msgstr "Endurstilla"
+
+msgid "again."
+msgstr "Aftur"
+
+msgid ""
+"Enter your email address. You will receive a link to reset your password."
+msgstr "Skráðu netfangið hér að neðan. Við munum senda þér nýtt lykilorð."
+
+msgid "Send the reset email"
+msgstr "Endursetning á lykilorði hefur verið sent í tölvupósti \".\"."
+
+msgid ""
+"The reset password email was sent successfully. Please follow the "
+"instructions provided in the email."
+msgstr ""
+"Við höfum sent staðfestingu í emailið þitt.<br/>\n"
+"\t\t\t\t\tVinsamlegast farðu eftir leiðbeiningunum í email-inu"
+
+msgid "Interests"
+msgstr "Áhugamál:"
+
+msgid "Skills"
+msgstr "Hæfni"
+
+msgid "Edit personal details"
+msgstr "Persónuupplýsingar þínar"
+
+msgid "First name"
+msgstr "Fornafn"
+
+msgid "Last name"
+msgstr "Eftirnafn"
+
+msgid "About me"
+msgstr "Um migName"
+
+msgid "Profile picture"
+msgstr "Notandasíða"
+
+msgid "Update profile"
+msgstr "Uppfæra upplýsingar"
+
+msgid "Edit social media links"
+msgstr "Samfélagsmiðlar"
+
+msgid "Remove link"
+msgstr "Fjarlægja"
+
+msgid "Add new link"
+msgstr "Bæta við"
+
+msgid "Save links"
+msgstr "Hlekkir"
+
+msgid "Edit interests"
+msgstr "Áhugamál:"
+
+msgid "Subjects / tags"
+msgstr "Viðfangsefni"
+
+msgid "Type to search for tags"
+msgstr "Settu inn hér til að leita."
+
+msgid "Chosen subjects"
+msgstr "Viðfangsefni"
+
+msgid "Save chosen tags"
+msgstr "Save chosen tags"
+
+msgid "Add a skill"
+msgstr "Bæta við línu"
+
+msgid "Present skills"
+msgstr "Hæfni"
+
+msgid "Save skills"
+msgstr "Tave skills"
+
+msgid "Change password"
+msgstr "Breyta lykilorði"
+
+msgid "Current password"
+msgstr "Núverandi lykilorð"
+
+msgid "Enter your current password"
+msgstr ""
+
+msgid "Choose a new password"
+msgstr ""
+
+msgid "Repeat the new password"
+msgstr ""
+
+msgid "Please wait..."
+msgstr "Augnablik..."
+
+msgid "Type a name to search users"
+msgstr "Settu inn hér til að leita."
+
+msgid "Edit"
+msgstr "Breyta"
+
+msgid "Your answer"
+msgstr "Þitt svar"
+
+msgid "Add a full description and pictures"
+msgstr "Bæta við línu"
+
+msgid "Save full description"
+msgstr "Save full description"
+
+msgid "How would your idea solve the problem?"
+msgstr "Geturðu leyst dæmið?"
+
+msgid "How would you test your idea? What is the the experiment in practice?"
+msgstr "How would you test your idea? What is the the experiment in practice?"
+
+msgid "Who will take the experiment?"
+msgstr "Með hverjum ætlarðu að fara?"
+
+msgid "What is the budget of the experiment?"
+msgstr "Samræming, frammistöðumat, gæðatrygging og þróun"
+
+msgid "What is the planned schedule for the experiment?"
+msgstr "HVER ERU VERÐLAUNIN FYRIR SIGURVEGARANA?"
+
+msgid "What is the goal of the experiment?"
+msgstr "Hvert er hlutverk Sóttvarnastofnunar Evrópu?"
+
+msgid "Goal:"
+msgstr "Samtals:"
+
+msgid "Currency:"
+msgstr "Gjaldmiðill:"
+
+msgid "Accelerator funding:"
+msgstr "hröðunarmerki"
+
+msgid "State funding:"
+msgstr "Hérað/ Fylki:"
+
+msgid "Crowdfunding:"
+msgstr "Crowdfunding:"
+
+msgid "Platform:"
+msgstr "Verkvangur"
+
+msgid "Campaign ID:"
+msgstr "Herferðar ID vantar"
+
+msgid "Save funding"
+msgstr "Vista Sjálfvirkt"
+
+msgid "Did the experiment reach the required goals?"
+msgstr "Did the experiment reach the required goals?"
+
+msgid "Total:"
+msgstr "Samtals:"
+
+msgid "Experiment not found"
+msgstr "Fannst ekki"
+
+msgid "Team"
+msgstr "Lið"
+
+msgid "Take part"
+msgstr "Finna hlutiName"
+
+msgid "Discuss or comment"
+msgstr "Discuss or comment"
+
+msgid "Share"
+msgstr "Deila"
+
+msgid "Experiment phase"
+msgstr "Tilraun"
+
+msgid "Show"
+msgstr "Sýna"
+
+msgid "Front page"
+msgstr "forsíða"
+
+msgid "Yes"
+msgstr "Já"
+
+msgid "No"
+msgstr "Nei"
+
+msgid "Tag"
+msgstr "Merki"
+
+msgid "Available tags"
+msgstr "Tiltækar síur"
+
+msgid "Links for additional information"
+msgstr "Frekari upplýsingar"
+
+msgid "Muncipality / City"
+msgstr "Borg"
+
+msgid "Save location"
+msgstr "Staðsetning vistunar:"
+
+msgid "Remove experiment"
+msgstr "Fjarlægja"
+
+msgid "This will remove experiment"
+msgstr "Hér getur þú fjarlægt tungumál af listanum."
+
+msgid "I understand"
+msgstr "Skilningur"
+
+msgid "Remove"
+msgstr "Fjarlægja"
+
+msgid "Browse the previous stages of the experiments"
+msgstr "Fer á fyrri síðu skjalsins"
+
+msgid "Browse to the challenge stage"
+msgstr "Þú ert ekki lengur þátttakandi í áskoruninni."
+
+msgid "Browse to the idea stage"
+msgstr "Fara upp"
+
+msgid "Browse to the suggestion stage"
+msgstr "Fara upp"
+
+msgid "Browse to the funding stage"
+msgstr "Fara upp"
+
+msgid "Browse to the experiment stage"
+msgstr "Til hægri"
+
+msgid "Browse to the archive stage"
+msgstr "Bæta skrám við í skjalasafn"
+
+msgid "Back to the present stage"
+msgstr "Aftiur á forsíðu"
+
+msgid "Similar experiments:"
+msgstr "Finna svipað..."
+
+msgid "No similar internal pages found."
+msgstr "Engin síða fannst"
+
+msgid "Related subjects outside the service:"
+msgstr "birtingu:"
+
+msgid "No related subjects outside the services found."
+msgstr "No related subjects outside the services found."
+
+msgid "Image"
+msgstr "Mynd"
+
+msgid "Image file:"
+msgstr "Myndskrá:"
+
+msgid "Ready?"
+msgstr "Ekki tilbúið"
+
+msgid "Ready"
+msgstr "Ekki tilbúið"
+
+msgid ""
+"Click here to see your experiment in your own profile. You can also return "
+"to edit it. We'll publish the suggestions when they are checked."
+msgstr ""
+"Click here to see your experiment in your own profile. You can also return "
+"to edit it. We'll publish the suggestions when they are checked."
+
+msgid "Support call"
+msgstr "Stoð"
+
+msgid "Do you want to advance your experiment to the next stage?"
+msgstr "Viltu vista breytingar í:"
+
+msgid "Click here to move your experiment to the next stage"
+msgstr "Smelltu hér til að sleppa þessu þrepi og hald áfram á næsta þrep"
+
+msgid "Move"
+msgstr "Flytja"
+
+msgid "Most popular"
+msgstr "Vinsælast"
+
+msgid "Alphabetically"
+msgstr "Í stafrófsröð"
+
+msgid "Latest first"
+msgstr "Nýjast"
+
+msgid "Type a keyword to search"
+msgstr "Settu inn hér til að leita."
+
+msgid "The rest of the experiments related to the idea search"
+msgstr ""
+
+msgid "All of the experiments related to the idea search"
+msgstr ""
+
+msgid "The chosen experiments for further development"
+msgstr ""
+
+msgid "Idea search"
+msgstr ""
+
+msgid "What skills or resources the team already has?"
+msgstr ""
+
+msgid "What are you expecting to learn from the experiment?"
+msgstr ""
+
+msgid "Experiments on a map"
+msgstr ""
+
+msgid "Filter by keyword"
+msgstr ""
+
+msgid "Back to browsing view"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Oldest"
+msgstr ""
+
+msgid "Newest"
+msgstr ""
+
+msgid "Click on code to select all"
+msgstr ""
+
+msgid "Showing users with tag:"
+msgstr ""
+
+msgid "Showing experiments with tag:"
+msgstr ""
+
+msgid "Filter by tag"
+msgstr ""
+
+msgid "What did you learn?"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Unpublish"
+msgstr ""
+
+msgid "Upcoming"
+msgstr ""
+
+msgid "Ended"
+msgstr ""
+
+msgid ""
+"Publish your experiment. You can edit it any time after publishing. Until "
+"you choose to publish it, your experiment can be found only in your own "
+"profile or via the experiment url."
+msgstr ""
+
+msgid ""
+"Unpublish your experiment. After you unpublish it, your experiment can be "
+"found only in your own profile or via the experiment url."
+msgstr ""
+
+msgid "Funding stage"
+msgstr ""
+
+#~ msgid "log in"
+#~ msgstr "Innskrá"

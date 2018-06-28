@@ -4,12 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${ title }</title>
 
+	 <meta property="og:image" content="https://www.kokeilunpaikka.fi/img/fb-logo.gif"/>
     <meta property="og:image" content="${meta_image}"/>
     <meta property="og:title" content="${title}"/>
     <meta property="og:description" content="${meta_description}"/>
-    <meta property="leiki:index" content="${leiki_index}" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@kokeilunpaikka"/>
+    <meta property="leiki:index" content="${leiki_index}"/>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/css/foundation.min.css" integrity="sha256-Gxk756LCcjwUNjIrkNrXNqY1Q+EW/Tct/IuGRw6Q1Mo=" crossorigin="anonymous"/>
 
@@ -18,36 +22,12 @@
     <link rel="stylesheet" href="/place-to-experiment/css/modal.css">
     <link rel="stylesheet" href="/place-to-experiment/css/foundation-icons/foundation-icons.css"/>
 
-    <!--
-/**
- * @license
- * MyFonts Webfont Build ID 3316666, 2016-12-04T11:12:30-0500
- *
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are
- * explicitly restricted from using the Licensed Webfonts(s).
- *
- * You may obtain a valid license at the URLs below.
- *
- * Webfont: AvenirLTStd-Light by Linotype
- * URL: http://www.myfonts.com/fonts/linotype/avenir/35-light/
- *
- * Webfont: AvenirLTStd-Black by Linotype
- * URL: http://www.myfonts.com/fonts/linotype/avenir/95-black/
- *
- *
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=3316666
- * Licensed pageviews: 250,000
- * Webfonts copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated.
- * All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All
- * rights reserved.
- *
- * © 2016 MyFonts Inc
-*/
+    <!-- extracted by webpack -->
+    <link rel="stylesheet" href="/place-to-experiment/css/place-to-experiment.8c49a36660675fd25aff1677a77562e7.css"/>
 
--->
+    <!-- /** * @license * MyFonts Webfont Build ID 3316666, 2016-12-04T11:12:30-0500 * * The fonts listed in this notice are subject to the End User License * Agreement(s) entered into by the website owner. All other parties are * explicitly restricted from using the Licensed Webfonts(s). * * You may obtain a valid license at the URLs below. * * Webfont: AvenirLTStd-Light by Linotype * URL: http://www.myfonts.com/fonts/linotype/avenir/35-light/ * * Webfont: AvenirLTStd-Black by Linotype * URL: http://www.myfonts.com/fonts/linotype/avenir/95-black/ * * * License: http://www.myfonts.com/viewlicense?type=web&buildid=3316666 * Licensed pageviews: 250,000 * Webfonts copyright: Copyright &#x00A9; 1989, 1995, 2002 Adobe Systems Incorporated. * All Rights Reserved. &#x00A9; 1981, 1995, 2002 Heidelberger Druckmaschinen AG. All * rights reserved. * * © 2016 MyFonts Inc */ -->
     <link rel="stylesheet" type="text/css" href="/MyFontsWebfontsKit.css">
-    <link href="/css/kokeilu.css" rel="stylesheet" type="text/css">
+    <link href="/css/kokeilu.css?v=180616" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/png" href="/img/favicon1.png"/>
     <link rel="apple-itouch-icon" type="image/png" href="/img/favicon.png"/>
 
@@ -55,7 +35,6 @@
         [v-cloak] {
             display: none;
         }
-
     </style>
 
     <!-- is this used anywhere??? it triggers IE "unamatched body tag" error -->

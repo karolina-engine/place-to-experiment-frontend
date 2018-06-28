@@ -1,333 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <experiment-page
-        inline-template
-        :common="{placeholders: placeholders}"
-        api-url="${agitator_url}"
-        language="${lang}"
-        experiment-id="${experimentId}"
-        placeholder-image-url="/img/placeholder.png"
-        cached-data="${experiment_json}"
-        :experiment-locations="['Akaa',
-'Alajärvi',
-'Alavieska',
-'Alavus',
-'Asikkala',
-'Askola',
-'Aura',
-'Brändö',
-'Eckerö',
-'Enonkoski',
-'Enontekiö',
-'Espoo',
-'Eura',
-'Eurajoki',
-'Evijärvi',
-'Finström',
-'Forssa',
-'Föglö',
-'Geta',
-'Haapajärvi',
-'Haapavesi',
-'Hailuoto',
-'Halsua',
-'Hamina',
-'Hammarland',
-'Hankasalmi',
-'Hanko',
-'Harjavalta',
-'Hartola',
-'Hattula',
-'Hausjärvi',
-'Heinola',
-'Heinävesi',
-'Helsinki',
-'Hirvensalmi',
-'Hollola',
-'Honkajoki',
-'Huittinen',
-'Humppila',
-'Hyrynsalmi',
-'Hyvinkää',
-'Hämeenkyrö',
-'Hämeenlinna',
-'Ii',
-'Iisalmi',
-'Iitti',
-'Ikaalinen',
-'Ilmajoki',
-'Ilomantsi',
-'Imatra',
-'Inari',
-'Inkoo',
-'Isojoki',
-'Isokyrö',
-'Janakkala',
-'Joensuu',
-'Jokioinen',
-'Jomala',
-'Joroinen',
-'Joutsa',
-'Juuka',
-'Juupajoki',
-'Juva',
-'Jyväskylä',
-'Jämijärvi',
-'Jämsä',
-'Järvenpää',
-'Kaarina',
-'Kaavi',
-'Kajaani',
-'Kalajoki',
-'Kangasala',
-'Kangasniemi',
-'Kankaanpää',
-'Kannonkoski',
-'Kannus',
-'Karijoki',
-'Karkkila',
-'Karstula',
-'Karvia',
-'Kaskinen',
-'Kauhajoki',
-'Kauhava',
-'Kauniainen',
-'Kaustinen',
-'Keitele',
-'Kemi',
-'Kemijärvi',
-'Keminmaa',
-'Kemiönsaari',
-'Kempele',
-'Kerava',
-'Keuruu',
-'Kihniö',
-'Kinnula',
-'Kirkkonummi',
-'Kitee',
-'Kittilä',
-'Kiuruvesi',
-'Kivijärvi',
-'Kokemäki',
-'Kokkola',
-'Kolari',
-'Konnevesi',
-'Kontiolahti',
-'Korsnäs',
-'Koski Tl',
-'Kotka',
-'Kouvola',
-'Kristiinankaupunki',
-'Kruunupyy',
-'Kuhmo',
-'Kuhmoinen',
-'Kumlinge',
-'Kuopio',
-'Kuortane',
-'Kurikka',
-'Kustavi',
-'Kuusamo',
-'Kyyjärvi',
-'Kärkölä',
-'Kärsämäki',
-'Kökar',
-'Lahti',
-'Laihia',
-'Laitila',
-'Lapinjärvi',
-'Lapinlahti',
-'Lappajärvi',
-'Lappeenranta',
-'Lapua',
-'Laukaa',
-'Lemi',
-'Lemland',
-'Lempäälä',
-'Leppävirta',
-'Lestijärvi',
-'Lieksa',
-'Lieto',
-'Liminka',
-'Liperi',
-'Lohja',
-'Loimaa',
-'Loppi',
-'Loviisa',
-'Luhanka',
-'Lumijoki',
-'Lumparland',
-'Luoto',
-'Luumäki',
-'Maalahti',
-'Maarianhamina',
-'Marttila',
-'Masku',
-'Merijärvi',
-'Merikarvia',
-'Miehikkälä',
-'Mikkeli',
-'Muhos',
-'Multia',
-'Muonio',
-'Mustasaari',
-'Muurame',
-'Mynämäki',
-'Myrskylä',
-'Mäntsälä',
-'Mänttä-Vilppula',
-'Mäntyharju',
-'Naantali',
-'Nakkila',
-'Nivala',
-'Nokia',
-'Nousiainen',
-'Nurmes',
-'Nurmijärvi',
-'Närpiö',
-'Orimattila',
-'Oripää',
-'Orivesi',
-'Oulainen',
-'Oulu',
-'Outokumpu',
-'Padasjoki',
-'Paimio',
-'Paltamo',
-'Parainen',
-'Parikkala',
-'Parkano',
-'Pedersören kunta',
-'Pelkosenniemi',
-'Pello',
-'Perho',
-'Pertunmaa',
-'Petäjävesi',
-'Pieksämäki',
-'Pielavesi',
-'Pietarsaari',
-'Pihtipudas',
-'Pirkkala',
-'Polvijärvi',
-'Pomarkku',
-'Pori',
-'Pornainen',
-'Porvoo',
-'Posio',
-'Pudasjärvi',
-'Pukkila',
-'Punkalaidun',
-'Puolanka',
-'Puumala',
-'Pyhtää',
-'Pyhäjoki',
-'Pyhäjärvi',
-'Pyhäntä',
-'Pyhäranta',
-'Pälkäne',
-'Pöytyä',
-'Raahe',
-'Raasepori',
-'Raisio',
-'Rantasalmi',
-'Ranua',
-'Rauma',
-'Rautalampi',
-'Rautavaara',
-'Rautjärvi',
-'Reisjärvi',
-'Riihimäki',
-'Ristijärvi',
-'Rovaniemi',
-'Ruokolahti',
-'Ruovesi',
-'Rusko',
-'Rääkkylä',
-'Saarijärvi',
-'Salla',
-'Salo',
-'Saltvik',
-'Sastamala',
-'Sauvo',
-'Savitaipale',
-'Savonlinna',
-'Savukoski',
-'Seinäjoki',
-'Sievi',
-'Siikainen',
-'Siikajoki',
-'Siikalatva',
-'Siilinjärvi',
-'Simo',
-'Sipoo',
-'Siuntio',
-'Sodankylä',
-'Soini',
-'Somero',
-'Sonkajärvi',
-'Sotkamo',
-'Sottunga',
-'Sulkava',
-'Sund',
-'Suomussalmi',
-'Suonenjoki',
-'Sysmä',
-'Säkylä',
-'Taipalsaari',
-'Taivalkoski',
-'Taivassalo',
-'Tammela',
-'Tampere',
-'Tervo',
-'Tervola',
-'Teuva',
-'Tohmajärvi',
-'Toholampi',
-'Toivakka',
-'Tornio',
-'Turku',
-'Tuusniemi',
-'Tuusula',
-'Tyrnävä',
-'Ulvila',
-'Urjala',
-'Utajärvi',
-'Utsjoki',
-'Uurainen',
-'Uusikaarlepyy',
-'Uusikaupunki',
-'Vaala',
-'Vaasa',
-'Valkeakoski',
-'Valtimo',
-'Vantaa',
-'Varkaus',
-'Vehmaa',
-'Vesanto',
-'Vesilahti',
-'Veteli',
-'Vieremä',
-'Vihti',
-'Viitasaari',
-'Vimpeli',
-'Virolahti',
-'Virrat',
-'Vårdö',
-'Vöyri',
-'Ylitornio',
-'Ylivieska',
-'Ylöjärvi',
-'Ypäjä',
-'Ähtäri',
-'Äänekoski']">
+    {% set locations = "['Akaa','Alajärvi','Alavieska','Alavus','Asikkala','Askola','Aura','Brändö','Eckerö','Enonkoski','Enontekiö','Espoo','Eura','Eurajoki','Evijärvi','Finström','Forssa','Föglö','Geta','Haapajärvi','Haapavesi','Hailuoto','Halsua','Hamina','Hammarland','Hankasalmi','Hanko','Harjavalta','Hartola','Hattula','Hausjärvi','Heinola','Heinävesi','Helsinki','Hirvensalmi','Hollola','Honkajoki','Huittinen','Humppila','Hyrynsalmi','Hyvinkää','Hämeenkyrö','Hämeenlinna','Ii','Iisalmi','Iitti','Ikaalinen','Ilmajoki','Ilomantsi','Imatra','Inari','Inkoo','Isojoki','Isokyrö','Janakkala','Joensuu','Jokioinen','Jomala','Joroinen','Joutsa','Juuka','Juupajoki','Juva','Jyväskylä','Jämijärvi','Jämsä','Järvenpää','Kaarina','Kaavi','Kajaani','Kalajoki','Kangasala','Kangasniemi','Kankaanpää','Kannonkoski','Kannus','Karijoki','Karkkila','Karstula','Karvia','Kaskinen','Kauhajoki','Kauhava','Kauniainen','Kaustinen','Keitele','Kemi','Kemijärvi','Keminmaa','Kemiönsaari','Kempele','Kerava','Keuruu','Kihniö','Kinnula','Kirkkonummi','Kitee','Kittilä','Kiuruvesi','Kivijärvi','Kokemäki','Kokkola','Kolari','Konnevesi','Kontiolahti','Korsnäs','Koski Tl','Kotka','Kouvola','Kristiinankaupunki','Kruunupyy','Kuhmo','Kuhmoinen','Kumlinge','Kuopio','Kuortane','Kurikka','Kustavi','Kuusamo','Kyyjärvi','Kärkölä','Kärsämäki','Kökar','Lahti','Laihia','Laitila','Lapinjärvi','Lapinlahti','Lappajärvi','Lappeenranta','Lapua','Laukaa','Lemi','Lemland','Lempäälä','Leppävirta','Lestijärvi','Lieksa','Lieto','Liminka','Liperi','Lohja','Loimaa','Loppi','Loviisa','Luhanka','Lumijoki','Lumparland','Luoto','Luumäki','Maalahti','Maarianhamina','Marttila','Masku','Merijärvi','Merikarvia','Miehikkälä','Mikkeli','Muhos','Multia','Muonio','Mustasaari','Muurame','Mynämäki','Myrskylä','Mäntsälä','Mänttä-Vilppula','Mäntyharju','Naantali','Nakkila','Nivala','Nokia','Nousiainen','Nurmes','Nurmijärvi','Närpiö','Orimattila','Oripää','Orivesi','Oulainen','Oulu','Outokumpu','Padasjoki','Paimio','Paltamo','Parainen','Parikkala','Parkano','Pedersören kunta','Pelkosenniemi','Pello','Perho','Pertunmaa','Petäjävesi','Pieksämäki','Pielavesi','Pietarsaari','Pihtipudas','Pirkkala','Polvijärvi','Pomarkku','Pori','Pornainen','Porvoo','Posio','Pudasjärvi','Pukkila','Punkalaidun','Puolanka','Puumala','Pyhtää','Pyhäjoki','Pyhäjärvi','Pyhäntä','Pyhäranta','Pälkäne','Pöytyä','Raahe','Raasepori','Raisio','Rantasalmi','Ranua','Rauma','Rautalampi','Rautavaara','Rautjärvi','Reisjärvi','Riihimäki','Ristijärvi','Rovaniemi','Ruokolahti','Ruovesi','Rusko','Rääkkylä','Saarijärvi','Salla','Salo','Saltvik','Sastamala','Sauvo','Savitaipale','Savonlinna','Savukoski','Seinäjoki','Sievi','Siikainen','Siikajoki','Siikalatva','Siilinjärvi','Simo','Sipoo','Siuntio','Sodankylä','Soini','Somero','Sonkajärvi','Sotkamo','Sottunga','Sulkava','Sund','Suomussalmi','Suonenjoki','Sysmä','Säkylä','Taipalsaari','Taivalkoski','Taivassalo','Tammela','Tampere','Tervo','Tervola','Teuva','Tohmajärvi','Toholampi','Toivakka','Tornio','Turku','Tuusniemi','Tuusula','Tyrnävä','Ulvila','Urjala','Utajärvi','Utsjoki','Uurainen','Uusikaarlepyy','Uusikaupunki','Vaala','Vaasa','Valkeakoski','Valtimo','Vantaa','Varkaus','Vehmaa','Vesanto','Vesilahti','Veteli','Vieremä','Vihti','Viitasaari','Vimpeli','Virolahti','Virrat','Vårdö','Vöyri','Ylitornio','Ylivieska','Ylöjärvi','Ypäjä','Ähtäri','Äänekoski']" %}
+
+    <experiment-page inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" experiment-id="${experimentId}" placeholder-image-url="/img/placeholder.png" cached-data="${experiment_json}" :experiment-locations="${locations}">
         <div class="wrapper experiment">
+
+            <meta name="twitter:title" :content="getLanguage('title', true)" />
+            <meta name="twitter:description" :content="getLanguage('short_description', true)" />
+            <meta name="twitter:image" :content="getExperimentPicUrl(placeholderImage, experiment, 'top_image', 800, 400)" />
+
             <div v-if="!this.experiment" class="large-12 columns">
                 <div class="primary callout info submenu start">
-                    <h2>Experiment not found</h2>
+                    <h2>${'Experiment not found'|trans}</h2>
                     <p>
-                        Sorry, this experiment does not exist. Do you want to
-                        <a :href="rootUrl + '${lang}/haku'">browse</a>
-                        experiments?
+                        ${'Sorry, this experiment does not exist. Do you want to'|trans}
+                        <a :href="rootUrl + '${lang}/haku'">${'browse'|trans}</a>
+                        ${'sorry_access2'|trans}
                     </p>
                 </div>
             </div>
@@ -335,12 +24,12 @@
                 <div class="callout userinfo" :class="'color-' + displayedExperimentStage">
                     <div class="row">
                         <div class="large-12 medium-12 small-12 columns">
-                            <h2 v-if="displayedExperimentStage == 0">Haaste</h2>
-                            <h2 v-if="displayedExperimentStage == 1">Idea</h2>
-                            <h2 v-if="displayedExperimentStage == 2">Ehdotus</h2>
-                            <h2 v-if="displayedExperimentStage == 3">Rahoitus</h2>
-                            <h2 v-if="displayedExperimentStage == 4">Toteutus</h2>
-                            <h2 v-if="displayedExperimentStage == 5">Opit</h2>
+                            <h2 v-if="displayedExperimentStage == 0">${'Challenge'|trans}</h2>
+                            <h2 v-if="displayedExperimentStage == 1">${'Idea'|trans}</h2>
+                            <h2 v-if="displayedExperimentStage == 2">${'Suggestion'|trans}</h2>
+                            <h2 v-if="displayedExperimentStage == 3">${'Funding'|trans}</h2>
+                            <h2 v-if="displayedExperimentStage == 4">${'Experiment'|trans}</h2>
+                            <h2 v-if="displayedExperimentStage == 5">${'archive'|trans}</h2>
 
                             <p class="sub">{{ getLanguage('title', true) }}</p>
 
@@ -349,7 +38,8 @@
                         </div>
                     </div>
                     <div class="row team">
-                        <h4>Team</h4>
+                        <h4>${'Team'|trans}</h4>
+						 <p v-if="getLanguage('owner_name', true)">{{ getLanguage('owner_name', true) }}</p>
                         <div v-if="experiment.team" v-for="teamMember in experiment.team" class="large-12 medium-12 small-12 columns">
 
                             <a :href="rootUrl + '${lang}/profile/'+ teamMember.profile_id + '/'">
@@ -363,15 +53,7 @@
                     </div>
 
                     <div class="row" v-if="experiment.links">
-                        <links
-                            inline-template
-                            :links="experiment.links"
-                            facebook-icon-path="/img/fb_p.png"
-                            twitter-icon-path="/img/twit_p.png"
-                            instagram-icon-path="/img/instag_p.png"
-                            linkedin-icon-path="/img/in_p.png"
-                            email-icon-path="/img/mail_p.png"
-                            www-icon-path="/img/www_p.png">
+                        <links inline-template :links="experiment.links" facebook-icon-path="/img/fb_p.png" twitter-icon-path="/img/twit_p.png" instagram-icon-path="/img/instag_p.png" linkedin-icon-path="/img/in_p.png" email-icon-path="/img/mail_p.png" www-icon-path="/img/www_p.png">
                             <div class="row social-icon-bar">
                                 <span v-for="link in links">
                                     <a :href="link.url" :class="getLinkClass(link)" :style="{'background-image':'url(' + getBackgroundImage(link) + ')'}"></a>
@@ -393,7 +75,7 @@
                 <div class="callout light share" :class="'color-' + displayedExperimentStage">
                     <div class="row social-icon-bar">
                         <div class="large-12 medium-12 small-12 columns">
-                            <h2>Osallistu</h2>
+                            <h2>${'Take part'|trans}</h2>
 
                             <div class="like" style="cursor:pointer;" :class="{ liked: userLiked }" @click="likeExperiment()">
                                 <img src="/img/heart.png" v-if="userLiked == false" style="height:30px;">
@@ -401,33 +83,40 @@
                                 <span class="likecount">{{ likeCount }}</span>
                             </div>
 
-                            <a href="#bottom" class="bottom">Kommentoi</a>
+                            <a href="#bottom" class="bottom">${'Discuss or comment'|trans}</a>
 
-                            <h2>Jaa</h2>
-                            <social-sharing :url="currentUrl()" :title="getLanguage('title', true)" :description="getLanguage('short_description', true)" hashtags="kokeilunpaikka" inline-template>
+                            <h2>${'Share'|trans}</h2>
+
 
                                 <div>
 
-                                    <network network="facebook">
-                                        <a class="facebook"></a>
-                                    </network>
+                                    <social-sharing :url="currentUrl()" :title="getLanguage('title', true)" :description="getLanguage('short_description', true)" hashtags="kokeilunpaikka" inline-template>
+                                        <span>
+                                            <network network="facebook">
+                                                <a class="facebook"></a>
+                                            </network>
 
-                                    <network network="twitter">
-                                        <a class="tweet"></a>
-                                    </network>
+                                            <network network="twitter">
+                                                <a class="tweet"></a>
+                                            </network>
 
-                                    <network network="linkedin">
-                                        <a class="linkedin"></a>
-                                    </network>
+                                            <network network="linkedin">
+                                                <a class="linkedin"></a>
+                                            </network>
 
-                                    <a class="mail" :href="'mailto:?to=&subject=' + encodeURI(title) + '%20on%20Kokeilun%20Paikka&body=See%20this%20experiment%20here%20' + url" target="_blank">
-                                        <i class="fa fa-mail fa-lg"></i>
-                                    </a>
+                                            <a class="mail" :href="'mailto:?to=&subject=' + encodeURI(title) + '%20on%20Kokeilun%20Paikka&body=See%20this%20experiment%20here%20' + url" target="_blank">
+                                                <i class="fa fa-mail fa-lg"></i>
+                                            </a>
+                                        </span>
+                                    </social-sharing>
+
+									                  <button class="button embed" type="button" data-toggle="example-dropdown-1"></button>
+									                  <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
+                                        <span><i>${'Click on code to select all'|trans}</i></span>
+                                        <textarea class="embed-code-textarea" readonly @focus="$event.target.select()" @click="$event.target.select()">{{ getEmbedCode(rootUrl + '${lang}/experiment-embed/' + experiment.experiment_id, 320, 440) }}</textarea>
+                                    </div>
 
                                 </div>
-
-                            </social-sharing>
-
                         </div>
                     </div>
                 </div>
@@ -440,54 +129,49 @@
                                     <button type="button" class="button secondary right" @click="editExperimentStage == false ? editExperimentStage = true : editExperimentStage = true">
                                         <i class="fi-pencil medium">&nbsp;</i>
                                     </button>
-                                    <h2>Kokeilun vaihe</h2>
+                                    <h2>${'Experiment phase'|trans}</h2>
                                     <select v-model="selectedExperimentStage" v-show="editExperimentStage">
                                         <option value="0" :selected="experiment.stage == 0">
-                                            Haaste
+                                            ${'Challenge'|trans}
                                         </option>
                                         <option value="1" :selected="experiment.stage == 1">
-                                            Idea
+                                            ${'Idea'|trans}
                                         </option>
                                         <option value="2" :selected="experiment.stage == 2">
-                                            Ehdotus
+                                            ${'Suggestion'|trans}
                                         </option>
                                         <option value="3" :selected="experiment.stage == 3">
-                                            Rahoitus
+                                            ${'Funding'|trans}
                                         </option>
                                         <option value="4" :selected="experiment.stage == 4">
-                                            Toteutus
+                                            ${'Experiment'|trans}
                                         </option>
                                         <option value="5" :selected="experiment.stage == 5">
-                                            Opit
+                                            ${'Archive'|trans}
                                         </option>
                                     </select>
-                                    <button
-                                        v-show="editExperimentStage"
-                                        class="button"
-                                        :disabled="experiment.stage == selectedExperimentStage"
-                                        :class="{success:experiment.stage != selectedExperimentStage ,secondary:experiment.stage == selectedExperimentStage}"
-                                        @click="updateExperimentStage(apiUrl, experimentId, selectedExperimentStage)">
+                                    <button v-show="editExperimentStage" class="button" :disabled="experiment.stage == selectedExperimentStage" :class="{success:experiment.stage != selectedExperimentStage ,secondary:experiment.stage == selectedExperimentStage}" @click="updateExperimentStage(apiUrl, experimentId, selectedExperimentStage)">
                                         <i class="fi-check medium">&nbsp;</i>
-                                        Päivitä kokeilun tila</button>
+                                        ${'Update the phase of experiment'|trans}</button>
                                     <button v-show="editExperimentStage" type="button" class="button alert" @click="resetStage()">
-                                        <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </li>
                                 <br>
                                 <li v-if="isUserAdmin">
                                     <button type="button" class="button secondary right" @click="initializeShowInEditor()">
                                         <i class="fi-pencil medium">&nbsp;</i>
                                     </button>
-                                    <h2 class="left">Näytä</h2>
+                                    <h2 class="left">${'Show'|trans}</h2>
                                     <div v-show="editExperimentShowIn" class="large-12 medium-12 small-12 columns">
                                         <div class="large-8 medium-8 small-8 columns">
-                                            "Selaa kokeiluja"
+                                            ${'browse_exp'|trans}
                                         </div>
                                         <div class="large-4 medium-4 small-4 columns">
                                             <div class="switch">
                                                 <input v-model="selectedExperimentShowIn.index" class="switch-input" id="index" type="checkbox" name="exampleSwitch" @click="toggleShowIn($event, 'index')">
                                                 <label class="switch-paddle" for="index">
-                                                    <span class="switch-active" aria-hidden="true">Yes</span>
-                                                    <span class="switch-inactive" aria-hidden="true">No</span>
+                                                    <span class="switch-active" aria-hidden="true">${'Yes'|trans}</span>
+                                                    <span class="switch-inactive" aria-hidden="true">${'No'|trans}</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -495,14 +179,14 @@
 
                                     <div v-show="editExperimentShowIn" class="large-12 medium-12 small-12 columns">
                                         <div class="large-8 medium-8 small-8 columns">
-                                            Front page
+                                            ${'Front page'|trans}
                                         </div>
                                         <div class="large-4 medium-4 small-4 columns">
                                             <div class="switch">
                                                 <input v-model="selectedExperimentShowIn.frontpage" class="switch-input" id="frontpage" type="checkbox" name="exampleSwitch" @click="toggleShowIn($event, 'frontpage')">
                                                 <label class="switch-paddle" for="frontpage">
-                                                    <span class="switch-active" aria-hidden="true">Yes</span>
-                                                    <span class="switch-inactive" aria-hidden="true">No</span>
+                                                    <span class="switch-active" aria-hidden="true">${'Yes'|trans}</span>
+                                                    <span class="switch-inactive" aria-hidden="true">${'No'|trans}</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -510,9 +194,9 @@
 
                                     <button v-show="editExperimentShowIn" class="button" :disabled="!isShowInModified" :class="{success: isShowInModified,secondary: !isShowInModified}" @click="updateExperimentShowIn(apiUrl, experimentId)">
                                         <i class="fi-check medium">&nbsp;</i>
-                                        Save settings</button>
+                                        ${'Save'|trans}</button>
                                     <button v-show="editExperimentShowIn" type="button" class="button alert" @click="resetShowIn">
-                                        <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </li>
                                 <br>
 
@@ -522,10 +206,10 @@
                                             <button type="button" class="button secondary right" @click="initializeEditor">
                                                 <i class="fi-pencil medium">&nbsp;</i>
                                             </button>
-                                            <h2 class="left">Avainsana</h2>
+                                            <h2 class="left">${'Subjects / tags'|trans}</h2>
                                             <div class="row" v-show="showEditor">
                                                 <div class="large-12 medium-12 small-12 columns">
-                                                    <h6>Available tags</h6>
+                                                    <h6>${'Available tags'|trans}</h6>
                                                 </div>
                                                 <input ref="searchInputRef" @keyup="searchTags" v-model="searchTerm" type="text" class="form-control" placeholder="Type to search for tags">
                                                 <div class="large-12 medium-12 small-12 columns" style="padding:10px;margin-bottom:20px;max-height:15em;overflow:scroll;">
@@ -537,7 +221,7 @@
                                                 </div>
                                                 <br/>
                                                 <div class="large-12 medium-12 small-12 columns">
-                                                    <h6>Current tags</h6>
+                                                    <h6>${'Chosen subjects'|trans}</h6>
                                                 </div>
                                                 <div class="large-12 medium-12 small-12 columns" style="padding:10px;max-height:15em;overflow:hidden;">
                                                     <span class="tag label" @click="removeTag(tag.id)" v-for="tag in selectedTags" style="cursor:pointer;">
@@ -548,9 +232,9 @@
                                                 <div class="large-12 medium-12 small-12 columns" style="padding:10px;">
                                                     <form action="#" @submit.prevent="saveTags()">
                                                         <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                                                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                                                            <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
                                                         <button type="button" class="button alert" @click="resetTags()">
-                                                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                                                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -564,7 +248,7 @@
                                         <button type="button" class="button secondary right" @click="initializeLinksEditor">
                                             <i class="fi-pencil medium">&nbsp;</i>
                                         </button>
-                                        <h2 class="left">Linkit lisätietoon</h2>
+                                        <h2 class="left">${'Links for additional information'|trans}</h2>
                                         <div class="row" v-show="editExperimentLinks">
                                             <div class="large-12 medium-12 small-12 columns">
                                                 <form action="#" @submit.prevent="saveExperimentLinks(apiUrl, experimentId)" data-vv-scope="experiment-links-form">
@@ -578,7 +262,7 @@
                                                             </div>
                                                             <div class="large-4 medium-4 small-12 columns">
                                                                 <a @click="removeExperimentLinkField(index)">
-                                                                    <i class="fi-x medium">&nbsp;</i>Remove
+                                                                    <i class="fi-x medium">&nbsp;</i>${'Remove link'|trans}
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -586,16 +270,16 @@
                                                     <div class="large-10 columns">
 
                                                         <a @click="addExperimentLinkField" style="float:right;">
-                                                            <i class="fi-plus medium">&nbsp;</i>Add new link
+                                                            <i class="fi-plus medium">&nbsp;</i>${'Add a new link link'|trans}
                                                         </a>
 
                                                     </div>
                                                     <br/><br/>
 
                                                     <button type="submit" :disabled="!areExperimentLinksModified" class="button" :class="{success:areExperimentLinksModified, secondary:!areExperimentLinksModified}">
-                                                        <i class="fi-check medium">&nbsp;</i>Save Links</button>
+                                                        <i class="fi-check medium">&nbsp;</i>${'Save links'|trans}</button>
                                                     <button type="button" class="button alert" @click="resetLinksEditor">
-                                                        <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -608,18 +292,16 @@
                                         <button type="button" class="button secondary right" @click="initializeLocationEditor">
                                             <i class="fi-pencil medium">&nbsp;</i>
                                         </button>
-                                        <h2 class="left">Paikkakunta</h2>
+                                        <h2 class="left">${'Muncipality / City'|trans}</h2>
                                         <select v-show="editExperimentLocation" v-model="experimentLocation">
-                                            <template v-for="location in experimentLocations">
-                                                <option :value="location">
-                                                    {{ location }}
-                                                </option>
-                                            </template>
+                                            <option v-for="location in experimentLocations" :value="location">
+                                                {{ location }}
+                                            </option>
                                         </select>
                                         <button v-show="editExperimentLocation" @click="saveExperimentLocation(apiUrl, experimentId)" :disabled="!isExperimentLocationModified" class="button" :class="{success:isExperimentLocationModified, secondary:!isExperimentLocationModified}">
-                                            <i class="fi-check medium">&nbsp;</i>Tallenna paikkakunta<!--Save Location--></button>
+                                            <i class="fi-check medium">&nbsp;</i>${'Save location'|trans}<!--Save Location--></button>
                                         <button v-show="editExperimentLocation" type="button" class="button alert" @click="resetLocationEditor">
-                                            <i class="fi-x medium">&nbsp;</i>Peruuta</button>
+                                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                     </span>
                                 </li>
 
@@ -633,20 +315,20 @@
                                     <button type="button" class="button secondary right" @click="initializeDisabledEditor()">
                                         <i class="fi-pencil medium">&nbsp;</i>
                                     </button>
-                                    <h2 class="left">Poista kokeilu</h2>
+                                    <h2 class="left">${'Remove experiment'|trans}</h2>
                                     <div v-show="editExperimentDisabled" class="large-12 medium-12 small-12 columns">
                                         <p>
-                                            This will remove the experiment.
+                                            ${'This will remove the entire experiment'|trans}
                                         </p>
                                         <input v-model="experimentDisabledAgree" id="remove-experiment" type="checkbox">
-                                        <label for="remove-experiment">I understand</label>
+                                        <label for="remove-experiment">${'I understand'|trans}</label>
                                     </div>
                                     <button v-show="editExperimentDisabled" class="button" :disabled="!isDisabledAgreed" :class="{success: isDisabledAgreed,secondary: !isDisabledAgreed}" @click="updateExperimentDisabled($event, apiUrl, experimentId)">
                                         <i class="fi-trash medium">&nbsp;</i>
-                                        Remove
+                                        ${'Remove'|trans}
                                     </button>
                                     <button v-show="editExperimentDisabled" type="button" class="button alert" @click="resetDisabled">
-                                        <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                        <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                 </li>
                             </ul>
                         </div>
@@ -658,29 +340,30 @@
                         <div class="large-12 medium-12 small-12 columns stages">
                             <ul>
                                 <li v-if="experiment.stage > 0">
-                                    <h2>Selaa kokeilun edellisiä vaiheita</h2>
+                                    <h2>${'Browse the previous stages of the experiments'|trans}
+                                    </h2>
                                     <ul>
                                         <li v-for="n in parseInt(experiment.stage)">
-                                            <a v-if="(n-1) == 0" @click="displayedExperimentStage = 0">Katso vaihe Haaste</a>
-                                            <a v-if="(n-1) == 1" @click="displayedExperimentStage = 1">Katso vaihe Idea</a>
-                                            <a v-if="(n-1) == 2" @click="displayedExperimentStage = 2">Katso vaihe Ehdotus</a>
-                                            <a v-if="(n-1) == 3" @click="displayedExperimentStage = 3">Katso vaihe Rahoitus</a>
-                                            <a v-if="(n-1) == 4" @click="displayedExperimentStage = 4">Katso vaihe Toteutus</a>
-                                            <a v-if="(n-1) == 5" @click="displayedExperimentStage = 5">Katso vaihe Opit</a>
+                                            <a v-if="(n-1) == 0" @click="displayedExperimentStage = 0">${'Browse to the challenge stage'|trans}</a>
+                                            <a v-if="(n-1) == 1" @click="displayedExperimentStage = 1">${'Browse to the idea stage'|trans}</a>
+                                            <a v-if="(n-1) == 2" @click="displayedExperimentStage = 2">${'Browse to the suggestion stage'|trans}</a>
+                                            <a v-if="(n-1) == 3" @click="displayedExperimentStage = 3">${'Browse to the funding stage'|trans}</a>
+                                            <a v-if="(n-1) == 4" @click="displayedExperimentStage = 4">${'Browse to the experiment stage'|trans}</a>
+                                            <a v-if="(n-1) == 5" @click="displayedExperimentStage = 5">${'Browse to the archive stage'|trans}</a>
                                         </li>
                                     </ul>
                                     <br/>
                                     <ul>
                                         <li v-if="displayedExperimentStage != experiment.stage">
-                                            <a @click="displayedExperimentStage = experiment.stage">Takaisin nykyiseen tilaan</a>
+                                            <a @click="displayedExperimentStage = experiment.stage">${'Back to the present stage'|trans}</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <h2>Avainsanat</h2>
+                                    <h2>${'Subjects / tags'|trans}</h2>
                                     <div class="row" v-show="experiment.tags">
                                         <div class="large-12 medium-12 small-12 columns" style="padding:10px;max-height:15em;overflow:hidden;">
-                                            <span class="label tag" v-for="tag in experiment.tags">
+                                            <span class="label tag pointer" v-for="tag in experiment.tags" @click="openUrl('/${lang}/haku/tag/' + tag.id)">
                                                 {{ tag.label }}
                                             </span>
                                         </div>
@@ -697,23 +380,27 @@
                             <div class="large-12 medium-12 small-12 columns">
 
                                 <div v-if="leikiData.tabs" class="wrapper similar">
-                                    <h2>Samankaltaisia kokeiluja:</h2>
-                                    <ul v-if="leikiData.tabs[0]">
-                                        <li v-for="tab in leikiData.tabs[0].items">
-                                            <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
-                                        </li>
-                                    </ul>
-                                    <div v-else>
-                                        No similar internal pages found.
+                                    <h2>${'Similar experiments:'|trans}</h2>
+                                    <div v-if="leikiData.tabs[0]">
+                                        <ul>
+                                            <li v-for="tab in leikiData.tabs[0].items">
+                                                <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <h2>Lisää aiheesta muualla:</h2>
-                                    <ul v-if="leikiData.tabs[1]">
-                                        <li v-for="tab in leikiData.tabs[1].items">
-                                            <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
-                                        </li>
-                                    </ul>
                                     <div v-else>
-                                        No similar external pages found.
+                                        ${'No similar internal pages found.'|trans}
+                                    </div>
+                                    <h2>${'Related subjects outside the service:'|trans}</h2>
+                                    <div v-if="leikiData.tabs[1]">
+                                        <ul>
+                                            <li v-for="tab in leikiData.tabs[1].items">
+                                                <a :href="tab.actualUrl" @click="leikiOnClick(tab.url)">{{ tab.headline }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div v-else>
+                                        ${'No related subjects outside the services found.'|trans}
                                     </div>
                                 </div>
 
@@ -733,11 +420,7 @@
 
             </div>
 
-            <!--  <span class="label tag color-0" style="cursor: pointer;font-size:110%;padding-left:20px;padding-right:20px;">Haaste</span>
-            <span class="label tag color-1" style="cursor: pointer;font-size:110%;padding-left:20px;padding-right:20px;">Idea</span>
-            <span class="label tag color-2" style="cursor: pointer;font-size:110%;padding-left:20px;padding-right:20px;">Ehdotus</span>
-            <span class="label tag color-3" style="cursor: pointer;font-size:110%;padding-left:20px;padding-right:20px;">Rahoitus</span>
-            <span class="label tag color-4" style="cursor: pointer;font-size:110%;padding-left:20px;padding-right:20px;">Opit</span>-->
+
 
             <div v-if="this.experiment" class="large-8 medium-8 small-12 columns">
                 <div class="callout" :class="'color-' + displayedExperimentStage">
@@ -748,16 +431,16 @@
                                 <form action="#" @submit.prevent="uploadImage('top_image')">
                                     <button type="button" class="button secondary right" @click="showEditor === false ? showEditor = true : showEditor = true">
                                         <i class="fi-pencil medium">&nbsp;</i>
-                                        Kuva
+                                        ${'Image'|trans}
                                     </button>
                                     <div id="image" v-show="showEditor" style="padding:20px;background-color:white;max-width:70%;">
-                                        <label>Kuvatiedosto:</label>
+                                        <label>${'Image file:'|trans}</label>
                                         <input ref="imageFile" type="file" name="image" v-validate.initial data-vv-rules="image|size:2048" accept="image/gif, image/jpeg, image/jpg, image/png" @change="verifyImage">
                                         <button type="submit" class="button button save" :disabled="!imageData" :class="{success:imageData, secondary:!imageData}">
                                             <i class="fi-check medium">&nbsp;</i>
-                                            Tallenna kuva</button>
+                                            ${'Save'|trans}</button>
                                         <button type="button" class="button alert" @click="resetImage()">
-                                            <i class="fi-x medium">&nbsp;</i>Cancel</button>
+                                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                                     </div>
                                 </form>
 
@@ -812,22 +495,66 @@
                         </div>
                     </div>
 
-                    <div class="callout success next" v-if="experiment.stage < 5 && isUserEditor" style="height:auto;">
-                        <h5>Valmista?</h5>
-                        <p>klikkaa tästä ja näet kokeiluehdotuksesi omassa profiilissasi. Voit myös palata parantelemaan sitä. Julkaisemme ehdotukset kun ne on tarkastettu.</p>
-                        <button v-if="isUserAuthenticated" class="button success next" @click="openUrl('/${lang}/profile/me')">Valmis</button>
+
+                    <div class="callout success next" v-if="!isExperimentPublished && isUserEditor" style="height:auto;">
+
+                        <h5>${'Ready?'|trans}</h5>
+                        <p>${'Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own profile or via the experiment url.'|trans}</p>
+
+                        <button class="button success next"  @click="publishExperiment">
+                                ${'Publish'|trans}
+                        </button>
+
 
                         <button v-if="isUserAuthenticated" class="button success next right">
-                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">Tukipyyntö</a>
+                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">
+                                ${'Support call'|trans}</a>
                         </button>
 
                     </div>
 
-                    <div class="callout success next" v-if="experiment.stage < 5 && isUserEditor" style="height:auto;">
-                        <h5>Haluatko viedä kokeiluasi eteenpäin</h5>
-                        <p>Klikkaa tästä ja siirrä kokeilusi seuraavaan vaiheeseen</p>
-                        <button class="button success next" @click="goToTheNextStage(apiUrl, experimentId, 'Olet nyt siirtymässä Kokeilun seuraavaan vaiheeseen. Oletko valmis?', 'Kokeilusi on nyt siirtynyt seuraavaan vaiheeseen')">
-                            Siirry seuraavaan vaiheeseen</button>
+                    <div class="callout success next" v-if="isExperimentPublished && isUserEditor" style="height:auto;">
+
+                        <p>${'Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile or via the experiment url.'|trans}</p>
+
+                        <button class="button success next" @click="unpublishExperiment">
+                                ${'Unpublish'|trans}
+                        </button>
+
+
+                        <button v-if="isUserAuthenticated" class="button success next right">
+                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">
+                                ${'Support call'|trans}</a>
+                        </button>
+
+                    </div>
+
+                    <div class="callout success next" v-if="experiment.stage < 5 && isUserEditor" style="height:auto;" :class="[experiment.tags.map(function(tag) {return 'tag-' + tag.id}).join(' ')]">
+
+						<div class="breadcrumbs">
+            <span class="label tag color-0" style="">${'Challenge'|trans}</span>
+            <span class="label tag color-1" style="">${'Idea'|trans}</span>
+            <span class="label tag color-2" style="">${'Suggestion'|trans}</span>
+            <span class="label tag color-3" style="">${'Funding'|trans}</span>
+            <span class="label tag color-4" style="">${'Experiment'|trans}</span>
+			<span class="label tag color-5" style="">${'archive'|trans}</span>
+						</div>
+
+			<!--
+				past active experiment stage label bg: text-decoration: line-through;
+				active experiment stage label bg: text-decoration: underline;
+				next stage: normal color, no text decoration
+				nonactive experiment stage label bg: background-color: #cbcaca;
+
+			-->
+
+
+                        <h5>${'Do you want to advance your experiment to the next stage?'|trans}</h5>
+                        <p>${'Click here to move your experiment to the next stage'|trans}</p>
+                        <alert inline-template display-text="${'move_to_next_stage'|trans}" @confirm="goToTheNextStage()">
+                            <button class="button success next" @click="showAlert()">
+                            ${'Move'|trans}</button>
+                        </alert>
                     </div>
                     <a name="bottom"></a>
 

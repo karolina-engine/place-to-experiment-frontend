@@ -1,31 +1,31 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Kokeilun paikka\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Language-Team: \n"
+"Last-Translator: \n"
+"Language-Team: Marko Tanninen\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
-"Last-Translator: \n"
+"X-Generator: Poedit 2.0.8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
 
 msgid "register"
 msgstr "Register"
 
 msgid "login"
-msgstr "Log in"
+msgstr "login"
 
 msgid "logout"
-msgstr "Log out"
+msgstr "logout"
 
 msgid "email"
-msgstr "E-mail"
+msgstr "E-Email"
 
 msgid "insert_info"
-msgstr "Insert info"
+msgstr "insert info"
 
 msgid "placeofexperiment"
 msgstr "Place of experiment"
@@ -35,3 +35,704 @@ msgstr "About the service"
 
 msgid "browse_exp"
 msgstr "Browse the experiments"
+
+msgid "start_exp"
+msgstr "Start an experiment"
+
+msgid "browse_users"
+msgstr "Browse users"
+
+msgid "search"
+msgstr "Search"
+
+msgid "discl_not_register"
+msgstr "Email or password is wrong or this user is not registered."
+
+msgid "error"
+msgstr "Error: Action failed."
+
+msgid "not_allowed"
+msgstr "Not allowed."
+
+msgid "sorry_access1"
+msgstr "Sorry, you need to be logged in to access this page. Do you want to"
+
+msgid "sorry_access2"
+msgstr "experiments?"
+
+msgid "experiments"
+msgstr "Experiments"
+
+msgid "browse"
+msgstr "browse"
+
+msgid "type_to_search"
+msgstr "Type to search experiments"
+
+msgid "show"
+msgstr "Show:"
+
+msgid "view"
+msgstr "View"
+
+msgid "browse_by_keyword"
+msgstr "Browse by keyword"
+
+msgid "move_to_next_stage"
+msgstr "You are now moving to the next step in the Experiment. Are you ready?"
+
+msgid "challenges"
+msgstr "Challenges"
+
+msgid "Challenge"
+msgstr "Challenge"
+
+msgid "ideas"
+msgstr "Ideas"
+
+msgid "Idea"
+msgstr "Idea"
+
+msgid "suggestions"
+msgstr "Suggestions"
+
+msgid "Suggestion"
+msgstr "Suggestion"
+
+msgid "fundings"
+msgstr "Fundings"
+
+msgid "Funding"
+msgstr "Funding"
+
+msgid "Experiment"
+msgstr "Experiment"
+
+msgid "archives"
+msgstr "Archives"
+
+msgid "archive"
+msgstr "Archive"
+
+# accerator.html ///
+msgid "Circular economy"
+msgstr "Circular economy"
+
+msgid "Food"
+msgstr "Food"
+
+msgid "Living"
+msgstr "Living"
+
+msgid "Transportation"
+msgstr "Transportation"
+
+msgid "ask_and_discuss"
+msgstr "Ask and discuss about this idea search"
+
+msgid "experiments_related"
+msgstr "Experiments related to this idea search"
+
+# index.html ///
+msgid "What do you want to do?"
+msgstr "What do you want to do?"
+
+msgid "To challenge"
+msgstr "Challenge"
+
+msgid "Suggest an idea"
+msgstr "Suggest an idea"
+
+msgid "Start an experiment"
+msgstr "Start an experiment"
+
+msgid "Apply funding"
+msgstr "Apply funding"
+
+msgid "Learn from previous experiments"
+msgstr "Learn from previous experiments"
+
+msgid "An arc of experiments"
+msgstr "An arc of experiments"
+
+msgid "What problem would you like to solve?"
+msgstr "What problem would you like to solve?"
+
+msgid "CHALLENGE to solve"
+msgstr "CHALLENGE to solve"
+
+msgid "Come up with an idea that would solve the problem"
+msgstr "Come up with an idea that would solve the problem"
+
+msgid "A solving IDEA?"
+msgstr "A solving IDEA?"
+
+msgid "How would you test whether you idea might work?"
+msgstr "How would you test whether you idea might work?"
+
+msgid "Start with a suggestion in order to get funding"
+msgstr "Start with a suggestion in order to get funding"
+
+msgid "Start with a suggestion in order to experiment"
+msgstr "Start with a suggestion in order to experiment"
+
+msgid "FUNDING an experiment"
+msgstr "FUNDING an experiment"
+
+msgid "Suggestion for an EXPERIMENT"
+msgstr "Suggestion for an EXPERIMENT"
+
+msgid "EXPERIMENT in paractice"
+msgstr "EXPERIMENT in paractice"
+
+msgid "Save your experiment to the archive"
+msgstr "Save your experiment to the archive"
+
+msgid "Experiment ARCHIVE"
+msgstr "Experiment ARCHIVE"
+
+msgid "Experiment search"
+msgstr "Experiment search"
+
+msgid "Blog"
+msgstr "Blog"
+
+msgid "Follow us on the Facebok page of Kokeilun Paikka"
+msgstr "Follow us on our Facebok page"
+
+msgid ""
+"The Place of experiment is a service where we can all think and develop "
+"common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding "
+"and implementation."
+msgstr ""
+"We are combining ideas, implementers, sparrers and financiers. Here, you can "
+"share an idea, make suggestions and experiment with the support of the "
+"network. Here you can find partners and potential financiers. You can also "
+"comment and spar on other experiments. The outcome of the experiments will "
+"be shared among us all."
+
+msgid "Is your idea any good? You'll find out by experimenting"
+msgstr ""
+"Is your idea any good?\n"
+"You'll find out by experimenting"
+
+msgid "Please log in"
+msgstr "Please log in"
+
+msgid "Sorry, you need to be logged in to access this page. Please"
+msgstr "Sorry, you need to be logged in to access this page. Please"
+
+msgid "or"
+msgstr "or"
+
+msgid "Redirecting to discourse..."
+msgstr "Redirecting to discussions..."
+
+msgid "Logging in"
+msgstr "Logging in"
+
+msgid "Provide your information"
+msgstr "Provide your information"
+
+msgid "I forgot my password"
+msgstr "I forgot my password"
+
+msgid "close"
+msgstr "close"
+
+msgid "Are you sure you want to log out?"
+msgstr "Are you sure you want to log out?"
+
+msgid "You need to be logged in to start an experiment"
+msgstr "You need to be logged in to start an experiment"
+
+msgid "Start a challenge"
+msgstr "Start a challenge"
+
+msgid "Start an idea"
+msgstr "Start an idea"
+
+msgid "Start a suggestion"
+msgstr "Start a suggestion"
+
+msgid "Start an archive"
+msgstr "Start an archive"
+
+msgid "Experiment title"
+msgstr "Experiment title"
+
+msgid "Experiment short description"
+msgstr "Experiment short description"
+
+msgid "Give your challenge a short descriptive name"
+msgstr ""
+
+msgid "Give your idea a short descriptive name"
+msgstr ""
+
+msgid "Give your experiment a short descriptive name"
+msgstr ""
+
+msgid "Give your archive a short descriptive name"
+msgstr ""
+
+msgid "Name (person or organization)"
+msgstr "Name (person or organization)"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Insert heading here"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Write a short description (Max 300 characters)"
+msgstr ""
+
+msgid "Experiment owner"
+msgstr "Experiment owner"
+
+msgid "Enter your email address and choose a new password."
+msgstr "Enter your email address and choose a new password."
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Pepeat new password"
+msgstr "Repeat new password"
+
+msgid "Set new password"
+msgstr "Set new password"
+
+msgid "The password was modified successfully. Please"
+msgstr "The password was modified successfully. Please"
+
+msgid "Log in"
+msgstr "Log in"
+
+msgid "using the new password."
+msgstr "using the new password."
+
+msgid "This token has already been used. Please resend reset password email."
+msgstr "This token has already been used. Please resend reset password email."
+
+msgid "There was an error, you may need to start the"
+msgstr "There was an error, you may need to start the"
+
+msgid "reset process"
+msgstr "reset process"
+
+msgid "again."
+msgstr "again."
+
+msgid ""
+"Enter your email address. You will receive a link to reset your password."
+msgstr ""
+"Enter your email address. You will receive a link to reset your password."
+
+msgid "Send the reset email"
+msgstr "Send the reset email"
+
+msgid ""
+"The reset password email was sent successfully. Please follow the "
+"instructions provided in the email."
+msgstr ""
+"The reset password email was sent successfully. Please follow the "
+"instructions provided in the email."
+
+msgid "Interests"
+msgstr "Interests"
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Edit personal details"
+msgstr "Edit personal details"
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "About me"
+msgstr "About me"
+
+msgid "Profile picture"
+msgstr "Profile picture"
+
+msgid "Update profile"
+msgstr "Update profile"
+
+msgid "Edit social media links"
+msgstr "Edit social media links"
+
+msgid "Remove link"
+msgstr "Remove link"
+
+msgid "Add new link"
+msgstr "Add new link"
+
+msgid "Save links"
+msgstr "Save links"
+
+msgid "Edit interests"
+msgstr "Edit interests"
+
+msgid "Subjects / tags"
+msgstr "Tags"
+
+msgid "Type to search for tags"
+msgstr "Type to search for tags"
+
+msgid "Chosen subjects"
+msgstr "Chosen subjects"
+
+msgid "Save chosen tags"
+msgstr "Save chosen tags"
+
+msgid "Add a skill"
+msgstr "Add a skill"
+
+msgid "Present skills"
+msgstr "Present skills"
+
+msgid "Save skills"
+msgstr "Save skills"
+
+msgid "Change password"
+msgstr "Change password"
+
+msgid "Current password"
+msgstr "Current password"
+
+msgid "Enter your current password"
+msgstr "Enter your current password"
+
+msgid "Choose a new password"
+msgstr "Choose a new password"
+
+msgid "Repeat the new password"
+msgstr "Repeat the new password"
+
+msgid "Please wait..."
+msgstr "Please wait..."
+
+msgid "Type a name to search users"
+msgstr "Type a name to search users"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Your answer"
+msgstr "Your answer"
+
+msgid "Add a full description and pictures"
+msgstr "Add a full description and pictures"
+
+msgid "Save full description"
+msgstr "Save full description"
+
+msgid "How would your idea solve the problem?"
+msgstr "How would your idea solve the problem?"
+
+msgid "How would you test your idea? What is the the experiment in practice?"
+msgstr "How would you test your idea? What is the the experiment in practice?"
+
+msgid "Who will take the experiment?"
+msgstr "Who will take the experiment?"
+
+msgid "What is the budget of the experiment?"
+msgstr "What is the budget of the experiment?"
+
+msgid "What is the planned schedule for the experiment?"
+msgstr "What is the planned schedule for the experiment?"
+
+msgid "What is the goal of the experiment?"
+msgstr "What is the goal of the experiment?"
+
+msgid "Goal:"
+msgstr "Goal:"
+
+msgid "Currency:"
+msgstr "Currency:"
+
+msgid "Accelerator funding:"
+msgstr "Accelerator funding:"
+
+msgid "State funding:"
+msgstr "State funding:"
+
+msgid "Crowdfunding:"
+msgstr "Crowdfunding:"
+
+msgid "Platform:"
+msgstr "Platform:"
+
+msgid "Campaign ID:"
+msgstr "Campaign ID:"
+
+msgid "Save funding"
+msgstr "Save funding"
+
+msgid "Did the experiment reach the required goals?"
+msgstr "Did the experiment reach the required goals?"
+
+msgid "Total:"
+msgstr "Total:"
+
+msgid "Experiment not found"
+msgstr "Experiment not found"
+
+msgid "Team"
+msgstr "Team"
+
+msgid "Take part"
+msgstr "Take part"
+
+msgid "Discuss or comment"
+msgstr "Discuss"
+
+msgid "Share"
+msgstr "Share"
+
+msgid "Experiment phase"
+msgstr "Experiment stage"
+
+msgid "Show"
+msgstr "Show"
+
+msgid "Front page"
+msgstr "Front page"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Tag"
+msgstr "Tag"
+
+msgid "Available tags"
+msgstr "Available tags"
+
+msgid "Links for additional information"
+msgstr "Links for additional information"
+
+msgid "Muncipality / City"
+msgstr "Muncipality / City"
+
+msgid "Save location"
+msgstr "Save location"
+
+msgid "Remove experiment"
+msgstr "Remove experiment"
+
+msgid "This will remove experiment"
+msgstr "This will remove experiment"
+
+msgid "I understand"
+msgstr "I understand"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Browse the previous stages of the experiments"
+msgstr "Browse the previous stages of the experiments"
+
+msgid "Browse to the challenge stage"
+msgstr "Browse to the challenge stage"
+
+msgid "Browse to the idea stage"
+msgstr "Browse to the idea stage"
+
+msgid "Browse to the suggestion stage"
+msgstr "Browse to the suggestion stage"
+
+msgid "Browse to the funding stage"
+msgstr "Browse to the funding stage"
+
+msgid "Browse to the experiment stage"
+msgstr "Browse to the experiment stage"
+
+msgid "Browse to the archive stage"
+msgstr "Browse to the acrhive stage"
+
+msgid "Back to the present stage"
+msgstr "Back to the present stage"
+
+msgid "Similar experiments:"
+msgstr "Similar experiments:"
+
+msgid "No similar internal pages found."
+msgstr "No similar internal pages found."
+
+msgid "Related subjects outside the service:"
+msgstr "Related subjects outside the service:"
+
+msgid "No related subjects outside the services found."
+msgstr "No related subjects outside the services found."
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Image file:"
+msgstr "Image file:"
+
+msgid "Ready?"
+msgstr "Ready?"
+
+msgid "Ready"
+msgstr "Ready"
+
+msgid ""
+"Click here to see your experiment in your own profile. You can also return "
+"to edit it. We'll publish the suggestions when they are checked."
+msgstr ""
+"Click here to see your experiment in your own profile. You can also return "
+"to edit it. We'll publish the suggestions when they are checked."
+
+msgid "Support call"
+msgstr "Support call"
+
+msgid "Do you want to advance your experiment to the next stage?"
+msgstr "Do you want to advance your experiment to the next stage?"
+
+msgid "Click here to move your experiment to the next stage"
+msgstr "Click here to move your experiment to the next stage"
+
+msgid "Move"
+msgstr "Move"
+
+msgid "Most popular"
+msgstr "Most popular"
+
+msgid "Alphabetically"
+msgstr "Alphabetically"
+
+msgid "Latest first"
+msgstr "Latest first"
+
+msgid "Type a keyword to search"
+msgstr "Type a keyword to search"
+
+msgid "The rest of the experiments related to the idea search"
+msgstr "The rest of the experiments related to the idea search"
+
+msgid "All of the experiments related to the idea search"
+msgstr "All of the experiments related to the idea search"
+
+msgid "The chosen experiments for further development"
+msgstr "The chosen experiments for further development"
+
+msgid "Idea search"
+msgstr "Idea search"
+
+msgid "What skills or resources the team already has?"
+msgstr "What skills or resources the team already has?"
+
+msgid "What are you expecting to learn from the experiment?"
+msgstr "What are you expecting to learn from the experiment?"
+
+msgid "Experiments on a map"
+msgstr "Experiments on a map"
+
+msgid "Filter by keyword"
+msgstr "Filter by keyword"
+
+msgid "Back to browsing view"
+msgstr "Back to browsing view"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Oldest"
+msgstr "Oldest"
+
+msgid "Newest"
+msgstr "Newest"
+
+msgid "Click on code to select all"
+msgstr "Click on code to select all"
+
+msgid "Showing users with tag:"
+msgstr "Showing users with tag:"
+
+msgid "Showing experiments with tag:"
+msgstr "Showing experiments with tag:"
+
+msgid "Filter by tag"
+msgstr "Filter by tag"
+
+msgid "What did you learn?"
+msgstr "What did you learn?"
+
+msgid "Publish"
+msgstr "Publish"
+
+msgid "Unpublish"
+msgstr "Unpublish"
+
+msgid "Upcoming"
+msgstr "Upcoming"
+
+msgid "Ended"
+msgstr "Ended"
+
+msgid "News"
+msgstr "News"
+
+msgid "Artificial intelligence"
+msgstr "Artificial intelligence"
+
+msgid "Challenge search"
+msgstr "Challenge search"
+
+msgid ""
+"What happens at the end of the experiment? How can you scale-up the "
+"experiment and what does it require?"
+msgstr ""
+"What happens at the end of the experiment? How can you scale-up the "
+"experiment and what does it require?"
+
+msgid ""
+"Publish your experiment. You can edit it any time after publishing. Until "
+"you choose to publish it, your experiment can be found only in your own "
+"profile or via the experiment url."
+msgstr ""
+
+msgid ""
+"Unpublish your experiment. After you unpublish it, your experiment can be "
+"found only in your own profile or via the experiment url."
+msgstr ""
+
+msgid "Ask and discuss about AI"
+msgstr "sk and discuss about AI"
+
+msgid "Funding stage"
+msgstr "Funding stage"
+
+msgid "All of the challenges related to the idea search"
+msgstr "All of the challenges related to the idea search"
+
+msgid "All of the suggestions related to the idea search"
+msgstr "All of the suggestions related to the idea search"
+
+msgid "Learn about the experiment stages"
+msgstr "Learn about the experiment stages"
+
+msgid "here."
+msgstr "here."
+
+msgid "Life management"
+msgstr "Life management"
+
+msgid "More communality"
+msgstr "More communality"
+
+msgid "Environment and us"
+msgstr "Environment and us"

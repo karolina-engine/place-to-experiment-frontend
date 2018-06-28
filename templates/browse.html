@@ -6,7 +6,7 @@
         :common="{placeholders: placeholders}"
         api-url="${agitator_url}"
         language="${lang}"
-        placeholder-image-url="/img/placeholder.jpg"
+        placeholder-image-url="/img/placeholder.png"
         get-place="index"
         show-limit="12"
         :sort-experiments-object="[{key:'likes',name:'Suosituimmat ensin',initial:true}, {key:'alphabetical', name:'Aakkosjärjestyksessä', initial:false}, {key:'id', name:'Recent', initial:false}]">
@@ -20,10 +20,10 @@
             <!-- sorting -->
             <div v-if="sortOptionsObject" class="large-12 columns">
                 <h3>Sort by:</h3>
-                <template v-for="option in sortOptionsObject">
+                <span v-for="option in sortOptionsObject">
                     <input type="checkbox" :name="option.name" :checked="option.initial" :id="option.name" v-model="option.initial">
                     <label :for="option.name">{{ option.name }}</label>
-                </template>
+                </span>
             </div>
 
             <div class="large-12 columns">
@@ -32,7 +32,7 @@
                     <!--Challenges-->
                 </a>
             </div>
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '0') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '0') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 
@@ -45,7 +45,7 @@
                 </a>
             </div>
 
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '1') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '1') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 
@@ -58,7 +58,7 @@
                 </a>
             </div>
 
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '2') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '2') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 
@@ -71,7 +71,7 @@
                 </a>
             </div>
 
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '3') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '3') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 
@@ -84,7 +84,7 @@
                 </a>
             </div>
 
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '4') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '4') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 
@@ -97,7 +97,7 @@
                 </a>
             </div>
 
-            <div v-for="experiment in sortExperiments(titleDescriptionFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '5') , 0, showLimit), searchTerm))">
+            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '5') , 0, showLimit), searchTerm))">
 
                 ${include('experiment_index_parts/experiment_card.html')}
 

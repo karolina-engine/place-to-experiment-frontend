@@ -9,14 +9,713 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
-msgstr "Registera"
+msgstr "Registrera dig"
 
 msgid "login"
-msgstr "Inloggning"
+msgstr "Logga in "
+
+msgid "logout"
+msgstr "Logga ut"
 
 msgid "email"
-msgstr "E-post"
+msgstr "E-postadress"
+
+msgid "insert_info"
+msgstr "Information"
+
+msgid "placeofexperiment"
+msgstr "Plats för försök"
+
+msgid "gettoknow"
+msgstr "Läs om tjänsten"
+
+msgid "browse_exp"
+msgstr "Sök bland försök"
+
+msgid "start_exp"
+msgstr "Starta försök"
+
+msgid "browse_users"
+msgstr "Sök bland användare"
+
+msgid "search"
+msgstr "Sökning"
+
+msgid "discl_not_register"
+msgstr ""
+"Din e-postadress eller användarnamn är felaktigt eller du har inte "
+"registrerat dig än."
+
+msgid "error"
+msgstr "Fel"
+
+msgid "not_allowed"
+msgstr "Ej tillåten"
+
+msgid "sorry_access1"
+msgstr "Den här sidan kräver inloggning först. Vill du"
+
+msgid "sorry_access2"
+msgstr "försöker?"
+
+msgid "experiments"
+msgstr "Försök"
+
+msgid "browse"
+msgstr "bläddra"
+
+msgid "type_to_search"
+msgstr "Sök bland försök"
+
+msgid "show"
+msgstr "Visa:"
+
+msgid "view"
+msgstr "visa"
+
+msgid "browse_by_keyword"
+msgstr "Använd sökord"
+
+msgid "move_to_next_stage"
+msgstr ""
+
+msgid "challenges"
+msgstr "Utmaningar"
+
+msgid "Challenge"
+msgstr "Utmaning"
+
+msgid "ideas"
+msgstr "Idéer"
+
+msgid "Idea"
+msgstr "Idé"
+
+msgid "suggestions"
+msgstr "Lösningar"
+
+msgid "Suggestion"
+msgstr "Lösning"
+
+msgid "fundings"
+msgstr "Finansiärer"
+
+msgid "Funding"
+msgstr "Finansiering"
+
+msgid "Experiment"
+msgstr "Lösning"
+
+msgid "archives"
+msgstr "Lärdomar av försöket"
+
+msgid "archive"
+msgstr "Lärdomar"
+
+# accerator.html ///
+msgid "Circular economy"
+msgstr "Cirkulär ekonomi"
+
+msgid "Food"
+msgstr "Mat"
+
+msgid "Living"
+msgstr "Liv"
+
+msgid "Transportation"
+msgstr "Transport"
+
+msgid "ask_and_discuss"
+msgstr "Fråga och diskutera om lösning"
+
+msgid "experiments_related"
+msgstr "Sökrelaterade lösningar"
+
+# index.html ///
+msgid "What do you want to do?"
+msgstr "Vad vill du göra nu?"
+
+msgid "To challenge"
+msgstr "Att utmana"
+
+msgid "Suggest an idea"
+msgstr "Föreslå en idé"
+
+msgid "Start an experiment"
+msgstr "Starta ett försök"
+
+msgid "Apply funding"
+msgstr "Ansöka om finansiering"
+
+msgid "Learn from previous experiments"
+msgstr "Lära av försöken"
+
+msgid "An arc of experiments"
+msgstr "Försökets livscykel"
+
+msgid "What problem would you like to solve?"
+msgstr "Vilket problem vill du lösa?"
+
+msgid "CHALLENGE to solve"
+msgstr "UTMANING som behöver en lösning"
+
+msgid "Come up with an idea that would solve the problem"
+msgstr "Dela med dig av en idé som kan vara en lösning"
+
+msgid "A solving IDEA?"
+msgstr "IDÉ till en lösning?"
+
+msgid "How would you test whether you idea might work?"
+msgstr "Berätta hur du kan testa om din lösning fungerar"
+
+msgid "Start with a suggestion in order to get funding"
+msgstr "För att komma till finansieringsskedet, lämna först ett förslag"
+
+msgid "Start with a suggestion in order to experiment"
+msgstr "Börja med ett förslag för att experimentera"
+
+msgid "FUNDING an experiment"
+msgstr "FINANSIERING av försöket"
+
+msgid "Suggestion for an EXPERIMENT"
+msgstr "Försök som ska genomföras"
+
+msgid "EXPERIMENT in paractice"
+msgstr "FÖRSÖK i paractice"
+
+msgid "Save your experiment to the archive"
+msgstr "Spara ditt försök till lärdomar"
+
+msgid "Experiment ARCHIVE"
+msgstr "LÄRDOMAR av försöket"
+
+msgid "Experiment search"
+msgstr "Försök sök"
+
+msgid "Blog"
+msgstr "Blogg"
+
+msgid "Follow us on the Facebok page of Kokeilun Paikka"
+msgstr "Följ oss på Facebok sidan i Plats för försök"
+
+msgid ""
+"The Place of experiment is a service where we can all think and develop "
+"common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding "
+"and implementation."
+msgstr ""
+" Kokeilunpaikka.fi kombinerar idéer, implementatörer, sparrare och "
+"finansiärer. Här kan du dela en idé, lägga fram förslag och experimentera "
+"med nätverksstöd. Här hittar du partners och potentiella finansiärer. Du kan "
+"också kommentera och sparra på andra experiment. Resultatet av experimenten "
+"delas bland oss alla."
+
+msgid "Is your idea any good? You'll find out by experimenting"
+msgstr ""
+"Är din idé något bra?\n"
+"Du får reda på genom att experimentera"
+
+msgid "Please log in"
+msgstr "Vänligen logga in."
+
+msgid "Sorry, you need to be logged in to access this page. Please"
+msgstr "Tyvärr, behöver du vara inloggad för att komma åt sidan. Snälla"
+
+msgid "or"
+msgstr "eller"
+
+msgid "Redirecting to discourse..."
+msgstr "Omdirigera till diskutera…"
+
+msgid "Logging in"
+msgstr "Loggar in"
+
+msgid "Provide your information"
+msgstr "Din information"
+
+msgid "I forgot my password"
+msgstr "Jag har glömt mitt lösenord."
+
+msgid "close"
+msgstr "stäng"
+
+msgid "Are you sure you want to log out?"
+msgstr "Är du säker på att du vill logga ut?"
+
+msgid "You need to be logged in to start an experiment"
+msgstr "Du måste vara inloggad för att starta et försök"
+
+msgid "Start a challenge"
+msgstr "Lämna en utmaning"
+
+msgid "Start an idea"
+msgstr "Starta en idé"
+
+msgid "Start a suggestion"
+msgstr "Starta ett förslag"
+
+msgid "Start an archive"
+msgstr "Starta ett lärdom"
+
+msgid "Experiment title"
+msgstr "Försök titel"
+
+msgid "Experiment short description"
+msgstr "Kort beskrivninig"
+
+msgid "Name (person or organization)"
+msgstr "Namn (person eller organisation)"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Insert heading here"
+msgstr "Information"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Write a short description (Max 300 characters)"
+msgstr "Skriv en kort beskrivning (max 300 tecken)"
+
+msgid "Experiment owner"
+msgstr "Försökt ägare"
+
+msgid "Enter your email address and choose a new password."
+msgstr "Ange din e-postadress och välja ett nytt lösenord."
+
+msgid "New password"
+msgstr "Nytt lösenord"
+
+msgid "Pepeat new password"
+msgstr "Upprepa nytt lösenord"
+
+msgid "Set new password"
+msgstr "Ange nytt lösenord"
+
+msgid "The password was modified successfully. Please"
+msgstr "Lösenordet ändrades framgångsrikt. Snälla"
+
+msgid "Log in"
+msgstr "logga in"
+
+msgid "using the new password."
+msgstr "använda det nya lösenordet."
+
+msgid "This token has already been used. Please resend reset password email."
+msgstr ""
+"Denna token har redan använts. Vänligen skicka e-postmeddelande för "
+"återställning av lösenord."
+
+msgid "There was an error, you may need to start the"
+msgstr "Ett fel uppstod vid uppladdning av filen, var god försök"
+
+msgid "reset process"
+msgstr "återställa processen"
+
+msgid "again."
+msgstr "igen."
+
+msgid ""
+"Enter your email address. You will receive a link to reset your password."
+msgstr ""
+"Ange din e-postadress. Här får du en länk för att återställa ditt lösenord."
+
+msgid "Send the reset email"
+msgstr "Skicka återställningsmejlet"
+
+msgid ""
+"The reset password email was sent successfully. Please follow the "
+"instructions provided in the email."
+msgstr ""
+"Vi har skickat en bekräftelse till din e-postadress. Följ instruktionerna i "
+"e-post och komma tillbaka till den här sidan."
+
+msgid "Interests"
+msgstr "Räntor"
+
+msgid "Skills"
+msgstr "Färdigheter"
+
+msgid "Edit personal details"
+msgstr "Redigera personuppgifter"
+
+msgid "First name"
+msgstr "Förnamn"
+
+msgid "Last name"
+msgstr "Efternamn"
+
+msgid "About me"
+msgstr "Om mig"
+
+msgid "Profile picture"
+msgstr "Profilbild"
+
+msgid "Update profile"
+msgstr "Uppdatera profil"
+
+msgid "Edit social media links"
+msgstr "Länkar till sociala medier"
+
+msgid "Remove link"
+msgstr "Ta bort länken"
+
+msgid "Add new link"
+msgstr "Lägg till en ny länk"
+
+msgid "Save links"
+msgstr "Spara länkar"
+
+msgid "Edit interests"
+msgstr "Ändra intressen"
+
+msgid "Subjects / tags"
+msgstr "Ämnen / taggar"
+
+msgid "Type to search for tags"
+msgstr "Skriv för att söka efter taggar"
+
+msgid "Chosen subjects"
+msgstr "Valda ämnen"
+
+msgid "Save chosen tags"
+msgstr "Spara valda taggar"
+
+msgid "Add a skill"
+msgstr "Lägg till en färdighet"
+
+msgid "Present skills"
+msgstr "Nuvarande färdigheter"
+
+msgid "Save skills"
+msgstr "Spara färdigheter"
+
+msgid "Change password"
+msgstr "Ändra lösenord"
+
+msgid "Current password"
+msgstr "Nuvarande lösenord"
+
+msgid "Enter your current password"
+msgstr ""
+
+msgid "Choose a new password"
+msgstr ""
+
+msgid "Repeat the new password"
+msgstr ""
+
+msgid "Please wait..."
+msgstr "Skickas …"
+
+msgid "Type a name to search users"
+msgstr "Skriv ett namn för att söka användare"
+
+msgid "Edit"
+msgstr "Redigera"
+
+msgid "Your answer"
+msgstr "Ditt svar"
+
+msgid "Add a full description and pictures"
+msgstr "Lägg till en fullständig beskrivning och bilder"
+
+msgid "Save full description"
+msgstr "Full beskrivning"
+
+msgid "How would your idea solve the problem?"
+msgstr "Hur skulle din idé lösa problemet?"
+
+msgid "How would you test your idea? What is the the experiment in practice?"
+msgstr "Hur kan du testa din idé? Vad är det som testas i praktiken? "
+
+msgid "Who will take the experiment?"
+msgstr "Vem genomför försöket? "
+
+msgid "What is the budget of the experiment?"
+msgstr "Vad är försökets budget?"
+
+msgid "What is the planned schedule for the experiment?"
+msgstr "Vad är det planerade schemat för försöket?"
+
+msgid "What is the goal of the experiment?"
+msgstr "Vad är målet med försöket? "
+
+msgid "Goal:"
+msgstr "Mål:"
+
+msgid "Currency:"
+msgstr "Valuta:"
+
+msgid "Accelerator funding:"
+msgstr "Accelerator finansiering:"
+
+msgid "State funding:"
+msgstr "Statlig finansiering:"
+
+msgid "Crowdfunding:"
+msgstr "Gruppfinansiering:"
+
+msgid "Platform:"
+msgstr "Plattform:"
+
+msgid "Campaign ID:"
+msgstr "Kampanj-ID:"
+
+msgid "Save funding"
+msgstr "Spara finansiering"
+
+msgid "Did the experiment reach the required goals?"
+msgstr "Gick försöket till de önskade målen?"
+
+msgid "Total:"
+msgstr "Totalt:"
+
+msgid "Experiment not found"
+msgstr "Försöket hittades inte"
+
+msgid "Team"
+msgstr "Team"
+
+msgid "Take part"
+msgstr "Ta del"
+
+msgid "Discuss or comment"
+msgstr "Diskutera eller kommentera"
+
+msgid "Share"
+msgstr "Dela"
+
+msgid "Experiment phase"
+msgstr "Försök scenen"
+
+msgid "Show"
+msgstr "Visa"
+
+msgid "Front page"
+msgstr "Förstasidaa"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
+msgid "Tag"
+msgstr "Tagg"
+
+msgid "Available tags"
+msgstr "Tillgängliga taggar"
+
+msgid "Links for additional information"
+msgstr "Länkar för ytterligare information"
+
+msgid "Muncipality / City"
+msgstr "Ort"
+
+msgid "Save location"
+msgstr "Spara position"
+
+msgid "Remove experiment"
+msgstr "Ta bort försöket"
+
+msgid "This will remove experiment"
+msgstr "Detta tar bort försöket"
+
+msgid "I understand"
+msgstr "Jag förstår!"
+
+msgid "Remove"
+msgstr "Ta bort"
+
+msgid "Browse the previous stages of the experiments"
+msgstr "Bläddra i de tidigare faser av försöket"
+
+msgid "Browse to the challenge stage"
+msgstr "Bläddra till utmaningsfasen"
+
+msgid "Browse to the idea stage"
+msgstr "Bläddra till ideenfasen"
+
+msgid "Browse to the suggestion stage"
+msgstr "Bläddra till förslagetfasen"
+
+msgid "Browse to the funding stage"
+msgstr "Bläddra till finansieringsfasen"
+
+msgid "Browse to the experiment stage"
+msgstr "Bläddra till experimentfasen"
+
+msgid "Browse to the archive stage"
+msgstr "Bläddra till förslagetfasen"
+
+msgid "Back to the present stage"
+msgstr "Tillbaka till ideenfasen"
+
+msgid "Similar experiments:"
+msgstr "Liknande försöker:"
+
+msgid "No similar internal pages found."
+msgstr "Inga liknande interna sidor hittades."
+
+msgid "Related subjects outside the service:"
+msgstr "Närstående ämnen utanför tjänsten:"
+
+msgid "No related subjects outside the services found."
+msgstr "Inga relaterade ämnen utanför de funna tjänsterna."
+
+msgid "Image"
+msgstr "Bild"
+
+msgid "Image file:"
+msgstr "Avbildsfil:"
+
+msgid "Ready?"
+msgstr "Redo?"
+
+msgid "Ready"
+msgstr "Redo"
+
+msgid ""
+"Click here to see your experiment in your own profile. You can also return "
+"to edit it. We'll publish the suggestions when they are checked."
+msgstr ""
+"Klicka här för att se ditt försöket i din egen profil. Du kan också "
+"återvända för att redigera den. Vi publicerar förslaget när de kontrolleras."
+
+msgid "Support call"
+msgstr "Support"
+
+msgid "Do you want to advance your experiment to the next stage?"
+msgstr "Vill du göra ditt försöket vidare till nästa fasen?"
+
+msgid "Click here to move your experiment to the next stage"
+msgstr "Klicka här för att flytta ditt försöket till nästa fasen"
+
+msgid "Move"
+msgstr "Flytta"
+
+msgid "Most popular"
+msgstr "Mest populära"
+
+msgid "Alphabetically"
+msgstr "Alfabetiskt"
+
+msgid "Latest first"
+msgstr "Senaste först"
+
+msgid "Type a keyword to search"
+msgstr "Skriv ett sökord"
+
+msgid "The rest of the experiments related to the idea search"
+msgstr "Resten av guiden"
+
+msgid "All of the experiments related to the idea search"
+msgstr ""
+
+msgid "The chosen experiments for further development"
+msgstr "Valt försöket för vidareutveckling"
+
+msgid "Idea search"
+msgstr "Sök"
+
+msgid "What skills or resources the team already has?"
+msgstr "Vilka färdigheter eller resurser har laget redan?"
+
+msgid "What are you expecting to learn from the experiment?"
+msgstr "Vad förväntar du dig att lära från försöket?"
+
+msgid "Experiments on a map"
+msgstr "Försöket på kartan"
+
+msgid "Filter by keyword"
+msgstr "Använd sökord"
+
+msgid "Back to browsing view"
+msgstr "Tillbaka till bläddring visa"
+
+msgid "Tags"
+msgstr "Taggar"
+
+msgid "Oldest"
+msgstr "Äldst"
+
+msgid "Newest"
+msgstr "Nyaste"
+
+msgid "Click on code to select all"
+msgstr "Välj alla"
+
+msgid "Showing users with tag:"
+msgstr "Visar användare med taggen:"
+
+msgid "Showing experiments with tag:"
+msgstr "Visar försöket med taggen:"
+
+msgid "Filter by tag"
+msgstr "Filtrera efter Tag"
+
+msgid "What did you learn?"
+msgstr "Vad lärde du dig?"
+
+msgid "Publish"
+msgstr "Publicera"
+
+msgid "Unpublish"
+msgstr "Avpublicera"
+
+msgid "Upcoming"
+msgstr "Kommande"
+
+msgid "Ended"
+msgstr "Slutade"
+
+msgid "News"
+msgstr "Nyheter"
+
+msgid "Artificial intelligence"
+msgstr "Artificiell intelligens"
+
+msgid "Challenge search"
+msgstr "Utmaningssökning"
+
+msgid ""
+"Publish your experiment. You can edit it any time after publishing. Until "
+"you choose to publish it, your experiment can be found only in your own "
+"profile or via the experiment url."
+msgstr ""
+
+msgid ""
+"Unpublish your experiment. After you unpublish it, your experiment can be "
+"found only in your own profile or via the experiment url."
+msgstr ""
+
+msgid "Funding stage"
+msgstr ""
+
+msgid ""
+"What happens at the end of the experiment? (How can you scale-up the "
+"experiment and what does it require?"
+msgstr ""
+"Vad händer i slutet av försöket? (Hur kan du skala upp försöket och vad "
+"kräver det?"
+
+msgid "Learn about the experiment stages"
+msgstr "Learn about the experiment stages"
+
+msgid "here."
+msgstr "here."
+
+msgid "Life management"
+msgstr "Daglig förvaltning"
+
+msgid "More communality"
+msgstr "Mer gemensamhet"
+
+msgid "Environment and us"
+msgstr "Miljö och oss"

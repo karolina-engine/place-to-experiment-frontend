@@ -1,3 +1,4 @@
 *.xml
 tests/_output/*
 *vendor/*
+.idea/place-to-experiment-frontend.iml

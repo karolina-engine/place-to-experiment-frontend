@@ -1,6 +1,6 @@
 <div v-if="!isUserEditor" class="content-short-description">
      <span v-if="getLanguage('0_short_description')">
-    <h4>Minkä ongelman haluat ratkaista?</h4>
+    <h4>${'What problem would you like to solve?'|trans}</h4>
     <p>{{ getLanguage('0_short_description') }}</p><hr>
     </span>
     <span v-else>
@@ -11,17 +11,17 @@
     <div class="wrapper">
         <div>
             <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
-                <i class="fi-pencil medium">&nbsp;</i>Muokkaa</button>
+                <i class="fi-pencil medium">&nbsp;</i>${'Edit'|trans}</button>
         </div>
 
-        <h4>Minkä ongelman haluat ratkaista?</h4>
+        <h4>${'What problem would you like to solve?'|trans}</h4>
 
         <div class="content-short-description">
 
             <p v-if="value">{{ value }}</p>
-            <span v-else>
-                <i>Vastauksesi</i>
-            </span>
+            <p v-else>
+                <i>${'Your answer'|trans}</i>
+            </p>
         </div>
         <div class="row">
             <div class="large-12 columns" v-show="showEditor">
@@ -29,20 +29,20 @@
                     <form action="#" @submit.prevent="updateText()">
                         <div class="form-group">
                             <div class="input-group" style="width:100%;">
-                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="Syötä teksti" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
+                                <textarea ref="customTextInputRef" rows="3" name="custom_text" class="form-control" placeholder="${'Your answer'|trans}" v-model="languageText" v-validate.initial data-vv-rules="" data-vv-as="text"></textarea>
                                 <div v-if="errors.has('custom_text') && showErrors" class="input-group-addon alert-danger">
                                     <span>{{ errors.first('custom_text') }}</span>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                            <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
                         <button type="button" class="button alert" @click="collapseEditor">
-                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                     </form>
                 </div>
             </div>
-        </div>        
+        </div>
         <hr>
     </div>
 </experiment-language>
@@ -70,7 +70,7 @@
         <div>
             <div class="panel clearfix">
                 <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
-                    <i class="fi-pencil medium">&nbsp;</i>Lisää pitkä kuvausteksti ja kuvat</button>
+                    <i class="fi-pencil medium">&nbsp;</i>${'Add a full description and pictures'|trans}</button>
             </div>
         </div>
         <div v-if="showEditor">
@@ -78,9 +78,9 @@
             <br/>
             <form action="#" @submit.prevent="updateText()">
                 <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                    <i class="fi-check medium">&nbsp;</i>Tallenna pidempi kuvaus</button>
+                    <i class="fi-check medium">&nbsp;</i>${'Save full description'|trans}</button>
                 <button type="button" class="button alert" @click="collapseEditor">
-                    <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                    <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
             </form>
         </div>
         <div v-show="!showEditor">

@@ -23,12 +23,26 @@ $routes->get('/', function() use($app) {
 
 });
 
-$routes->get('/{lang}/', function() use($app) {
+$routes->get('/{lang}/', function($lang) use($app) {
 
 	$wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
-	$posts = $wpAPI->getPostsIndex(1);
 
-	$data['first_post'] = $posts[0];
+    $data['first_post_cat'] = 9;
+	$posts = $wpAPI->getPostsIndex(1, $lang, $data['first_post_cat']);
+
+	if (isset($posts[0])) {
+        $data['first_post'] = $posts[0];
+    } else {
+        $data['first_post']['title'] = "No posts yet";
+        $data['first_post']['date_formatted'] = "";
+        $data['first_post']['excerpt'] = "In this category";
+        $data['first_post']['id'] = 0;
+        $data['first_post']['slug'] = "none";
+        $data['first_post']['featured_image'] = "none";
+    }
+ 
+    $data['cat'] = 7;
+    $data['posts'] = $wpAPI->getPostsIndex(5, $lang, $data['cat']);
 
 	return $app['twig']->render('index.html', $data);
 
@@ -210,6 +224,12 @@ $routes->get('/{lang}/haku2/', function() use($app) {
 
 });
 
+$routes->get('/{lang}/haku3/', function() use($app) {
+
+   return $app['twig']->render('browse3.html');
+
+});
+
 $routes->get('/{lang}/haku/stage/{stage}', function($stage) use($app) {
 
 	$data['stage'] = $stage;
@@ -217,10 +237,23 @@ $routes->get('/{lang}/haku/stage/{stage}', function($stage) use($app) {
 
 });
 
+$routes->get('/{lang}/haku/tag/{tag}', function($tag) use($app) {
+
+	$data['tag'] = $tag;
+	return $app['twig']->render('browse_tag.html', $data);
+
+});
 
 $routes->get('/{lang}/kayttajia/', function() use($app) {
 
    return $app['twig']->render('users.html');
+
+});
+
+$routes->get('/{lang}/kayttajia/tag/{tag}', function($tag) use($app) {
+
+    $data['tag'] = $tag;
+   return $app['twig']->render('users_tag.html', $data);
 
 });
 
@@ -234,6 +267,13 @@ $routes->get('/{lang}/blogi.html', function() use($app) {
 $routes->get('/{lang}/accelerator.html', function() use($app) {
 
    return $app['twig']->render('accelerator.html');
+
+});
+
+
+$routes->get('/{lang}/accelerator2.html', function() use($app) {
+
+   return $app['twig']->render('accelerator2.html');
 
 });
 
@@ -271,12 +311,13 @@ $routes->get('/{lang}/password-reset/', function($lang) use($app) {
 });
 
 
-$routes->get('/{lang}/post/{id}/{slug}/', function($id, $slug) use($app) {
+$routes->get('/{lang}/post/{id}/{cat}/{slug}/', function($lang, $id, $cat, $slug) use($app) {
 
 	$client = new GuzzleHttp\Client();
 	$wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
 
-	$data['posts'] = $wpAPI->getPostsIndex(10);
+    $data['cat'] = $cat;
+	$data['posts'] = $wpAPI->getPostsIndex(10, $lang, $cat);
 	$data['single_post'] = $wpAPI->getPost($id);
 
 	$data['title'] = $data['single_post']['title'];
@@ -287,17 +328,15 @@ $routes->get('/{lang}/post/{id}/{slug}/', function($id, $slug) use($app) {
 
 
 
-$routes->get('/{lang}/custom/{template}/{slug}/', function($template, $slug) use($app) {
+$routes->get('/{lang}/custom/{template}/{slug}/', function($lang, $template, $slug) use($app) {
 
 	if (!ctype_alnum($template)) {
 		exit('template must be alphanum');
 	}
 
-	$client = new GuzzleHttp\Client();
 	$wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
 
-	$data['posts'] = $wpAPI->getPostsIndex(10);
-
+	$data['posts'] = $wpAPI->getPostsIndex(10, $lang);
 
 	$client = new GuzzleHttp\Client();
 
@@ -308,24 +347,154 @@ $routes->get('/{lang}/custom/{template}/{slug}/', function($template, $slug) use
 	$data['content'] = $wpData[0]['content']['rendered'];
 	return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
+});
+
+
+
+$routes->get('/{lang}/hackforsociety/', function($lang) use($app) {
+
+    $template = "accelerator2";
+    $slug = "hack-for-society";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
 
-$routes->get('/{lang}/page/{slug}/', function($slug) use($app) {
+$routes->get('/{lang}/kiertotalous/', function($lang) use($app) {
 
-	$client = new GuzzleHttp\Client();
+    $template = "accelerator";
+    $slug = "kokeiluhaku";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+$routes->get('/{lang}/stea-ideahaku/', function($lang) use($app) {
+
+    $template = "accelerator3";
+    $slug = "stea-ideahaku";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+
+$routes->get('/{lang}/tekoalyhaku/', function($lang) use($app) {
+
+    $template = "accelerator4";
+    $slug = "tekoalyhaku";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+
+
+	// Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+    
+    
+    
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+$routes->get('/{lang}/page/{slug}/', function($lang, $slug) use($app) {
+
 	$wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
 
-	$data['posts'] = $wpAPI->getPostsIndex(10);
+	$data['posts'] = $wpAPI->getPostsIndex(10, $lang);
 
 
 	$client = new GuzzleHttp\Client();
 
 	$res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
 	$wpData = json_decode($res->getBody(), true);
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
 
-	$data['title'] = $wpData[0]['title']['rendered'];
-	$data['content'] = $wpData[0]['content']['rendered'];
+
+	// Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+
 	return $app['twig']->render('page.html', $data);
 
 

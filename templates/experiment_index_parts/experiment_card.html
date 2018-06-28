@@ -1,13 +1,13 @@
 <div class="large-3 columns panels">
-    <div class="callout" :class="'color-' + experiment.stage">
+    <div class="callout" :class="['color-' + experiment.stage, experiment.tags.map(function(tag) {return 'tag-' + tag.id}).join(' ')]">
         <div>
-            <a target="_parent" :href="rootUrl + 'experiment/' + experiment.experiment_id">
-                <h2 v-if="experiment.stage == 0">Haaste</h2>
-                <h2 v-if="experiment.stage == 1">Idea</h2>
-                <h2 v-if="experiment.stage == 2">Ehdotus</h2>
-                <h2 v-if="experiment.stage == 3">Rahoitus</h2>
-                <h2 v-if="experiment.stage == 4">Toteutus</h2>
-                <h2 v-if="experiment.stage == 5">Opit</h2>
+            <a target="_parent" :href="rootUrl + '${lang}/experiment/' + experiment.experiment_id">
+                <h2 v-if="experiment.stage == 0">${'Challenge'|trans}</h2>
+                <h2 v-if="experiment.stage == 1">${'Idea'|trans}</h2>
+                <h2 v-if="experiment.stage == 2">${'Suggestion'|trans}</h2>
+                <h2 v-if="experiment.stage == 3">${'Funding'|trans}</h2>
+                <h2 v-if="experiment.stage == 4">${'Experiment'|trans}</h2>
+                <h2 v-if="experiment.stage == 5">${'archive'|trans}</h2>
                 <div class="owner">
                     <p>{{ experiment.owner_name | truncate(25, '...') }}</p>
                 </div>
@@ -15,7 +15,7 @@
         </div>
         <div>
             <p class="ingress">
-                <a target="_parent" :href="rootUrl + 'experiment/' + experiment.experiment_id">{{ experiment.title | truncate(50, '...') }}</a>
+                <a target="_parent" :href="rootUrl + '${lang}/experiment/' + experiment.experiment_id">{{ experiment.title | truncate(50, '...') }}</a>
             </p>
 
             <!--

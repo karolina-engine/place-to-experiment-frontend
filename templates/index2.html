@@ -1,0 +1,271 @@
+	{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row front">
+
+        <!-- VIDEO -->
+        <div class="large-8 medium-8 small-12 columns">
+            <div class="primary callout flex-video white">
+      <iframe width="790" height="560" src="https://www.youtube.com/embed/3IG8qGoUfcM?controls=0?showinfo=0?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- SUBMENU -->
+        <div class="large-4 medium-4 small-12 columns">
+            <div class="primary callout startmenu">
+                <h1>${'What do you want to do?'|trans}</h1>
+                <ul>
+                    <li>
+                        <a :href="rootUrl + '${lang}/aloita/'">${'To challenge'|trans}</a>
+                    </li>
+                    
+                    <li>
+                        <a :href="rootUrl + '${lang}/aloita/'">${'Suggest an idea'|trans}</a>
+                    </li>
+                    
+                    <li>
+                        <a :href="rootUrl + '${lang}/haku/'">${'Start an experiment'|trans}</a>
+                    </li>
+                    <li>
+                    	<a :href="rootUrl + '${lang}/page/rahoitus/'">${'Apply funding'|trans}</a>
+                    </li>
+             
+                    <li>
+                        <a :href="rootUrl + '${lang}/haku/'">${'Learn from previous experiments'|trans}</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!--PROCESS PIPELINE -->
+
+        <div class="large-12 columns process">
+            <div class="primary callout info submenu start front">
+                <h2>${'An arc of experiments'|trans}</h2>
+                <div class="row">
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/0'">
+                            <p>• ${'What problem would you like to solve?'|trans}</p>
+                            <div class="callout color-0 proc">${'CHALLENGE to solve'|trans}<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/1'">
+                            <p>• ${'Come up with an idea that would solve the problem'|trans}</p>
+                            <div class="callout color-1 proc">${'A solving IDEA?'|trans}<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/2'">
+                            <p>• ${'How would you test whether you idea might work?'|trans}</p>
+                            <div class="callout color-2 proc">${'Suggestion for an EXPERIMENT'|trans}<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <p>${'Start with a suggestion in order to get funding'|trans}</p>
+                        <div class="callout color-3 proc">${'FUNDING an experiment'|trans}</div>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <p>${'Start with a suggestion in order to experiment'|trans}</p>
+                        <div class="callout color-4 proc">${'EXPERIMENT in paractice'|trans}</div>
+                    </div>
+                    <div class="large-2 medium-4 small-12 columns">
+                        <a :href="rootUrl + '${lang}/new-experiment/5'">
+                            <p>•  ${'Save your experiment to the archive'|trans}</p>
+                            <div class="callout color-5 proc">${'Experiment ARCHIVE'|trans}<img src="/img/arrow_w.png" alt=""/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+          
+                       <!-- accelerator 3 -->
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout info accelerator stea">
+
+                 <a :href="rootUrl + '${lang}/custom/accelerator3/stea-ideahaku/'">
+					<div class="maincontent">
+               <h2>${'Idea search'|trans}</h2>
+               <h3>Vapaaehtois-<br>	
+				toiminta</h3>
+                </div></a>
+                    </div>
+                </div>
+           
+              <!-- BLOG -->
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout blog">
+                        <h1>${'Blog'|trans}</h1>
+                        <a :href="rootUrl + '${lang}/post/${first_post.id}/${first_post.slug}/'">
+
+                            <h2>${first_post.title|raw}</h2>
+                            <p>${first_post.date_formatted}: ${first_post.excerpt|length > 100 ? first_post.excerpt|slice(0, 100) ~ '...' : first_post.excerpt}</p>
+                            <div class="img_crop"><img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_200,w_327/${first_post.featured_image}"></div>
+                        </a>
+                    </div>
+                </div>
+                    
+           
+             <!-- accelerator 2 -->
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout info accelerator hack">
+
+                 <a :href="rootUrl + '${lang}/hackforsociety/'">
+					<div class="maincontent">
+               <h2>${'Experiment search'|trans}</h2>
+               <h3>${'Hack for society'|trans}</h3>
+                </div></a>
+                    </div>
+                </div>
+                
+                
+             
+                     
+
+        <experiment-index
+            inline-template
+            :common="{placeholders: placeholders}"
+            api-url="${agitator_url}"
+            language="${lang}"
+            placeholder-image-url="/img/placeholder.png"
+            get-place="frontpage"
+            show-limit="12"
+            :sort-experiments-object="[{key:'likes',name:'Suosituimmat ensin',initial:true}, {key:'alphabetical', name:'A-Z', initial:false}, {key:'id', name:'Recent', initial:false}]">
+            <div class="wrapper">
+
+
+
+
+            
+                
+            <!-- accelerator 1 -->
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout info accelerator">
+
+                 <a :href="rootUrl + '${lang}/custom/accelerator/kokeiluhaku/'">
+					<div class="maincontent"><h2>${'Experiment search'|trans}</h2>
+                   <h3>${'Circular economy'|trans}</h3>
+						<p>${'Living'|trans}<br>${'Food'|trans}<br>${'Transportation'|trans}</p></div></a>
+                    </div>
+                </div>
+
+
+                    <!-- experiment 1 -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index == 0">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+                <!-- experiment 2 -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index == 1">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- FEEDBACK
+					<div class="large-4 medium-4 small-12 columns">
+						<div class="primary callout feedback">
+							<h2>Anna palautetta</h2>
+
+							<img src="/img/apple.png" alt=""/>
+							<p>Et ut hit optur? Qui torum quidel </p>
+							<a class="more" href="#">Siirry <br>
+            <img src="/img/Asset 1.svg" alt=""/></a>
+						</div>
+					</div>
+
+					-->
+
+                <!-- SOME -->
+                <!-- moved to script_imports.html (Vue JS does not like <script> tags in the middle) -->
+                <!-- <script src="/js/facebook.js"></script> -->
+
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout fb">
+                        <div class="fb-like-box">
+                            <h2>${'Follow us on the Facebok page of Kokeilun Paikka'|trans}</h2>
+                            <div class="fb-page" data-href="https://www.facebook.com/kokeilunpaikka/" data-tabs="timeline" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+                                <blockquote cite="https://www.facebook.com/kokeilunpaikka/" class="fb-xfbml-parse-ignore">
+                                    <a href="https://www.facebook.com/kokeilunpaikka/">Kokeilun Paikka</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- experiment 3 -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index == 2">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+
+                <!-- experiment 4 -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index == 3">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+
+                <!-- INFO -->
+                <div class="large-4 medium-4 small-12 columns">
+                    <div class="primary callout info">
+                        <p class="ingress">${'The Place of experiment is a service where we can all think and develop common experiments and get funding for them. The experiment stage moves from the idea / challenge to the suggestion, and onwards to the possible funding and implementation.'|trans}</p>
+                    </div>
+                </div>
+
+                <!-- experiment 5 -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index == 4">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+
+                <!-- experiment 6+ -->
+                <div v-for="(experiment, index) in experiments">
+
+                    <div v-if="index >= 5">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
+
+            </div>
+        </experiment-index>
+
+
+
+    </div>
+{% endblock %}

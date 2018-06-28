@@ -3,20 +3,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
-"Last-Translator: \n"
+"X-Generator: Poedit 2.0.8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: fi_FI\n"
 
 msgid "register"
 msgstr "Rekisteröidy"
 
 msgid "login"
-msgstr "kirjaudu"
+msgstr "Kirjaudu"
 
 msgid "logout"
 msgstr "Kirjaudu ulos"
@@ -35,3 +35,682 @@ msgstr "Tutustu palveluun"
 
 msgid "browse_exp"
 msgstr "Selaa kokeiluja"
+
+msgid "start_exp"
+msgstr "Aloita kokeilu"
+
+msgid "browse_users"
+msgstr "Selaa käyttäjiä"
+
+msgid "search"
+msgstr "Haku"
+
+msgid "discl_not_register"
+msgstr "Sähköpostiosoite tai käyttäjätunnus on väärin tai et ole vielä rekisteröitynyt."
+
+msgid "error"
+msgstr "Toiminto epäonnistui."
+
+msgid "not_allowed"
+msgstr "Suljettu alue"
+
+msgid "sorry_access1"
+msgstr "Tämä sivu vaatii kirjautumisen ensin. Haluatko"
+
+msgid "sorry_access2"
+msgstr "kokeiluja?"
+
+msgid "experiments"
+msgstr "Kokeilut"
+
+msgid "browse"
+msgstr "selata"
+
+msgid "type_to_search"
+msgstr "Kirjoita hakusana etsiäksesi kokeiluja"
+
+msgid "show"
+msgstr "Näytä:"
+
+msgid "view"
+msgstr "View"
+
+msgid "browse_by_keyword"
+msgstr "Selaa hakusanan mukaan"
+
+msgid "move_to_next_stage"
+msgstr "Olet nyt siirtymässä Kokeilun seuraavaan vaiheeseen. Oletko valmis?"
+
+msgid "challenges"
+msgstr "Haasteet"
+
+msgid "Challenge"
+msgstr "Haaste"
+
+msgid "ideas"
+msgstr "Ideat"
+
+msgid "Idea"
+msgstr "Idea"
+
+msgid "suggestions"
+msgstr "Ehdotukset"
+
+msgid "Suggestion"
+msgstr "Ehdotus"
+
+msgid "fundings"
+msgstr "Rahoitukset"
+
+msgid "Funding"
+msgstr "Rahoitus"
+
+msgid "Experiment"
+msgstr "Kokeilu"
+
+msgid "archives"
+msgstr "Opit"
+
+msgid "archive"
+msgstr "Oppi"
+
+# accerator.html ///
+msgid "Circular economy"
+msgstr "Kiertotalous"
+
+msgid "Food"
+msgstr "Ruoka"
+
+msgid "Living"
+msgstr "Asuminen"
+
+msgid "Transportation"
+msgstr "Liikkuminen"
+
+msgid "ask_and_discuss"
+msgstr "Kysy ja keskustele kokeiluhausta"
+
+msgid "experiments_related"
+msgstr "Hakuun liittyvät kokeilut"
+
+# index.html ///
+msgid "What do you want to do?"
+msgstr "Mitä haluat tehdä?"
+
+msgid "To challenge"
+msgstr "Haastaa"
+
+msgid "Suggest an idea"
+msgstr "Ideoida"
+
+msgid "Start an experiment"
+msgstr "Aloittaa kokeilun"
+
+msgid "Apply funding"
+msgstr "Hakea rahoitusta"
+
+msgid "Learn from previous experiments"
+msgstr "Oppia kokeiluista"
+
+msgid "An arc of experiments"
+msgstr "Kokeilun kaari"
+
+msgid "What problem would you like to solve?"
+msgstr "Minkä ongelman haluaisit ratkaista?"
+
+msgid "CHALLENGE to solve"
+msgstr "Ratkaistava HAASTE"
+
+msgid "Come up with an idea that would solve the problem"
+msgstr "Kerro idea joka ratkaisisi ongelman"
+
+msgid "A solving IDEA?"
+msgstr "Ratkaisun IDEA?"
+
+msgid "How would you test whether you idea might work?"
+msgstr "Kerro miten voit testata toimisiko ratkaisusi"
+
+msgid "Start with a suggestion in order to get funding"
+msgstr "Päästäksesi rahoitusvaiheeseen tee ensin ehdotus"
+
+msgid "Start with a suggestion in order to experiment"
+msgstr "Päästäksesi toteutusvaiheeseen tee ensin ehdotus"
+
+msgid "FUNDING an experiment"
+msgstr "Kokeilun RAHOITUS"
+
+msgid "Suggestion for an EXPERIMENT"
+msgstr "EHDOTUS kokeiluksi"
+
+msgid "EXPERIMENT in paractice"
+msgstr "TOTEUTETTAVA kokeilu"
+
+msgid "Save your experiment to the archive"
+msgstr "Talleta kokeilusi Kokeilun paikan oppeihin"
+
+msgid "Experiment ARCHIVE"
+msgstr "kokeilun OPIT"
+
+msgid "Experiment search"
+msgstr "Kokeiluhaku"
+
+msgid "Blog"
+msgstr "Blogi"
+
+msgid "Follow us on the Facebok page of Kokeilun Paikka"
+msgstr "Seuraa meitä Kokeilun Paikan Facebook-sivulla"
+
+msgid "The Place of experiment is a service where we can all think and develop common experiments and get funding for them. The experiment stage moves from the idea / challenge to the suggestion, and onwards to the possible funding and implementation."
+msgstr "Yhdistämme ideoijat, toteuttajat, sparraajat ja rahoittajat. Täällä voit kertoa idean, tehdä ehdotuksia ja edetä kokeiluun verkoston tukemana. Kokeilun paikan kautta voit löytää sopivat kumppanit ja mahdolliset rahoittajat. Voit myös kommentoida ja sparrata muiden kokeiluja. Kokeilun opit jaetaan kaikkien kesken. "
+
+msgid "Is your idea any good? You'll find out by experimenting"
+msgstr ""
+"Onko idea hyvä?\n"
+"Se selviää kokeilemalla"
+
+msgid "Please log in"
+msgstr "Ole hyvä ja kirjaudu"
+
+msgid "Sorry, you need to be logged in to access this page. Please"
+msgstr "Sivu vaatii kirjautumisen. Ole hyvä ja"
+
+msgid "or"
+msgstr "tai"
+
+msgid "Redirecting to discourse..."
+msgstr "Siirrytään keskusteluihin..."
+
+msgid "Logging in"
+msgstr "Kirjautuminen"
+
+msgid "Provide your information"
+msgstr "Anna tietosi"
+
+msgid "I forgot my password"
+msgstr "Unohdin salasanani"
+
+msgid "close"
+msgstr "sulje"
+
+msgid "Are you sure you want to log out?"
+msgstr "Haluatko varmasti kirjautua ulos?"
+
+msgid "You need to be logged in to start an experiment"
+msgstr "Sinun täytyy kirjautua voidaksesi aloittaa kokeilun."
+
+msgid "Start a challenge"
+msgstr "Aloita haaste"
+
+msgid "Start an idea"
+msgstr "Aloita idea"
+
+msgid "Start a suggestion"
+msgstr "Aloita ehdotus"
+
+msgid "Start an archive"
+msgstr "Aloita oppi"
+
+msgid "Experiment title"
+msgstr "Otsikko"
+
+msgid "Experiment short description"
+msgstr "Kokeilun lyhyt kuvaus"
+
+msgid "Give your challenge a short descriptive name"
+msgstr "Anna haasteellesi lyhyt, kuvaava nimi"
+
+msgid "Give your idea a short descriptive name"
+msgstr "Anna ideallesi lyhyt, kuvaava nimi"
+
+msgid "Give your suggestion a short descriptive name"
+msgstr "Anna ehdotuksellesi lyhyt, kuvaava nimi"
+
+msgid "Give your archive a short descriptive name"
+msgstr "Anna kokeilun opillesi lyhyt, kuvaava nimi"
+
+msgid "Name (person or organization)"
+msgstr "Nimi (henkilö tai organisaatio)"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Insert heading here"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Write a short description (Max 300 characters)"
+msgstr "Kirjoita tähän lyhyt kiteytys. Pituus enintään 300 merkkiä."
+
+msgid "Experiment owner"
+msgstr "Kokeilun omistaja"
+
+msgid "Enter your email address and choose a new password."
+msgstr "Kirjoita sähköpostiosoitteesi ja valitse uusi salasana."
+
+msgid "New password"
+msgstr "Uusi salasana"
+
+msgid "Pepeat new password"
+msgstr "Toista uusi salasana"
+
+msgid "Set new password"
+msgstr "Aseta uusi salasana"
+
+msgid "The password was modified successfully. Please"
+msgstr "Salasana vaihdettu onnistuneesti. Ole hyvä ja"
+
+msgid "Log in"
+msgstr "kirjaudu sisään"
+
+msgid "using the new password."
+msgstr "uudella salasanallasi."
+
+msgid "This token has already been used. Please resend reset password email."
+msgstr "Tämä tunnus on jo käytössä. Lähetä uudelleen salasanan vaihto -sähköposti."
+
+msgid "There was an error, you may need to start the"
+msgstr "Ilmeni virhe, voit joutua aloittamaan"
+
+msgid "reset process"
+msgstr "salasanan uusimisen"
+
+msgid "again."
+msgstr "uudelleen."
+
+msgid "Enter your email address. You will receive a link to reset your password."
+msgstr "Kirjoita sähköpostiosoitteesi. Saat linkin salasanan vaihtamiseksi."
+
+msgid "Send the reset email"
+msgstr "Lähetä salasanan nollaussähköposti"
+
+msgid "The reset password email was sent successfully. Please follow the instructions provided in the email."
+msgstr "Salasanan vaihto-sähköposti on lähetetty. Seuraa ohjeita sinulle lähetetyssä sähköpostissa."
+
+msgid "Interests"
+msgstr "Mielenkiinnon kohteet"
+
+msgid "Skills"
+msgstr "Osaaminen"
+
+msgid "Edit personal details"
+msgstr "Muokkaa henkilökohtaisia tietoja"
+
+msgid "First name"
+msgstr "Etunimi"
+
+msgid "Last name"
+msgstr "Sukunimi"
+
+msgid "About me"
+msgstr "Lyhyt kuvaus itsestäsi"
+
+msgid "Profile picture"
+msgstr "Profiilikuva"
+
+msgid "Update profile"
+msgstr "Päivitä profiili"
+
+msgid "Edit social media links"
+msgstr "Muokkaa sosiaalisen media linkkejä"
+
+msgid "Remove link"
+msgstr "Poista linkki"
+
+msgid "Add new link"
+msgstr "Lisää linkki"
+
+msgid "Save links"
+msgstr "Tallenna linkit"
+
+msgid "Edit interests"
+msgstr "Muokkaa mielenkiinnon kohteita"
+
+msgid "Subjects / tags"
+msgstr "Avainsanat"
+
+msgid "Type to search for tags"
+msgstr "Kirjoita hakeaksesi avainsanoja"
+
+msgid "Chosen subjects"
+msgstr "Valitut avainsanat"
+
+msgid "Save chosen tags"
+msgstr "Tallenna valitut avainsanat"
+
+msgid "Add a skill"
+msgstr "Lisää osaamisalue"
+
+msgid "Present skills"
+msgstr "Nykyiset osaamisalueet"
+
+msgid "Save skills"
+msgstr "Tallenna nykyiset osaamisalueet"
+
+msgid "Change password"
+msgstr "Vaihda salasana"
+
+msgid "Current password"
+msgstr "Nykyinen salasana"
+
+msgid "Enter your current password"
+msgstr "Syötä nykyinen salasanasi"
+
+msgid "Choose a new password"
+msgstr "Valitse uusi salasanad"
+
+msgid "Repeat the new password"
+msgstr "Toista uusi salasana"
+
+msgid "Please wait..."
+msgstr "Odota..."
+
+msgid "Type a name to search users"
+msgstr "Kirjoita nimi etsiäksesi käyttäjiä"
+
+msgid "Edit"
+msgstr "Muokkaa"
+
+msgid "Your answer"
+msgstr "Vastauksesi"
+
+msgid "Add a full description and pictures"
+msgstr "Lisää pitkä kuvaus ja kuvat"
+
+msgid "Save full description"
+msgstr "Tallenna pitkä kuvaus"
+
+msgid "How would your idea solve the problem?"
+msgstr "Miten ideasi ratkaisee ongelman?"
+
+msgid "How would you test your idea? What is the the experiment in practice?"
+msgstr "Miten testata ideasi? Mitä käytännössä kokeillaan?"
+
+msgid "Who will take the experiment?"
+msgstr "Kuka kokeilun toteuttaa?"
+
+msgid "What is the budget of the experiment?"
+msgstr "Mikä on kokeilun budjetti?"
+
+msgid "What is the planned schedule for the experiment?"
+msgstr "Mikä on kokeilun kaavailtu ajankohta?"
+
+msgid "What is the goal of the experiment?"
+msgstr "Mitä kokeilusta halutaan oppia?"
+
+msgid "Goal:"
+msgstr "Tavoite:"
+
+msgid "Currency:"
+msgstr "Valuutta:"
+
+msgid "Accelerator funding:"
+msgstr "Ideahaku:"
+
+msgid "State funding:"
+msgstr "Valtion rahoitus:"
+
+msgid "Crowdfunding:"
+msgstr "Joukkorahoitus:"
+
+msgid "Platform:"
+msgstr "Alusta:"
+
+msgid "Campaign ID:"
+msgstr "Kampanja-ID:"
+
+msgid "Save funding"
+msgstr "Tallenna rahoitus"
+
+msgid "Did the experiment reach the required goals?"
+msgstr "Saavuttiko kokeilu sille asetetut tavoitteensa?"
+
+msgid "Total:"
+msgstr "Yhteensä:"
+
+msgid "Experiment not found"
+msgstr "Kokeiluja ei löytynyt"
+
+msgid "Team"
+msgstr "Tiimi"
+
+msgid "Take part"
+msgstr "Osallistu"
+
+msgid "Discuss or comment"
+msgstr "Keskustele"
+
+msgid "Share"
+msgstr "Jaa"
+
+msgid "Experiment phase"
+msgstr "Kokeilun vaihe"
+
+msgid "Show"
+msgstr "Näytä"
+
+msgid "Front page"
+msgstr "Etusivu"
+
+msgid "Yes"
+msgstr "Kyllä"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "Tag"
+msgstr "Avainsana"
+
+msgid "Available tags"
+msgstr "Avainsanat"
+
+msgid "Links for additional information"
+msgstr "Lisätietoa linkkien takana"
+
+msgid "Muncipality / City"
+msgstr "Paikkakunta"
+
+msgid "Save location"
+msgstr "Tallenna paikkakunta"
+
+msgid "Remove experiment"
+msgstr "Poista kokeilu"
+
+msgid "This will remove experiment"
+msgstr "Tämä poistaa kokeilun"
+
+msgid "I understand"
+msgstr "Ymmärrän"
+
+msgid "Remove"
+msgstr "Poista"
+
+msgid "Browse the previous stages of the experiments"
+msgstr "Selaa kokeilun edellisiä vaiheita"
+
+msgid "Browse to the challenge stage"
+msgstr "Katso vaihe haaste"
+
+msgid "Browse to the idea stage"
+msgstr "Katso vaihe idea"
+
+msgid "Browse to the suggestion stage"
+msgstr "Katso vaihe ehdotus"
+
+msgid "Browse to the funding stage"
+msgstr "Katso vaihe rahoitus"
+
+msgid "Browse to the experiment stage"
+msgstr "Katso vaihe kokeilu"
+
+msgid "Browse to the archive stage"
+msgstr "Katso vaihe opit"
+
+msgid "Back to the present stage"
+msgstr "Palaa kokeilun viimeisimpään vaiheeseen"
+
+msgid "Similar experiments:"
+msgstr "Samanlaisia kokeiluja:"
+
+msgid "No similar internal pages found."
+msgstr "Sivuja ei löytynyt"
+
+msgid "Related subjects outside the service:"
+msgstr "Lisää aiheesta muualla:"
+
+msgid "No related subjects outside the services found."
+msgstr "Linkkejä ei löytynyt"
+
+msgid "Image"
+msgstr "Kuva"
+
+msgid "Image file:"
+msgstr "Kuvatiedosto"
+
+msgid "Ready?"
+msgstr "Valmis?"
+
+msgid "Ready"
+msgstr "Valmis"
+
+msgid "Click here to see your experiment in your own profile. You can also return to edit it. We'll publish the suggestions when they are checked."
+msgstr "Klikkaa \"Valmis\" julkaistaksesi kokeilun. Voit palata muokkaamaan kokeilua myös julkaisun jälkeen."
+
+msgid "Support call"
+msgstr "Tukipyyntö"
+
+msgid "Do you want to advance your experiment to the next stage?"
+msgstr "Haluatko viedä kokeiluasi eteenpäin?"
+
+msgid "Click here to move your experiment to the next stage"
+msgstr "Klikkaa tästä ja siirrä kokeilusi seuraavaan vaiheeseen"
+
+msgid "Move"
+msgstr "Siirry seuraavaan vaiheeseen"
+
+msgid "Most popular"
+msgstr "Suosituimmat"
+
+msgid "Alphabetically"
+msgstr "Aakkosjärjestyksessä"
+
+msgid "Latest first"
+msgstr "Uusimmat"
+
+msgid "Type a keyword to search"
+msgstr "Kirjoita hakusana etsiäksesi kokeiluja"
+
+msgid "The rest of the experiments related to the idea search"
+msgstr "Loput hakuun osallistuneet kokeilut"
+
+msgid "All of the experiments related to the idea search"
+msgstr "Kaikki hakuun osallistuneet kokeilut"
+
+msgid "All of the challenges related to the idea search"
+msgstr "Kaikki hakuun osallistuneet haasteet"
+
+msgid "All of the suggestions related to the idea search"
+msgstr "Kaikki hakuun osallistuneet kokeiluehdotukset"
+
+msgid "The chosen experiments for further development"
+msgstr "Ohjelmaan valitut kokeilut"
+
+msgid "Idea search"
+msgstr "Ideahaku"
+
+msgid "What skills or resources the team already has?"
+msgstr "Mitä resursseja tiimillä on ennestään?"
+
+msgid "What are you expecting to learn from the experiment?"
+msgstr "Mitä odotatte oppivanne kokeilusta?"
+
+msgid "Experiments on a map"
+msgstr "Kokeilut kartalla"
+
+msgid "Filter by keyword"
+msgstr "Rajaa hakusanan perusteella"
+
+msgid "Back to browsing view"
+msgstr "Takaisin selausnäkymään"
+
+msgid "Tags"
+msgstr "Avainsanat"
+
+msgid "Oldest"
+msgstr "Vanhimmat ensin"
+
+msgid "Newest"
+msgstr "Uusimmat ensin"
+
+msgid "Click on code to select all"
+msgstr "Klikkaa koodia valitaksesi kaikki ja kopioi"
+
+msgid "Showing users with tag:"
+msgstr "Rajattu näkymä asiasanan perusteella:"
+
+msgid "Showing experiments with tag:"
+msgstr "Rajattu näkymä asiasanan perusteella:"
+
+msgid "Filter by tag"
+msgstr "Rajaa asiasanan perusteella"
+
+msgid "What did you learn?"
+msgstr "Mitä opittiin? Mitä konkreettisia tuloksia tai uutta tietoa kokeilulla sait? Nimeä kaksi keskeistä oppia ja mitä vinkkejä antaisit toisille kokeilijoille?"
+
+msgid "Publish"
+msgstr "Julkaise"
+
+msgid "Unpublish"
+msgstr "Poista julkaisuista"
+
+msgid "Upcoming"
+msgstr "Tulossa"
+
+msgid "Ended"
+msgstr "Päättynyt"
+
+msgid "News"
+msgstr "Ajankohtaista"
+
+msgid "Artificial intelligence"
+msgstr "Tekoäly"
+
+msgid "Challenge search"
+msgstr "Haastehaku"
+
+msgid "Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own profile or via the experiment url."
+msgstr "Julkaise kokeilusi. Voit muokata sitä myös julkaisun jälkeen. Julkaisematon kokeilu näkyy vain oman profiilisivusi alla."
+
+msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile or via the experiment url."
+msgstr "Poista julkaisusta. Poistettu kokeilu näkyy vain oman profiilisi alla tai kokeilun oman URLn takana."
+
+msgid "Funding stage"
+msgstr "Rahoitusvaihe"
+
+msgid "What happens at the end of the experiment? How can you scale-up the experiment and what does it require?"
+msgstr "Mitä tapahtuu kokeilun päätyttyä? Miten kokeilusta voi skaalata isomman mittakaavan toimintaa ja mitä se vaatii?"
+
+msgid "Ask and discuss about AI"
+msgstr "Kysy ja keskustele tekoälystä"
+
+msgid "Learn about the experiment stages"
+msgstr "Tutustu kokeilun vaiheisiin"
+
+msgid "here."
+msgstr "täällä."
+
+msgid "Life management"
+msgstr "Arki hallintaan"
+
+msgid "More communality"
+msgstr "Enemmän yhteisöllisyyttä"
+
+msgid "Environment and us"
+msgstr "Ympäristö ja me"
+
+#~ msgid "Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own profile."
+#~ msgstr "Julkaise kokeilusi. Voit palata takaisin muokkaamaan kokeilua. Julkaisemattomat kokelilusi löydät oman profiilisi sivulta."
+
+#~ msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile."
+#~ msgstr "Poista kokeilu julkaisuista. Poiston jälkeen kokeilu näkyy ainoastaan "

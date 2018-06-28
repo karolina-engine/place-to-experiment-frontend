@@ -6,7 +6,9 @@
     <div class="large-8 medium-8 small-12 columns post">
         <div class="primary callout info">
             <div class="maincontent">
+                {% if single_post.featured_image %}
                 <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,w_620/${single_post.featured_image}" class="featured_image">
+                {% endif %}
                 <h1>${single_post.title|raw}</h1>
                 <div>${single_post.content|raw}</div>
             </div>
@@ -18,10 +20,14 @@
 
         <div class="primary callout similar">
 
-            <h1>Blogi</h1>
+            {% if cat == 9 %}
+                <h1>${'Blog'|trans}</h1>
+            {% elseif cat == 7 %}
+                <h1>${'News'|trans}</h1>
+            {% endif %}
 
             {% for post in posts %}
-                <a :href="rootUrl + '${lang}/post/${post.id}/${post.slug}/'">
+                <a :href="rootUrl + '${lang}/post/${post.id}/${cat}/${post.slug}/'">
                     <h2>${post.title|raw}</h2>
                     <p>
                         <b>${post.date_formatted}</b>

@@ -1,40 +1,36 @@
 <div v-if="!isUserEditor" class="content-title">
     <h1 v-if="getLanguage('title', true)">{{ getLanguage('title', true) }}</h1>
-    <span v-else>
-        <h1 class="semi-transparent">Otsikko tähän</h1>
-    </span>
+    <h1 v-else class="semi-transparent">${'Insert heading here'|trans}</h1>
 </div>
 <experiment-language v-if="isUserEditor" inline-template :language="language" :common="common" :value="getLanguage('title', true)" language-key="title" format="plaintext" :default-language="true" @experiment-language-updated="experimentLanguageUpdated">
     <div class="wrapper">
         <div>
             <div class="panel clearfix">
                 <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
-                    <i class="fi-pencil medium">&nbsp;</i>Otsikko</button>
+                    <i class="fi-pencil medium">&nbsp;</i>${'Experiment title'|trans}</button>
             </div>
         </div>
         <div class="content-title">
             <h1 v-if="value">{{ value }}</h1>
-            <span v-else>
-                <h1 class="semi-transparent">Otsikko tähän</h1>
-            </span>
+            <h1 v-else class="semi-transparent">${'Insert heading here'|trans}</h1>
         </div>
         <div class="row">
             <div class="col-md-12" v-show="showEditor">
                 <div id="title_edit" class="collapse" style="padding: 20px;">
                     <form action="#" @submit.prevent="updateText()">
                         <div class="form-group">
-                            <label>Kokeilun otsikko:</label>
+                            <label>${'Experiment title'|trans}:</label>
                             <div class="input-group" style="width:100%;">
-                                <input ref="customTextInputRef" placeholder="Enter the title" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="title">
+                                <input ref="customTextInputRef" placeholder="${'Experiment title'|trans}:" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="title">
                                 <div v-if="errors.has('custom_text')  && showErrors" class="input-group-addon alert-danger">
                                     <span>{{ errors.first('custom_text') }}</span>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                            <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
                         <button type="button" class="button alert" @click="collapseEditor">
-                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                     </form>
                 </div>
             </div>
@@ -44,9 +40,7 @@
 
 <div v-if="!isUserEditor" class="content-short-description">
     <h3 v-if="getLanguage('short_description', true)">{{ getLanguage('short_description', true) }}</h3>
-    <span v-else>
-        <h3 class="semi-transparent">Kirjoita tähän lyhyt kiteytys. Pituus enintään 300 merkkiä</h3>
-    </span>
+    <h3 v-else class="semi-transparent">${'Write a short description (Max 300 characters)'|trans}</h3>
 </div>
 <experiment-language
     v-if="isUserEditor"
@@ -63,32 +57,30 @@
             <div class="panel clearfix">
                 <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
                     <i class="fi-pencil medium">&nbsp;</i>
-                    Lyhyt kuvaus</button>
+                    ${'Experiment short description'|trans}</button>
             </div>
         </div>
         <div class="content-short-description">
             <h3 v-if="value">{{ value }}</h3>
-            <span v-else>
-                <h3 class="semi-transparent">Kirjoita tähän lyhyt kiteytys. Pituus enintään 300 merkkiä</h3>
-            </span>
+            <h3 v-else class="semi-transparent">${'Write a short description (Max 300 characters)'|trans}</h3>
         </div>
         <div class="row">
             <div class="col-md-12" v-show="showEditor">
                 <div id="short_description_edit" class="collapse" style="padding: 20px;">
                     <form action="#" @submit.prevent="updateText()">
                         <div class="form-group">
-                            <label>Luhyt kuvaus:</label>
+                            <label>${'Experiment short description'|trans}:</label>
                             <div class="input-group" style="width:100%;">
-                                <input ref="customTextInputRef" placeholder="Enter the short description" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="short description">
+                                <input ref="customTextInputRef" placeholder="${'Experiment short description'|trans}" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="short description">
                                 <div v-if="errors.has('custom_text')  && showErrors" class="input-group-addon alert-danger">
                                     <span>{{ errors.first('custom_text') }}</span>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                            <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
                         <button type="button" class="button alert" @click="collapseEditor">
-                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                     </form>
                 </div>
             </div>
@@ -98,9 +90,7 @@
 
 <div v-if="!isUserEditor" class="content-short-description">
     <h3 v-if="getLanguage('owner_name', true)">{{ getLanguage('owner_name', true) }}</h3>
-    <span v-else>
-        <h3 class="semi-transparent">Nimi (Henkilö tai organisaatio)</h3>
-    </span>
+    <h3 v-else class="semi-transparent">${'Name (person or organization)'|trans}</h3>
 </div>
 <experiment-language
     v-if="isUserEditor"
@@ -118,32 +108,30 @@
             <div class="panel clearfix">
                 <button type="button" class="button secondary edit-btn right" @click="initializeEditor">
                     <i class="fi-pencil medium">&nbsp;</i>
-                    Kokeilun tekijä</button>
+                    ${'Name (person or organization)'|trans}</button>
             </div>
         </div>
         <div class="content-short-description">
             <h3 v-if="value">{{ value }}</h3>
-            <span v-else>
-                <h3 class="semi-transparent">Nimi (Henkilö tai organisaatio)</h3>
-            </span>
+            <h3 v-else class="semi-transparent">${'Name (person or organization)'|trans}</h3>
         </div>
         <div class="row">
             <div class="col-md-12" v-show="showEditor">
                 <div id="owner_name_edit" class="collapse" style="padding: 20px;">
                     <form action="#" @submit.prevent="updateText()">
                         <div class="form-group">
-                            <label>Kokeilun omistaja:</label>
+                            <label>${'Experiment owner'|trans}</label>
                             <div class="input-group" style="width:100%;">
-                                <input ref="customTextInputRef" placeholder="Nimi" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="language">
+                                <input ref="customTextInputRef" placeholder="${'Experiment owner'|trans}" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="language">
                                 <div v-if="errors.has('custom_text')  && showErrors" class="input-group-addon alert-danger">
                                     <span>{{ errors.first('custom_text') }}</span>
                                 </div>
                             </div>
                         </div>
                         <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">
-                            <i class="fi-check medium">&nbsp;</i>Tallenna</button>
+                            <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
                         <button type="button" class="button alert" @click="collapseEditor">
-                            <i class="fi-x medium">&nbsp;</i>Kumoa</button>
+                            <i class="fi-x medium">&nbsp;</i>${'Cancel'|trans}</button>
                     </form>
                 </div>
             </div>

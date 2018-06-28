@@ -6,8 +6,8 @@
                     <sign-in inline-template @close="setShowModal(false)" :redirect-path="redirectPath">
                         <form action="#" @submit.prevent="validateForm()">
                             <div class="modal-header">
-                                <h2>Kirjautuminen</h2>
-                                <h3>Anna tiedosi</h3>
+                                <h2>${'Logging in'|trans}</h2>
+                                <h3>${'Provide your information'|trans}</h3>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
@@ -24,13 +24,13 @@
                                         <div class="input-group-addon alert-danger" v-if="errors.has('password') && showErrors">
                                             <span>{{ errors.first('password') }}</span>
                                         </div>
-                                        <a :href="rootUrl + '${lang}/password-reset/'">Unohdin salasanani</a>
+                                        <a :href="rootUrl + '${lang}/password-reset/'">${'I forgot my password'|trans}</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button id="modal-login-submit" class="btn btn-md btn-default login col-xs-5 pull-right submit" type="submit">KIRJAUDU</button>
-                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">SULJE</button>
+                                <button id="modal-login-submit" class="btn btn-md btn-default login col-xs-5 pull-right submit allcaps" type="submit">${'Log in'|trans}</button>
+                                <button class="btn btn-md btn-default col-xs-5 close allcaps" type="button" @click="$emit('close')">${'close'|trans}</button>
                             </div>
                         </form>
                     </sign-in>
@@ -48,12 +48,12 @@
                     <sign-out inline-template @close="setShowModal(false)">
                         <form action="#" @submit.prevent="validateForm()">
                             <div class="modal-header">
-                                <h2>Kirjaudu ulos</h2>
-                                <h3>Haluatko varmasti kirjautua ulos?</h3>
+                                <h2>${'logout'|trans}</h2>
+                                <h3>${'Are you sure you want to log out?'|trans}</h3>
                             </div>
                             <div class="modal-footer">
-                                <button id="modal-logout-submit" class="btn btn-md btn-default logout col-xs-5 pull-right" type="submit">Kirjaudu ulos</button>
-                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">SULJE</button>
+                                <button id="modal-logout-submit" class="btn btn-md btn-default logout col-xs-5 pull-right" type="submit">${'logout'|trans}</button>
+                                <button class="btn btn-md btn-default col-xs-5 close allcaps" type="button" @click="$emit('close')">${'close'|trans}</button>
                             </div>
                         </form>
                     </sign-out>
@@ -70,8 +70,8 @@
                     <sign-up inline-template @close="setShowModal(false)">
                         <form action="#" @submit.prevent="validateForm()">
                             <div class="modal-header">
-                                <h2>Rekisteröidy</h2>
-                                <h3>Anna tietosi</h3>
+                                <h2>${'register'|trans}</h2>
+                                <h3>${'Provide your information'|trans}</h3>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
@@ -116,8 +116,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button id="modal-register-submit" class="btn btn-md btn-default login col-xs-5 pull-right" type="submit">Kirjaudu</button>
-                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">Sulje</button>
+                                <button id="modal-register-submit" class="btn btn-md btn-default login col-xs-5 pull-right" type="submit">${'register'|trans}</button>
+                                <button class="btn btn-md btn-default col-xs-5 close" type="button" @click="$emit('close')">${'close'|trans}</button>
                             </div>
                         </form>
                     </sign-up>

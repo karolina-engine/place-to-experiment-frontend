@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- MAIN CONTENT -->
+    <div class="large-12 medium-12 small-12 columns page">
+        <div class="primary callout accelerator two">
+            <div class="maincontent">
+                <div class="row">
+
+                    <div class="large-4 medium-4 small-12 columns side">
+                        <h2>Hack For Society</h2>
+
+                    </div>
+                    <div class="large-8 medium-8 small-12 columns main">
+
+                        <h1>${title|raw}</h1>
+
+                        <div>${content|raw}</div>
+                        <a class="button" href="https://keskustelu.kokeilunpaikka.fi/t/kokeiluhaku-hack-for-society/468/1">${'ask_and_discuss'|trans}</a>
+                    </div>
+
+                    <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" get-tag="128">
+
+                        <div class="wrapper browse">
+
+                            <h3></h3>
+
+                            <div class="large-12 columns">
+                                <!--Challenges-->
+                            </div>
+                            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), showStages) , 0, showLimit), searchTerm))">
+
+                                ${include('experiment_index_parts/experiment_card.html')}
+
+                            </div>
+
+                        </div>
+                    </experiment-index>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SMALL COL -->
+
+{% endblock %}

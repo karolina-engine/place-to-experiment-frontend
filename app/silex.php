@@ -116,6 +116,7 @@ $app['twig']->addGlobal('title', 'Kokeilun Paikka');
 $app['twig']->addGlobal('meta_description', 'Kokeilun paikka on palvelu, jossa me kaikki voimme ideoida ja kehittää yhteisiä kokeiluja sekä hakea niille rahoitusta. Kokeilun paikassa edetään ideasta / haasteesta kokeiluehdotukseen, mahdolliseen rahoitukseen ja toteutukseen asti.');
 $app['twig']->addGlobal('meta_image', getenv('PROTOCOL').'://'.$_SERVER['HTTP_HOST'].'/img/logo.svg');
 $app['twig']->addGlobal('allow_discussion', getenv('ALLOW_DISCUSSION'));
+$app['twig']->addGlobal('google_maps_api_key', getenv('GOOGLE_MAPS_API_KEY'));
 $app['twig']->addGlobal('leiki_index', "false");
 
 $lexer = new Twig_Lexer($app['twig'], array(

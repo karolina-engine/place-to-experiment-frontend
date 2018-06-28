@@ -33,23 +33,23 @@ env:
             config:
                 WebDriver:
                     browser: safari
-    
+
     local-chrome:
         modules:
             config:
                 WebDriver:
-                    url: http://kokeilunpaikka.dev/
+                    url: http://kokeilunpaikka.test/
     local-firefox:
         modules:
             config:
                 WebDriver:
-                    url: http://kokeilunpaikka.dev/
+                    url: http://kokeilunpaikka.test/
                     browser: firefox
     local-ie:
         modules:
             config:
                 WebDriver:
-                    url: http://kokeilunpaikka.dev/
+                    url: http://kokeilunpaikka.test/
                     browser: internet explorer
                     capabilities:
                         # This fixes the garbled input text
@@ -61,5 +61,5 @@ env:
         modules:
             config:
                 WebDriver:
-                    url: http://kokeilunpaikka.dev/
+                    url: http://kokeilunpaikka.test/
                     browser: MicrosoftEdge

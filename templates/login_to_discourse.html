@@ -3,18 +3,17 @@
 
     <div class="large-12 columns">
         <div v-if="!isUserAuthenticated" class="primary callout info">
-            <h2>Please log in</h2>
+            <h2>${'Please log in'|trans}</h2>
             <p>
-                Sorry, you need to be logged in to access this page. Please
-                <a @click="$root.eventBus.$emit('showModal', 'sign-in', true)">login</a>
+                ${'Sorry, you need to be logged in to access this page. Please'|trans}
+                <a @click="$root.eventBus.$emit('showModal', 'sign-in', true)">${'login'|trans}</a>
                 or
-                <a @click="$root.eventBus.$emit('showModal', 'sign-up', true)">register</a>
-                to continue
+                <a @click="$root.eventBus.$emit('showModal', 'sign-up', true)">${'register'|trans}</a>.
             </p>
         </div>
         <div v-else class="primary callout info">
             <p>
-                Redirecting to discourse ...
+                ${'Redirecting to discourse...'|trans} 
             </p>
             {{ openUrl('${redirectUrl}') }}
         </div>

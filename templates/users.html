@@ -3,13 +3,35 @@
 <div class="large-12 medium-12 small-12 columns">
 
     <div class="primary">
-        <profile-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" placeholder-image-url="/img/placeholder_small.jpg" limit="1000" profile-ids="all">
-            <div class="wrapper">
-                <div class="large-12 columns">
-                    <input @keyup="searchProfiles" v-model="searchTerm" type="text" class="form-control filter" placeholder="Kirjoita nimi etsiäksesi käyttäjiä">
+        <profile-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" placeholder-image-url="/img/placeholder_small.jpg" limit="0" profile-ids="all" :sort-profiles-object="[{key:'newest', name:'${'Newest'|trans}', initial:true},{key:'oldest',name:'${'Oldest'|trans}',initial:false} ]" :users-filter-array="[{key:'tags',name:'${'Interests'|trans}', initial:false}]">
+            <div class="wrapper browse">
+
+              <div class="large-12 columns">
+                  <div class="large-3 columns">
+                      <input @keyup="searchProfiles" v-model="searchTerm" type="text" class="form-control filter" placeholder="${'Type a name to search users'|trans}">
+                  </div>
+
+                  <span v-for="(option, index) in sortProfilesObject">
+                      <input type="radio" :id="'sort_' + index" :value="option.key" v-model="currentSortOptionKey" @click="triggerSort(option)">
+                      <label :for="'sort_' + index">{{ option.name }}</label>
+                  </span>
+
+                  <span v-for="(option, index) in filterOptions">
+                      <input type="checkbox" :id="'filter_' + index" :value="option.key" v-model="option.selected">
+                      <label :for="'filter_' + index">{{ option.name }}</label>
+                  </span>
+              </div>
+
+                <div class="large-12 columns tags" v-if="tagsForExperiments" v-show="filterOptionsContain('tags')">
+                    <h3 class="searchfield">Filter by interest</h3>
+                    <div class="tagsfilter">
+                        <span class="label tag pointer" v-for="tag in tagsForExperiments" @click="openUrl('/${lang}/kayttajia/tag/' + tag.id)" :class="{selected: tag.id == getTag}">
+                            {{ tag.label }}
+                        </span>
+                    </div>
                 </div>
 
-                <div v-for="profile in nameDescriptionFilter(sliceProfiles(filterById(profiles, userIds), 0, limit), searchTerm)">
+                <div v-for="profile in sortProfiles(keywordFilter(sliceProfiles(filterById(profiles, userIds), 0, limit), searchTerm))">
                     <div class="large-3 columns">
                         <div class="primary info callout users">
                             <!-- name and description -->
@@ -46,7 +68,7 @@
                             <div class="small-12 columns tags">
                                 <div class="row" v-show="profile.tags">
                                     <div style="padding:0px;max-height:6em;overflow:hidden;">
-                                        <p>Kiinnostukset</p><span class="label tag" v-for="tag in profile.tags">
+                                        <p>${'Interests'|trans}</p><span class="label tag" v-for="tag in profile.tags">
                                             {{ tag.label }}
                                         </span>
                                     </div>
@@ -56,7 +78,7 @@
                             <div class="small-12 columns tags">
                                 <div class="row" v-show="profile.skills">
                                     <div style="padding:0px;max-height:6em;overflow:hidden;">
-										<p>Osaamisalueet</p> <span class="label tag" v-for="skill in profile.skills">
+										<p>${'Skills'|trans}</p> <span class="label tag" v-for="skill in profile.skills">
                                             {{ skill }}
                                         </span>
                                     </div>

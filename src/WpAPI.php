@@ -13,10 +13,10 @@ Class WpAPI {
 		$this->apiUrl = $wpUrl."/wp-json/wp/v2";
 	}
 
-	public function getPostsIndex ($limit = 20) {
+	public function getPostsIndex ($limit = 20, $lang = "fi", $cat = 1) {
 	
 		$limit = (int) $limit;
-		$res = $this->client->request('GET', $this->apiUrl.'/posts/?_embed=1&per_page='.$limit)->getBody();
+		$res = $this->client->request('GET', $this->apiUrl.'/posts/?_embed=1&categories='.$cat.'&lang='.$lang.'&per_page='.$limit)->getBody();
 		$wpPostsData = json_decode($res, true);
 
 		$posts = array();
