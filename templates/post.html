@@ -8,6 +8,7 @@
             <div class="maincontent">
                 {% if single_post.featured_image %}
                 <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,w_620/${single_post.featured_image}" class="featured_image">
+                <meta name="twitter:image" content="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,w_620/${single_post.featured_image}" />
                 {% endif %}
                 <h1>${single_post.title|raw}</h1>
                 <div>${single_post.content|raw}</div>

@@ -449,7 +449,7 @@
             </div>
         </div>
         <div v-if="showEditor">
-            <quill-editor id="quill-editor" class="quill-editor" ref="quillEditorRef" :content="value" :config="quillEditorConfig" @change="onQuillEditorChange($event)"></quill-editor>
+            <quill-editor id="quill-editor" class="quill-editor" ref="quillEditorRef" :content="value" :options="quillEditorConfig" @change="onQuillEditorChange($event)"></quill-editor>
             <br/>
             <form action="#" @submit.prevent="updateText()">
                 <button type="submit" :disabled="!isModified" class="button" :class="{success:isModified, secondary:!isModified}">

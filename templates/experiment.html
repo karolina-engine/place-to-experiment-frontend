@@ -15,7 +15,7 @@
                     <h2>${'Experiment not found'|trans}</h2>
                     <p>
                         ${'Sorry, this experiment does not exist. Do you want to'|trans}
-                        <a :href="rootUrl + '${lang}/haku'">${'browse'|trans}</a>
+                        <a :href="rootUrl + '${lang}/kokeilut'">${'browse'|trans}</a>
                         ${'sorry_access2'|trans}
                     </p>
                 </div>
@@ -363,7 +363,7 @@
                                     <h2>${'Subjects / tags'|trans}</h2>
                                     <div class="row" v-show="experiment.tags">
                                         <div class="large-12 medium-12 small-12 columns" style="padding:10px;max-height:15em;overflow:hidden;">
-                                            <span class="label tag pointer" v-for="tag in experiment.tags" @click="openUrl('/${lang}/haku/tag/' + tag.id)">
+                                            <span class="label tag pointer" v-for="tag in experiment.tags" @click="openUrl('/${lang}/kokeilut/tag/' + tag.id)">
                                                 {{ tag.label }}
                                             </span>
                                         </div>
@@ -519,12 +519,6 @@
 
                         <button class="button success next" @click="unpublishExperiment">
                                 ${'Unpublish'|trans}
-                        </button>
-
-
-                        <button v-if="isUserAuthenticated" class="button success next right">
-                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">
-                                ${'Support call'|trans}</a>
                         </button>
 
                     </div>

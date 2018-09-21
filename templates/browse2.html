@@ -17,7 +17,7 @@
 
 
             <div class="large-12 columns">
-                <h3 class="searchfield">${'browse_by_keyword'|trans} | <a :href="rootUrl + '${lang}/haku3/'">${'Experiments on a map'|trans}</a></h3>
+                <h3 class="searchfield">${'browse_by_keyword'|trans} | <a :href="rootUrl + '${lang}/kokeilut/map/'">${'Experiments on a map'|trans}</a></h3>
 
                          <div class="large-3 columns">
                 <input @keyup="searchExperiments" v-model="searchTerm" type="text" class="form-control filter" placeholder="${'Type a keyword to search'|trans}">
@@ -37,7 +37,7 @@
             <div class="large-12 columns tags" v-if="tagsForExperiments" v-show="filterOptionsContain('tags')">
                 <h3 class="searchfield">Filter by tag</h3>
                 <div class="tagsfilter">
-                    <span class="label tag pointer" v-for="tag in sortTagsByLabel(tagsForExperiments)" @click="openUrl('/${lang}/haku/tag/' + tag.id)" :class="{selected: tag.id == getTag}">
+                    <span class="label tag pointer" v-for="tag in sortTagsByLabel(tagsForExperiments)" @click="openUrl('/${lang}/kokeilut/tag/' + tag.id)" :class="{selected: tag.id == getTag}">
                         {{ tag.label }}
                     </span>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="large-12 columns">
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/0'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/0'">
                             <h3>${'challenges'|trans}</h3>
                             <!--Challenges-->
                         </a>
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/1'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/1'">
                             <h3>${'ideas'|trans}</h3>
                             <!--Ideas-->
                         </a>
@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/2'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/2'">
                             <h3>${'suggestions'|trans}</h3>
                             <!--Suggestions-->
                         </a>
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/3'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/3'">
                             <h3>${'fundings'|trans}</h3>
                             <!--Funding-->
                         </a>
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/4'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/4'">
                             <h3>${'experiments'|trans}</h3>
                             <!--Experiments-->
                         </a>
@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="large-2 medium-2 small-4 vertical columns">
-                        <a :href="rootUrl + '${lang}/haku/stage/5'">
+                        <a :href="rootUrl + '${lang}/kokeilut/stage/5'">
                             <h3>${'archives'|trans}</h3>
                             <!--Archive-->
                         </a>

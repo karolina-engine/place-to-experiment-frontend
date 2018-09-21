@@ -4,7 +4,7 @@
         <profile-page inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" placeholder-image-url="/img/placeholder.png" user-id="${userId}" language="${lang}" logout-redirect-path="/${lang}/profile/">
             <div class="wrapper info primary callout profile">
 
-                <h2>{{ userName }}</h2>
+                <h2>{{ userFullName }}</h2>
                 <span v-if="profile.email">{{ profile.email }}</span>
                 <div class="row main_user_info">
 
@@ -83,7 +83,7 @@
                                     <div class="form-group">
                                         <label>${'First name'|trans}</label>
                                         <div class="input-group" style="width:100%">
-                                            <input ref="profileInputRef" type="text" name="first_name" class="form-control" placeholder="${'First name'|trans}" :value="profile.first_name" v-model="profileFirstName" v-validate data-vv-rules="required|min:2" data-vv-as="first name">
+                                            <input ref="profileInputRef" type="text" name="first_name" class="form-control" placeholder="${'First name'|trans}" v-model="profileFirstName" v-validate data-vv-rules="required|min:2" data-vv-as="first name">
                                             <div v-if="errors.has('first_name', 'update-profile-form') && showProfileErrors" class="input-group-addon alert-danger">
                                                 <span>{{ errors.first('first_name', 'update-profile-form') }}</span>
                                             </div>
@@ -92,7 +92,7 @@
                                     <div class="form-group">
                                         <label>${'Last name'|trans}</label>
                                         <div class="input-group" style="width:100%">
-                                            <input type="text" class="form-control" placeholder="${'Edit personal details'|trans}" name="last_name" :value="profile.last_name" v-model="profileLastName" v-validate data-vv-rules="required|min:2" data-vv-as="last name">
+                                            <input type="text" class="form-control" placeholder="${'Edit personal details'|trans}" name="last_name" v-model="profileLastName" v-validate data-vv-rules="required|min:2" data-vv-as="last name">
                                             <div v-if="errors.has('last_name', 'update-profile-form') && showProfileErrors" class="input-group-addon alert-danger">
                                                 <span>{{ errors.first('last_name', 'update-profile-form') }}</span>
                                             </div>

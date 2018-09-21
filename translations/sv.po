@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
@@ -130,7 +130,7 @@ msgid "Transportation"
 msgstr "Transport"
 
 msgid "ask_and_discuss"
-msgstr "Fråga och diskutera om lösning"
+msgstr "Fråga och diskutera om idésökningen"
 
 msgid "experiments_related"
 msgstr "Sökrelaterade lösningar"
@@ -194,7 +194,7 @@ msgid "Experiment ARCHIVE"
 msgstr "LÄRDOMAR av försöket"
 
 msgid "Experiment search"
-msgstr "Försök sök"
+msgstr "Försök sökning"
 
 msgid "Blog"
 msgstr "Blogg"
@@ -716,6 +716,15 @@ msgstr "Daglig förvaltning"
 
 msgid "More communality"
 msgstr "Mer gemensamhet"
-
+ 
 msgid "Environment and us"
 msgstr "Miljö och oss"
+
+msgid "Digitaidot sotetyössä"
+msgstr "Digitala färdigheter i arbetet inom social- och hälsovårdssektorn"
+
+msgid "Jätä ehdotus"
+msgstr "Lämna ditt förslag"
+
+msgid "Kysy ja keskustele kokeiluhausta"
+msgstr "Fråga och diskutera denna utmaning"

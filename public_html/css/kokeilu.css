@@ -788,6 +788,10 @@ p.ingress {
 
 p.ingress a, .maincontent .browse .callout p.ingress a {
     color: #2d3264;
+	-webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .color-5 p.ingress a {
@@ -797,7 +801,7 @@ p.ingress a, .maincontent .browse .callout p.ingress a {
 /*BROWSING VIEW CARDS*/
 
 .wrapper.browse .callout {
-    min-height: 14em;
+    min-height: 15.5em;
     padding: 1.2em;
     min-width: 11em;
 }
@@ -818,6 +822,7 @@ p.ingress a, .maincontent .browse .callout p.ingress a {
 
 .owner {
     min-height: 1em;
+	    mmax-height: 1em;
 }
 
 .crop {
@@ -1331,6 +1336,7 @@ a.disc_link {
 }
 
 
+
 .primary.callout.accelerator.two {
     background-image: url(../img/hack.jpg);
 }
@@ -1342,6 +1348,19 @@ a.disc_link {
 .primary.callout.accelerator.four {
     background-image: url(../img/ai.jpg);
 }
+
+.primary.callout.accelerator.five {
+    background-image: url(../img/digisauna.jpg);
+	    background-size: cover;
+}
+
+.primary.callout.accelerator.six {
+    background-image: url(../img/digisote_iso.jpg);}
+
+.six .primary.callout.accelerator.six {
+    background-image: url(../img/digisote_iso.jpg);
+    background-size: contain;
+    background-position-y: -19em;}
 
 .accelerator .maincontent {
     background-color: white;
@@ -1469,6 +1488,10 @@ cursor: help;
     margin-bottom: 1em;
 }
 */
+
+.callout.success.next.tag-1 {
+    display: none;
+}
 
 .userinfo p {
     font-size: 1.3em;

@@ -212,32 +212,26 @@ $routes->get('/{lang}/yhteystiedot/', function() use($app) {
 
 });
 
-$routes->get('/{lang}/haku/', function() use($app) {
+$routes->get('/{lang}/kokeilut/', function() use($app) {
 
    return $app['twig']->render('browse2.html');
 
 });
 
-$routes->get('/{lang}/haku2/', function() use($app) {
-
-   return $app['twig']->render('browse2.html');
-
-});
-
-$routes->get('/{lang}/haku3/', function() use($app) {
+$routes->get('/{lang}/kokeilut/map/', function() use($app) {
 
    return $app['twig']->render('browse3.html');
 
 });
 
-$routes->get('/{lang}/haku/stage/{stage}', function($stage) use($app) {
+$routes->get('/{lang}/kokeilut/stage/{stage}', function($stage) use($app) {
 
 	$data['stage'] = $stage;
 	return $app['twig']->render('browse_stage.html', $data);
 
 });
 
-$routes->get('/{lang}/haku/tag/{tag}', function($tag) use($app) {
+$routes->get('/{lang}/kokeilut/tag/{tag}', function($tag) use($app) {
 
 	$data['tag'] = $tag;
 	return $app['twig']->render('browse_tag.html', $data);
@@ -349,6 +343,140 @@ $routes->get('/{lang}/custom/{template}/{slug}/', function($lang, $template, $sl
 
 });
 
+
+
+$routes->get('/{lang}/digisotetaidot/', function($lang) use($app) {
+
+    $template = "accelerator6";
+    $slug = "digitaidot-sotetyossa";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+	
+		// Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+	
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+
+$routes->get('/digisotetaidot/', function($lang) use($app) {
+
+    $template = "accelerator6";
+    $slug = "digitaidot-sotetyossa";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+	
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+
+
+
+$routes->get('/{lang}/digisauna/', function($lang) use($app) {
+
+    $template = "accelerator5";
+    $slug = "digisauna";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+	
+		// Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+	
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
+
+$routes->get('/digisauna/', function($lang) use($app) {
+
+    $template = "accelerator5";
+    $slug = "digisauna";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+	
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
 
 
 $routes->get('/{lang}/hackforsociety/', function($lang) use($app) {
@@ -499,6 +627,6 @@ $routes->get('/{lang}/page/{slug}/', function($lang, $slug) use($app) {
 
 
 });
-
+ 
 
 return $routes;

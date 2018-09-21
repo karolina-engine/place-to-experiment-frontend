@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
@@ -128,7 +128,7 @@ msgid "Transportation"
 msgstr "Liikkuminen"
 
 msgid "ask_and_discuss"
-msgstr "Kysy ja keskustele kokeiluhausta"
+msgstr "Kysy ja keskustele ideahausta"
 
 msgid "experiments_related"
 msgstr "Hakuun liittyvät kokeilut"
@@ -708,6 +708,15 @@ msgstr "Enemmän yhteisöllisyyttä"
 
 msgid "Environment and us"
 msgstr "Ympäristö ja me"
+
+msgid "Digitaidot sotetyössä"
+msgstr "Digitaidot sotetyössä"
+
+msgid "Jätä ehdotus"
+msgstr "Jätä ehdotus"
+
+msgid "Kysy ja keskustele kokeiluhausta"
+msgstr "Kysy ja keskustele kokeiluhausta"
 
 #~ msgid "Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own profile."
 #~ msgstr "Julkaise kokeilusi. Voit palata takaisin muokkaamaan kokeilua. Julkaisemattomat kokelilusi löydät oman profiilisi sivulta."
