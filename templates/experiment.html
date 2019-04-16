@@ -523,12 +523,6 @@
                                 ${'Unpublish'|trans}
                         </button>
 
-
-                        <button v-if="isUserAuthenticated" class="button success next right">
-                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">
-                                ${'Support call'|trans}</a>
-                        </button>
-
                     </div>
 
                     <div class="callout success next" v-if="isUserEditor" style="height:auto;" :class="[experiment.tags.map(function(tag) {return 'tag-' + tag.id}).join(' ')]">

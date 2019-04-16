@@ -2,6 +2,8 @@
 
 namespace Karolina;
 
+use GuzzleHttp\Exception\RequestException;
+
 Class WpAPI {
 
 	private $apiUrl;
@@ -14,7 +16,7 @@ Class WpAPI {
 	}
 
 	public function getPostsIndex ($limit = 20, $lang = "fi", $cat = 1) {
-	
+
 		$limit = (int) $limit;
 		$res = $this->client->request('GET', $this->apiUrl.'/posts/?_embed=1&categories='.$cat.'&lang='.$lang.'&per_page='.$limit)->getBody();
 		$wpPostsData = json_decode($res, true);
@@ -41,10 +43,10 @@ Class WpAPI {
 
 				$post['featured_image'] = '';
 
-			}
+            }
 
 			$posts[] = $post;
-		
+
 		}
 
 		return $posts;
@@ -62,10 +64,29 @@ Class WpAPI {
 		if (isset($wpData['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'])) {
 			$data['featured_image'] = $wpData['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'];
 		} else {
-			$data['featured_image'] = "";
+            $data['featured_image'] = "";
+            if(isset($wpData['featured_media'])){
+
+                $mediaId = $wpData['featured_media'];
+
+                try {
+
+                    $resImg = $this->client->request('GET', $this->apiUrl.'/media/'.$mediaId.'/');
+
+                } catch (RequestException $e) {
+
+                }
+
+                if(isset($resImg)){
+
+                $imgData = json_decode($resImg->getBody(), true);
+                $data['featured_image'] = $imgData['source_url'];
+
+                }
+            }
 		}
 		$data['title'] = $wpData['title']['rendered'];
-		$data['content'] = $wpData['content']['rendered'];
+        $data['content'] = $wpData['content']['rendered'];
 
 		return $data;
 

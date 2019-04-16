@@ -843,7 +843,7 @@ p.ingress a, .maincontent .browse .callout p.ingress a,  .maincontent .browse .c
 
 .owner {
     min-height: 1em;
-        mmax-height: 1em;
+	    mmax-height: 1em;
 	overflow: hidden;
 }
 
@@ -968,13 +968,12 @@ p.ingress.user a {
     padding-bottom: 0;
     margin-bottom: 0;
     margin-top: 0;
-    min-height: 3em;
 }
 
 .callout.info p.user_description {
     font-family: AvenirLTStd-Black;
+    text-transform: uppercase;
     font-size: 0.8em;
-    display: block;
 }
 
 .callout.info h2 {
@@ -1027,24 +1026,8 @@ p.ingress.user a {
     text-decoration: underline;
 }
 
-p span {
-    text-decoration: none !important;
-}
-
 .callout .callout {
     height: 18em;
-}
-
-
-.users .label.tag {
-    line-height: 1;
-    display: block;
-    float: left;
-}
-
- .callout .users img {
-    padding-top: 0px;
-    margin-right: -1em;
 }
 
 .callout.info .callout h2 {
@@ -1132,11 +1115,11 @@ p span {
 	padding-left:20px;padding-right:20px;
 	font-size:110%;
 }
-
-/*.callout.success.next.tag-132 {
+ 
+.callout.success.next.tag-132 {
     display: none;
 }
-*/
+
 
 .callout.color-0 .callout .color-1, .callout.color-0 .callout .color-2, .callout.color-0 .callout .color-3, .callout.color-0 .callout .color-4, .callout.color-0 .callout .color-5 {
 background-color: #c5c3c3;
@@ -1330,7 +1313,7 @@ a.disc_link {
 .callout img {
     padding-top: 15px;
 }
-
+	
 	.front .callout {
 
     overflow: hidden;
@@ -1550,19 +1533,6 @@ a.disc_link {
     background-position-y: bottom;
 }
 
-.accelerator .chosencoal .callout { 
-    background-image: url(../img/coal_label.png);
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
-}
-
-.accelerator .chosencircu .callout { 
-    background-image: url(../img/circular_ec_label.png);
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-position-y: bottom;
-}
 
 .has-tip {
 position: relative;
@@ -1916,7 +1886,7 @@ font-weight: 900;
 
 }
 
-/* FOOTER */
+/* FOOTER */ 
 
 .footer .columns {padding-left: 1rem;}
 
@@ -1941,7 +1911,7 @@ text-transform: initial;
 
 ul li.tweet {
 	background-image: url("../img/footer_twitter.png");
-
+	
 }
 ul li.facebook {
 	background-image: url("../img/footer_fb.png");
@@ -2026,7 +1996,7 @@ margin-right: 0.5rem;
             padding: 0;
             margin-bottom: -9em;
         }
-
+		
 		.footer .callout img {
     padding-top: 15px;
     padding-bottom: 30px;
@@ -2035,8 +2005,8 @@ margin-right: 0.5rem;
 		.columns .last {
     padding-left: 1rem;
 }
-
-
+		
+		
     }
     @media screen and (min-width: 40em) {
         .callout.profile h2 {

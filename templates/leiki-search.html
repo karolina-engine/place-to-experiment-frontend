@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <leiki-search inline-template language="${lang}">
+        <div class="wrapper">
+            <div class="large-12 columns">
+                <div class="primary callout info">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <h2>Search results</h2>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input @keyup="searchResults" v-model="searchTermResults" type="text" class="form-control" placeholder="Type to search results">
+                                </div>
+                                <div class="large-12 columns">
+                                    <span>Results found: {{ results.length }}</span>
+                                    <ul v-if="results">
+                                        <li v-for="result in results">
+                                            <a :href="result.link">{{ result.title }}</a>, relevance:
+                                            {{ result.relevance }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </leiki-search>
+
+{% endblock %}

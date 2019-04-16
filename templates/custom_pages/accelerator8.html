@@ -19,13 +19,13 @@
                         <h1>${title|raw}</h1>
 
                         <div>${content|raw}</div>
-				
+						<a class="button" :href="rootUrl + '${lang}/new-experiment/2/132/'">${'start_exp'|trans}</a><br><br>
 						
-						 </div>		
 						
-
-									 <div class="chosencoal">
-                        <experiment-index inline-template="inline-template" :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" show-experiment-ids="958, 957, 1040, 961, 1001, 921, 925, 962, 997, 1045, 930, 1012, 1000, 938, 1007"> 
+                        <a class="button" href="https://keskustelu.kokeilunpaikka.fi/t/kysy-ja-keskustele-kiertotaloushausta/1346">${'Kysy ja keskustele kokeiluhausta'|trans}</a>
+						
+				 <div class="chosencoal">
+                        <experiment-index inline-template="inline-template" :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" show-experiment-ids="896, 898, 864, 845, 842, 889, 907, 861, 884, 882, 847, 897, 863, 905, 826, 868, 878, 869, 892, 873, 906">
 
                             <div class="wrapper browse"><hr>
 
@@ -43,9 +43,10 @@
                             </div>
                         </experiment-index>
 
-                    </div><br>
+                    </div>
+					<br>
 						
-									
+								 </div>			
 
                       <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" get-tag="132">
           <div class="wrapper browse">

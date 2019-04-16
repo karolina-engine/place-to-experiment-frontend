@@ -42,7 +42,7 @@
                                 </p></div>
                                 <div class="row name_pic">
                                 <div class="small-6 columns left">
-                                    <p class="user_description">{{ profile.short_description | truncate(60, '...') }}</p>
+                                    <p class="user_description">{{ profile.short_description | truncate(50, '...') }}</p>
                                 </div>
                                  <div class="small-6 columns right">
                                 <a :href="rootUrl + '${lang}/profile/' + profile.user_id">
@@ -67,7 +67,7 @@
                             <!-- tags -->
                             <div class="small-12 columns tags">
                                 <div class="row" v-show="profile.tags">
-                                    <div style="padding:0px;max-height:7em;overflow:hidden;">
+                                    <div style="padding:0px;max-height:6em;overflow:hidden;">
                                         <p>${'Interests'|trans}</p><span class="label tag" v-for="tag in profile.tags">
                                             {{ tag.label }}
                                         </span>
@@ -77,7 +77,7 @@
                             <!-- skills -->
                             <div class="small-12 columns tags">
                                 <div class="row" v-show="profile.skills">
-                                    <div style="padding:0px;max-height:7em;overflow:hidden;">
+                                    <div style="padding:0px;max-height:6em;overflow:hidden;">
 										<p>${'Skills'|trans}</p> <span class="label tag" v-for="skill in profile.skills">
                                             {{ skill }}
                                         </span>

@@ -773,4 +773,4 @@ msgstr "Puolita hiilijalanjälki!"
 #~ msgstr "Julkaise kokeilusi. Voit palata takaisin muokkaamaan kokeilua. Julkaisemattomat kokelilusi löydät oman profiilisi sivulta."
 
 #~ msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile."
-#~ msgstr "Poista kokeilu julkaisuista. Poiston jälkeen kokeilu näkyy ainoastaan " 
+#~ msgstr "Poista kokeilu julkaisuista. Poiston jälkeen kokeilu näkyy ainoastaan "
