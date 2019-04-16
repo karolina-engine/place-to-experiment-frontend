@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
@@ -192,7 +192,7 @@ msgid "Experiment ARCHIVE"
 msgstr "Experiment ARCHIVE"
 
 msgid "Experiment search"
-msgstr "Experiment search"
+msgstr "Experiment challenge"
 
 msgid "Blog"
 msgstr "Blog"
@@ -201,15 +201,11 @@ msgid "Follow us on the Facebok page of Kokeilun Paikka"
 msgstr "Follow us on our Facebok page"
 
 msgid ""
-"The Place of experiment is a service where we can all think and develop "
-"common experiments and get funding for them. The experiment stage moves from "
-"the idea / challenge to the suggestion, and onwards to the possible funding "
-"and implementation."
+"The Place of experiment is a service where we can all think and develop common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding and implementation."
 msgstr ""
-"We are combining ideas, implementers, sparrers and financiers. Here, you can "
-"share an idea, make suggestions and experiment with the support of the "
-"network. Here you can find partners and potential financiers. You can also "
-"comment and spar on other experiments. The outcome of the experiments will "
+"We are combining ideas, implementers, sparrers and financiers. Here, you can share an idea, make suggestions and experiment with the support of the "
+"network. Here you can find partners and potential financiers. You can also comment and spar on other experiments. The outcome of the experiments will "
 "be shared among us all."
 
 msgid "Is your idea any good? You'll find out by experimenting"
@@ -328,20 +324,14 @@ msgstr "reset process"
 msgid "again."
 msgstr "again."
 
-msgid ""
-"Enter your email address. You will receive a link to reset your password."
-msgstr ""
-"Enter your email address. You will receive a link to reset your password."
+msgid "Enter your email address. You will receive a link to reset your password."
+msgstr "Enter your email address. You will receive a link to reset your password."
 
 msgid "Send the reset email"
 msgstr "Send the reset email"
 
-msgid ""
-"The reset password email was sent successfully. Please follow the "
-"instructions provided in the email."
-msgstr ""
-"The reset password email was sent successfully. Please follow the "
-"instructions provided in the email."
+msgid "The reset password email was sent successfully. Please follow the instructions provided in the email."
+msgstr "The reset password email was sent successfully. Please follow the instructions provided in the email."
 
 msgid "Interests"
 msgstr "Interests"
@@ -446,7 +436,7 @@ msgid "Who will take the experiment?"
 msgstr "Who will take the experiment?"
 
 msgid "What is the budget of the experiment?"
-msgstr "What is the budget of the experiment?"
+msgstr "What is the budget of the experiment? Please write down here what is included in your budget. Also please mention if you get some other funding."
 
 msgid "What is the planned schedule for the experiment?"
 msgstr "What is the planned schedule for the experiment?"
@@ -589,12 +579,8 @@ msgstr "Ready?"
 msgid "Ready"
 msgstr "Ready"
 
-msgid ""
-"Click here to see your experiment in your own profile. You can also return "
-"to edit it. We'll publish the suggestions when they are checked."
-msgstr ""
-"Click here to see your experiment in your own profile. You can also return "
-"to edit it. We'll publish the suggestions when they are checked."
+msgid "Click here to see your experiment in your own profile. You can also return to edit it. We'll publish the suggestions when they are checked."
+msgstr "Click here to see your experiment in your own profile. You can also return to edit it. We'll publish the suggestions when they are checked."
 
 msgid "Support call"
 msgstr "Support call"
@@ -602,11 +588,20 @@ msgstr "Support call"
 msgid "Do you want to advance your experiment to the next stage?"
 msgstr "Do you want to advance your experiment to the next stage?"
 
+msgid "Do you want to move your experiment to the previous stage?"
+msgstr "Do you want to move your experiment to the previous stage?"
+
 msgid "Click here to move your experiment to the next stage"
 msgstr "Click here to move your experiment to the next stage"
 
+msgid "Click here to move your experiment to the previous stage"
+msgstr "Click here to move your experiment to the previous stage"
+
 msgid "Move"
 msgstr "Move"
+
+msgid "Move to previous stage"
+msgstr "Return to previous stage"
 
 msgid "Most popular"
 msgstr "Most popular"
@@ -692,22 +687,15 @@ msgstr "Artificial intelligence"
 msgid "Challenge search"
 msgstr "Challenge search"
 
-msgid ""
-"What happens at the end of the experiment? How can you scale-up the "
-"experiment and what does it require?"
-msgstr ""
-"What happens at the end of the experiment? How can you scale-up the "
-"experiment and what does it require?"
+msgid "What happens at the end of the experiment? How can you scale-up the experiment and what does it require?"
+msgstr "What happens at the end of the experiment? How can you scale-up the experiment and what does it require?"
 
 msgid ""
-"Publish your experiment. You can edit it any time after publishing. Until "
-"you choose to publish it, your experiment can be found only in your own "
+"Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own "
 "profile or via the experiment url."
 msgstr ""
 
-msgid ""
-"Unpublish your experiment. After you unpublish it, your experiment can be "
-"found only in your own profile or via the experiment url."
+msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile or via the experiment url."
 msgstr ""
 
 msgid "Ask and discuss about AI"
@@ -745,3 +733,45 @@ msgstr "Leave your suggestion"
 
 msgid "Kysy ja keskustele kokeiluhausta"
 msgstr "Ask and discuss this challenge"
+
+msgid "Tutustu palveluun"
+msgstr "Check out the service"
+
+msgid "Ohjeet"
+msgstr "Instructions"
+
+msgid "Pelisäännöt"
+msgstr "Ground rules"
+
+msgid "Hae rahoitusta"
+msgstr "Appy for funding"
+
+msgid "Discussion board"
+msgstr "Discussion board"
+
+msgid "Yhteystiedot"
+msgstr "Contact"
+
+msgid "Watch more"
+msgstr "Watch more"
+
+msgid "created"
+msgstr "created"
+
+msgid "updated"
+msgstr "updated"
+
+msgid "Lue lisää"
+msgstr "Read more"
+
+msgid "Haluatko osallistua kokeiluhakuun?"
+msgstr "Do you want to take part in experiment challenge?"
+
+msgid "Aloita hiilijalanjälkikokeilu tästä!"
+msgstr "Start How to halve carbon footprint challenge"
+
+msgid "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+msgstr "Place of Experiment is a community-based web platform that brings together ideas, sparrers, experimenters, and financiers. Welcome aboard!"
+
+msgid "Puolita hiilijalanjälki!"
+msgstr "How to halve carbon footprint?"

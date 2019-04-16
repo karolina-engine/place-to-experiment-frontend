@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
@@ -431,7 +431,7 @@ msgid "Who will take the experiment?"
 msgstr "Kuka kokeilun toteuttaa?"
 
 msgid "What is the budget of the experiment?"
-msgstr "Mikä on kokeilun budjetti?"
+msgstr "Mikä on kokeilun budjetti? Kerro mistä kokeilusi budjetti koostuu. Kerro myös, jos saat jo ennestään jotain muuta rahoitusta."
 
 msgid "What is the planned schedule for the experiment?"
 msgstr "Mikä on kokeilun kaavailtu ajankohta?"
@@ -586,8 +586,17 @@ msgstr "Haluatko viedä kokeiluasi eteenpäin?"
 msgid "Click here to move your experiment to the next stage"
 msgstr "Klikkaa tästä ja siirrä kokeilusi seuraavaan vaiheeseen"
 
+msgid "Do you want to move your experiment to the previous stage?"
+msgstr "Haluatko palata kokeilusi edelliseen vaiheeseen?"
+
+msgid "Click here to move your experiment to the previous stage"
+msgstr "Klikkaa tästä ja siirrä kokeilusi edelliseen vaiheeseen"
+
 msgid "Move"
 msgstr "Siirry seuraavaan vaiheeseen"
+
+msgid "Move to previous stage"
+msgstr "Palaa edelliseen vaiheeseen"
 
 msgid "Most popular"
 msgstr "Suosituimmat"
@@ -718,8 +727,50 @@ msgstr "Jätä ehdotus"
 msgid "Kysy ja keskustele kokeiluhausta"
 msgstr "Kysy ja keskustele kokeiluhausta"
 
+msgid "Tutustu palveluun"
+msgstr "Tutustu palveluun"
+
+msgid "Ohjeet"
+msgstr "Ohjeet"
+
+msgid "Pelisäännöt"
+msgstr "Pelisäännöt"
+
+msgid "Hae rahoitusta"
+msgstr "Hae rahoitusta"
+
+msgid "Discussion board"
+msgstr "Keskustelualusta"
+
+msgid "Yhteystiedot"
+msgstr "Yhteystiedot"
+
+msgid "Watch more"
+msgstr "Katso lisää"
+
+msgid "created"
+msgstr "luotu"
+
+msgid "updated"
+msgstr "päivitetty"
+
+msgid "Lue lisää"
+msgstr "Lue lisää"
+
+msgid "Haluatko osallistua kokeiluhakuun?"
+msgstr "Haluatko osallistua kokeiluhakuun?"
+
+msgid "Aloita hiilijalanjälkikokeilu tästä!"
+msgstr "Aloita hiilijalanjälkikokeilu tästä!"
+
+msgid "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+msgstr "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+
+msgid "Puolita hiilijalanjälki!"
+msgstr "Puolita hiilijalanjälki!"
+
 #~ msgid "Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own profile."
 #~ msgstr "Julkaise kokeilusi. Voit palata takaisin muokkaamaan kokeilua. Julkaisemattomat kokelilusi löydät oman profiilisi sivulta."
 
 #~ msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile."
-#~ msgstr "Poista kokeilu julkaisuista. Poiston jälkeen kokeilu näkyy ainoastaan "
+#~ msgstr "Poista kokeilu julkaisuista. Poiston jälkeen kokeilu näkyy ainoastaan " 

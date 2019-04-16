@@ -288,7 +288,6 @@ span.notch {
 }
 
 .wrapper.browse .columns {
-    padding-left: 1em;
     padding-right: 1em;
 }
 
@@ -343,7 +342,7 @@ a:hover.more img {
     color: #292929;
     border-style: none;
     text-align: left;
-    padding-left: 12px;
+    padding-left: 1rem;
     padding-top: 11px;
 }
 
@@ -553,21 +552,25 @@ body#front .callout {
 a.facebook {
     background-image: url(../img/fb.png);
     background-size: contain;
+	background-repeat: no-repeat;
 }
 
 a.tweet {
     background-image: url(../img/twit.png);
     background-size: contain;
+	background-repeat: no-repeat;
 }
 
 a.instagram {
     background-image: url(../img/instag.png);
     background-size: contain;
+	background-repeat: no-repeat;
 }
 
 a.mail {
     background-image: url(../img/mail.png);
     background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .embed {
@@ -681,6 +684,20 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:act
     font-family: AvenirLTStd-Black;
 }
 
+.modal-wrapper {
+    display: flex;
+    vertical-align: middle;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.primary.callout.similar.flex-video {
+min-height: 13em;
+}
+
 .callout.login .modal-header h3 {
     font-size: 1em;
     text-transform: initial;
@@ -779,19 +796,22 @@ p.ingress {
 
 .front p.ingress {
     font-size: 1.7em;
-    padding-top: 1.3em;
+    padding-top: 0.8em;
+	line-height: 1em;
 }
 
 .library.callout p.ingress {
     color: #2d3264;
 }
 
-p.ingress a, .maincontent .browse .callout p.ingress a {
+p.ingress a, .maincontent .browse .callout p.ingress a,  .maincontent .browse .callout p a {
     color: #2d3264;
 	-webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+	    border-bottom: none;
+    box-shadow: none;
 }
 
 .color-5 p.ingress a {
@@ -804,6 +824,7 @@ p.ingress a, .maincontent .browse .callout p.ingress a {
     min-height: 15.5em;
     padding: 1.2em;
     min-width: 11em;
+	padding-bottom: 0em;
 }
 
 .wrapper.experiment, .large-12.columns.process {
@@ -822,7 +843,8 @@ p.ingress a, .maincontent .browse .callout p.ingress a {
 
 .owner {
     min-height: 1em;
-	    mmax-height: 1em;
+        mmax-height: 1em;
+	overflow: hidden;
 }
 
 .crop {
@@ -946,12 +968,13 @@ p.ingress.user a {
     padding-bottom: 0;
     margin-bottom: 0;
     margin-top: 0;
+    min-height: 3em;
 }
 
 .callout.info p.user_description {
     font-family: AvenirLTStd-Black;
-    text-transform: uppercase;
     font-size: 0.8em;
+    display: block;
 }
 
 .callout.info h2 {
@@ -1004,8 +1027,24 @@ p.ingress.user a {
     text-decoration: underline;
 }
 
+p span {
+    text-decoration: none !important;
+}
+
 .callout .callout {
     height: 18em;
+}
+
+
+.users .label.tag {
+    line-height: 1;
+    display: block;
+    float: left;
+}
+
+ .callout .users img {
+    padding-top: 0px;
+    margin-right: -1em;
 }
 
 .callout.info .callout h2 {
@@ -1094,7 +1133,10 @@ p.ingress.user a {
 	font-size:110%;
 }
 
-
+/*.callout.success.next.tag-132 {
+    display: none;
+}
+*/
 
 .callout.color-0 .callout .color-1, .callout.color-0 .callout .color-2, .callout.color-0 .callout .color-3, .callout.color-0 .callout .color-4, .callout.color-0 .callout .color-5 {
 background-color: #c5c3c3;
@@ -1282,6 +1324,25 @@ a.disc_link {
     -webkit-filter: none;
 }
 
+
+/*This will work for firefox*/
+@-moz-document url-prefix() {
+.callout img {
+    padding-top: 15px;
+}
+
+	.front .callout {
+
+    overflow: hidden;
+    max-height: 29em;
+
+}
+}
+
+.callout img {
+    padding-top: 15px;
+}
+
 .img_crop {
     max-height: 13em;
     overflow: hidden;
@@ -1320,7 +1381,6 @@ a.disc_link {
 
 .primary.callout.accelerator {
     margin-left: 1em;
-    margin-right: 0.5em;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0em;
     border-bottom-left-radius: 2em;
@@ -1361,6 +1421,25 @@ a.disc_link {
     background-image: url(../img/digisote_iso.jpg);
     background-size: contain;
     background-position-y: -19em;}
+
+.primary.callout.accelerator.seven {
+    background-image: url(../img/kiertotaloushaku_bg.jpg);}
+
+.primary.callout.accelerator.eight {
+    background-image: url(../img/hiili.jpg);
+    background-size: contain;
+    background-position-y: -10em;}
+
+.primary.callout.info.accelerator.eight {
+    background-size: auto;
+    background-position-y: 0;
+}
+
+
+.primary.callout.info.accelerator.eight h2, .accelerator.eight .maincontent .side h2 {
+    color: #da5a27;
+}
+
 
 .accelerator .maincontent {
     background-color: white;
@@ -1463,6 +1542,28 @@ a.disc_link {
     background-position-y: bottom;
 }
 
+
+.accelerator .chosensote .callout {
+    background-image: url(../img/sote_label.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+.accelerator .chosencoal .callout { 
+    background-image: url(../img/coal_label.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+.accelerator .chosencircu .callout { 
+    background-image: url(../img/circular_ec_label.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
 .has-tip {
 position: relative;
 border-bottom: 0px dotted #8a8a8a;
@@ -1550,6 +1651,25 @@ cursor: help;
     text-transform: inherit;
     list-style-type: disc;
     padding-bottom: 0.5em;
+}
+
+
+.dateheader {
+    color: #3c3c3c;
+    margin-top: -0.5em;
+    font-size: 1.1em;
+}
+
+.dateinfo {
+    color: #3c3c3c;
+    margin-top: -0.3em;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.dateheader span, .dateinfo span {
+    width: 5rem;
+    display: inline-block;
 }
 
 .share li {
@@ -1691,6 +1811,8 @@ li.ends {
 .callout .maincontent {
     background-color: white;
     padding: 3em;
+	    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .data ul {
@@ -1769,6 +1891,19 @@ font-weight: 900;
 }
 
 
+.primary.callout.info.accelerator.five p {
+    color: #558316;
+    padding-top: 1em;
+	transform: rotate(-6deg);
+font-weight: 900;
+    text-transform: uppercase;
+    background-color: #e0e0e0;
+    padding: 6px;
+	    margin-top: 1em;
+
+}
+
+
 .primary.callout.info.accelerator.hack p {
     color: #c7a16d;
     padding-top: 1em;
@@ -1780,6 +1915,91 @@ font-weight: 900;
 	    margin-top: 1em;
 
 }
+
+/* FOOTER */
+
+.footer .columns {padding-left: 1rem;}
+
+.columns .last {
+    padding-left: 3rem;
+}
+
+
+.footer h4 {
+text-transform: initial;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+	padding-left: 0.5rem;
+}
+
+.last ul li {
+    padding-left: 47px;
+    background-repeat: no-repeat;
+    background-size: 33px;
+    line-height: 2.5em;
+}
+
+ul li.tweet {
+	background-image: url("../img/footer_twitter.png");
+
+}
+ul li.facebook {
+	background-image: url("../img/footer_fb.png");
+}
+ul li.instagram {
+	background-image: url("../img/footer_insta.png");
+}
+ul li.mail {
+	background-image: url("../img/footer_email.png");
+}
+
+.footer h3 {
+    padding-top: 0;
+    margin-top: -0.5rem;
+    color: #2d3264;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.footer p {
+    font-size: 1.3rem;
+}
+
+.last ul {
+    list-style: none;
+	margin-left: 0.2rem;
+}
+.primary.callout.info.submenu.start.steps {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+.large-12.columns.small-12.right {
+    padding-right: 0;
+}
+
+.primary.callout.info.submenu.footer {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+	    padding-top: 2.5rem;
+}
+
+.primary.callout.info {
+    margin-left: 0.5rem;
+}
+
+.front .primary.callout.info {
+    margin-left: 0;
+}
+
+.primary.callout.similar {
+margin-right: 0.5rem;
+}
+
+.front .primary.callout.similar {
+    margin-right: 0rem;
+}
+
 
     /* Define mobile styles */
     @media only screen and (max-width: 40em) {
@@ -1806,6 +2026,17 @@ font-weight: 900;
             padding: 0;
             margin-bottom: -9em;
         }
+
+		.footer .callout img {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+		.columns .last {
+    padding-left: 1rem;
+}
+
+
     }
     @media screen and (min-width: 40em) {
         .callout.profile h2 {
@@ -1920,7 +2151,7 @@ font-weight: 900;
 
 @media screen and (min-width: 40em) {
     .callout.info p.ingress {
-        font-size: 1.2em;
+        font-size: 1.26em;
         font-weight: 400;
         margin-right: 1em;
         line-height: 1.1em;
@@ -1964,7 +2195,7 @@ h1 {font-size: 2.5rem;
 
 @media screen and (min-width: 64em) and (max-width: 74.9375em) {
     .callout.info p.ingress {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }
 

@@ -30,6 +30,8 @@
                             <h2 v-if="displayedExperimentStage == 3">${'Funding'|trans}</h2>
                             <h2 v-if="displayedExperimentStage == 4">${'Experiment'|trans}</h2>
                             <h2 v-if="displayedExperimentStage == 5">${'archive'|trans}</h2>
+                            <div class="dateheader"><span>${'created'|trans}</span> <span>${'updated'|trans}</span></div>
+                            <div class="dateinfo"><span>{{experiment.created_at|date}}</span> <span>{{experiment.updated_at|date}}</span></div>
 
                             <p class="sub">{{ getLanguage('title', true) }}</p>
 
@@ -521,9 +523,15 @@
                                 ${'Unpublish'|trans}
                         </button>
 
+
+                        <button v-if="isUserAuthenticated" class="button success next right">
+                            <a href="https://keskustelu.kokeilunpaikka.fi/c/site-feedback">
+                                ${'Support call'|trans}</a>
+                        </button>
+
                     </div>
 
-                    <div class="callout success next" v-if="experiment.stage < 5 && isUserEditor" style="height:auto;" :class="[experiment.tags.map(function(tag) {return 'tag-' + tag.id}).join(' ')]">
+                    <div class="callout success next" v-if="isUserEditor" style="height:auto;" :class="[experiment.tags.map(function(tag) {return 'tag-' + tag.id}).join(' ')]">
 
 						<div class="breadcrumbs">
             <span class="label tag color-0" style="">${'Challenge'|trans}</span>
@@ -542,13 +550,22 @@
 
 			-->
 
-
+                    <template v-if="experiment.stage < 5">
                         <h5>${'Do you want to advance your experiment to the next stage?'|trans}</h5>
-                        <p>${'Click here to move your experiment to the next stage'|trans}</p>
-                        <alert inline-template display-text="${'move_to_next_stage'|trans}" @confirm="goToTheNextStage()">
+
+                        <alert inline-template display-text="${'Move'|trans}" @confirm="moveStage('next')">
                             <button class="button success next" @click="showAlert()">
-                            ${'Move'|trans}</button>
+                            ${'Move'|trans} ≫</button>
                         </alert>
+                    </template>
+                    <template v-if="experiment.stage > 0">
+                        <h5>${'Do you want to move your experiment to the previous stage?'|trans}</h5>
+
+                        <alert inline-template display-text="${'Move to previous stage'|trans}" @confirm="moveStage('previous')">
+                            <button class="button success next" @click="showAlert()">≪
+                            ${'Move to previous stage'|trans}</button>
+                        </alert>
+                    </template>
                     </div>
                     <a name="bottom"></a>
 

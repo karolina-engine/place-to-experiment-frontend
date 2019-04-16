@@ -9,8 +9,26 @@
                         <span v-if="!isUserAuthenticated">${'You need to be logged in to start an experiment'|trans}<br>
                                                           ${'Learn about the experiment stages'|trans} <a :href="rootUrl + '${lang}/page/ohjeet/'">${'here.'|trans}</a></span>
                         <!--You need to be logged in to start an experiment-->
-                        
+
                         <div v-if="isUserAuthenticated" class="content-div">
+
+
+
+
+								<!--Conditioning the pretagged experiment
+							<template v-if="experimentTag !== '132'">
+
+                  			<h2>${'Haluatko osallistua kokeiluhakuun?'|trans}</h2>
+                        <div class="columns">
+                          <div class="row">${'Aloita hiilijalanjälkikokeilu tästä!'|trans} - <a :href="rootUrl + '${lang}/hiilijalanjalki/'" target="_blank">${'Lue lisää'|trans}</a></div>
+                          <div class="row"><a :href="rootUrl + '${lang}/new-experiment/2/132'" class="button">${'Take part'|trans}</a></div>
+                        </div>
+
+							</template>-->
+
+
+							<!--Start experiment data-->
+
                             <div class="content-title">
 
                                 <h1 v-if="experimentStage == 0">${'Start a challenge'|trans}</h1>
@@ -29,19 +47,19 @@
                                         <!--Experiment title:-->
                                         <div class="input-group" style="width:100%;">
                                             <input  v-if="experimentStage == 0" type="text" name="title" class="form-control" placeholder="${'Give your challenge a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">
-											
-										  <input v-if="experimentStage == 1" type="text" name="title" class="form-control" placeholder="${'Give your idea a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">			
-										
-										  <input v-if="experimentStage == 2" type="text" name="title" class="form-control" placeholder="${'Give your suggestion a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">	
-										
-									       <input v-if="experimentStage == 5 " type="text" name="title" class="form-control" placeholder="${'Give your archive a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">		
-											
+
+										  <input v-if="experimentStage == 1" type="text" name="title" class="form-control" placeholder="${'Give your idea a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">
+
+										  <input v-if="experimentStage == 2" type="text" name="title" class="form-control" placeholder="${'Give your suggestion a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">
+
+									       <input v-if="experimentStage == 5 " type="text" name="title" class="form-control" placeholder="${'Give your archive a short descriptive name'|trans}" v-model="experimentTitle" v-validate.initial data-vv-rules="required">
+
                                             <div class="input-group-addon alert-danger" v-if="errors.has('title') && showErrors">
                                                 <span>{{ errors.first('title') }}</span>
                                             </div>
                                         </div>
                                     </div>
-              
+
                                     <div class="form-group">
                                         <label>${'Name (person or organization)'|trans}</label>
                                         <!--Experiment owner name:-->
@@ -52,13 +70,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button
+
+
+									<button
                                         id="new-experiment-submit"
                                         type="submit"
                                         class="button"
                                         :class="{success: experimentTitle != '' && experimentOwnerName != '', secondary: experimentTitle == '' || experimentOwnerName == ''}"
                                         :disabled="experimentTitle == '' || experimentOwnerName == ''">
                                         <i class="fi-check medium">&nbsp;</i>${'Save'|trans}</button>
+
                                     <!--Start this experiment-->
                                 </form>
                             </div>
@@ -67,6 +88,7 @@
                 </div>
             </div>
         </create-experiment>
+
     </div>
 
 {% endblock %}

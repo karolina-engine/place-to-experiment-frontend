@@ -1,56 +1,534 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block content %} 
 
-    <!-- MAIN CONTENT -->
-    <div class="large-12 medium-12 small-12 columns page">
-        <div class="primary callout accelerator six">
-            <div class="maincontent">
-                <div class="row">
+<!-- MAIN CONTENT -->
+<div class="large-12 medium-12 small-12 columns page">
+  <div class="primary callout accelerator six">
+    <div class="maincontent">
+      <div class="row">
+        <div class="large-4 medium-4 small-12 columns side">
+          <h2>${'Digitaidot sotetyössä'|trans}</h2>
+        </div>
+        <div class="large-8 medium-8 small-12 columns main">
+          <h1>${title|raw}</h1>
+          <div>${content|raw}</div>
+          <br>
+          <a class="button" href="https://keskustelu.kokeilunpaikka.fi/t/digitaidot-sotetyossa/1049">${'Kysy ja keskustele kokeiluhausta'|trans}</a> </div>
+		  
+		  
+		  
+					
+					          <div class="chosensote">
+                        <experiment-index inline-template="inline-template" :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" show-experiment-ids="718, 719, 725, 767, 751, 736, 720, 729, 748, 765, 755, 758, 773, 776, 779, 762">
 
-                    <div class="large-4 medium-4 small-12 columns side">
-                        <h2>${'Digitaidot sotetyössä'|trans}</h2>
+                            <div class="wrapper browse"><hr>
+
+                                <h3>${'The chosen experiments for further development'|trans}</h3>
+
+                                <div class="large-12 columns">
+                                    <!--Challenges-->
+                                </div>
+                                <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), showStages) , 0, showLimit), searchTerm))">
+
+                                    ${include('experiment_index_parts/experiment_card.html')}
+
+                                </div>
+
+                            </div>
+                        </experiment-index>
 
                     </div>
-                    <div class="large-8 medium-8 small-12 columns main">
-
-                        <h1>${title|raw}</h1>
-
-                        <div>${content|raw}</div>
-							<a class="button" :href="rootUrl + '${lang}/new-experiment/2/130/'">${'Jätä ehdotus'|trans}</a><br><br>
-						
-                        <a class="button" href="https://keskustelu.kokeilunpaikka.fi/t/digitaidot-sotetyossa/1049">${'Kysy ja keskustele kokeiluhausta'|trans}</a>
-						
-								 </div>			
-  <experiment-index inline-template :common="{placeholders: placeholders}" api-url="${agitator_url}" language="${lang}" show-limit="0" placeholder-image-url="/img/placeholder.png" get-tag="130">
-
-                        <div class="wrapper browse"><hr>
-    <h3 class="small-12">${'All of the experiments related to the idea search'|trans}</h3>
-
-
-                            <div class="large-12 columns">
-                                <!--Challenges-->
-                            </div>
-                            <div v-for="experiment in sortExperiments(keywordFilter(sliceExperiments(filterByStage(filterById(experiments, showExperimentIds), '1') , 0, showLimit), searchTerm))">
-
-                                ${include('experiment_index_parts/experiment_card.html')}
- 
-                            </div>
-
-                        </div> 
-                    </experiment-index>					
-
-                   
-
-					      
-
+					<br>
+		  
+        <div class="wrapper browse">
+          <hr>
+          <h3 class="small-12">${'All of the experiments related to the idea search'|trans}</h3>
+          <div class="large-12 columns"></div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/706"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Tiia Nikkilä...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Näytteenottajien perehdytys virtuaalisessa laboratoriossa" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/706">Näytteenottajien perehdytys virtuaalisessa...</a></p>
                 </div>
-
+              </div>
             </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-25 tag-31 tag-88 tag-110 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/718"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Mari Virtanen</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/c6d64a48-781d-4826-ae9d-53e5d64bb700.jpg" alt="Digitaalinen 360-ympäristö osana henkilöstön perehdyttämistä" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/718">Digitaalinen 360-ympäristö osana henkilöstön...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-2 tag-11 tag-25 tag-31 tag-60 tag-86 tag-88 tag-110 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/719"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Mari Virtanen</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/474df727-dc92-445f-b9d0-468b8036d191.jpg" alt="Potilasohjauksen pelillistäminen 360-teknologian avulla" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/719">Potilasohjauksen pelillistäminen 360-teknologian...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-24 tag-58 tag-87 tag-120 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/720"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Nobileo Oy</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/ec87c026-5d05-4937-b002-e5851b70555b.png" alt="Kotihoidon digiviestivihko" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/720">Kotihoidon digiviestivihko</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/725"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Tampereen yliopisto</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/6c0462ef-a1d9-4ae4-821e-5bb7eafb64b3.jpg" alt="HOITAJALLE PUETTAVAN VOIMALIIVIN KOKEILU: Robottiapua tavaranostoihin ja potilassiirtoihin" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/725">HOITAJALLE PUETTAVAN VOIMALIIVIN KOKEILU:...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/729"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Kalliola oy / Kalliolan...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/0fa326be-a428-461a-979a-a903b9c77a52.jpg" alt="Nopeasti hoitoon! — Päihdekuntoutuksen hoitoonhakeutumis- ja sisääntuloprosessin digitalisointi" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/729">Nopeasti hoitoon! — Päihdekuntoutuksen...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/730"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Kalliolan Setlementti ry...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Digi Ne-Rå" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/730">Digi Ne-Rå</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-2 tag-5 tag-6 tag-47 tag-58 tag-82 tag-85 tag-99 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/734"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Sanna Häkkinen &amp; Jonna...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/70efd00a-fb69-4554-a66d-e67d920896a3.jpg" alt="Digiavusteinen muistelu vanhustyössä" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/734">Digiavusteinen muistelu vanhustyössä</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/738"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Webido Oy</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/dec49dd4-ffd1-4d20-8b62-c9bbb4511284.png" alt="Hoitokäynnin dokumentointi kuvilla ja puheella" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/738">Hoitokäynnin dokumentointi kuvilla ja puheella</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-5 tag-31 tag-33 tag-59 tag-60 tag-62 tag-92 tag-98 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/739"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Oy Sailer Research &amp;...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/a978c7aa-64ed-49b9-8fd5-12c44759f1dc.png" alt="Videoraportointi osaksi vuorovaikutusta ja tiedonsiirtoa hoitotyössä" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/739">Videoraportointi osaksi vuorovaikutusta ja...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/744"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Vaasan...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Joustava oppiminen (Kokeiluun: Digitaidot sotetyössä)" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/744">Joustava oppiminen (Kokeiluun: Digitaidot...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/745"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Kaakkois-Suomen...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Ajankohtaista tietoa sote -alan digitalisaatiosta ja kokeilukulttuurista" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/745">Ajankohtaista tietoa sote -alan digitalisaatiosta...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/746"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Pöytyän kunta</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/2206ec17-465b-41ce-91b8-284dd88a6e63.jpg" alt="Golfautojen hyödyntäminen vanhustyössä" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/746">Golfautojen hyödyntäminen vanhustyössä</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/748"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Keski-Uudenmaan sote,...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/49c27ccf-14ed-49f1-a78f-1e421e23f440.jpg" alt="SoTe-ammattilaisen sähköinen opas terveyden edistämisen, omahoidon, itseasioinnin ja osallistamisen tueksi, digitaalisia menetelmiä hyödyntäen." class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/748">SoTe-ammattilaisen sähköinen opas terveyden...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/755"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Coreorient Oy</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Diginaapuri mukaan kotikäynnille" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/755">Diginaapuri mukaan kotikäynnille</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-5 tag-6 tag-47 tag-58 tag-59 tag-82 tag-85 tag-95 tag-99 tag-101 tag-120 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/758"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Helmi Seniorikoti </p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/386a082c-4631-4f7d-8b7d-ea19d9746ceb.jpg" alt="Helmi Connect - interaktiivinen infotaulu palvelutalon arkea helpottamassa" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/758">Helmi Connect - interaktiivinen infotaulu...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-3 tag-4 tag-30 tag-37 tag-38 tag-47 tag-61 tag-85 tag-95 tag-101 tag-102 tag-113 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/760"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Kuhmon kaupunki /...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/233ec5c9-51ff-41a5-bdd9-40b1cfa85e09.jpg" alt="Kelaten kalalle" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/760">Kelaten kalalle</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/765"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Päijät-Hämeen...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/1f6429e1-8fdc-47ce-9d6d-8f5581a75c05.png" alt="Vammaispalvelun asiakkaan toimintakyvyn arviointi -mobiilisovellus " class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/765">Vammaispalvelun asiakkaan toimintakyvyn arviointi...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/768"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Interbeing / Jussi Hölttä</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/33bb8dd8-cc64-459d-a3bb-9ab5371a1d11.jpg" alt="Pari- ja joukko-ohjelmoinnin käytänteet joustavan oppimisen mahdollistajina" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/768">Pari- ja joukko-ohjelmoinnin käytänteet joustavan...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/773"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Appsolute Solutions...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/11f76b6c-2ebd-4581-976b-e688fc4c59d7.png" alt="Sote-logistiikan ääni" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/773">Sote-logistiikan ääni</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/775"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Vanhustyön keskusliitto...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/bde0ed14-cf35-4f98-8d80-006a6f03b8ad.png" alt="Missä kuljet - kotihoidon asiantuntija?" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/775">Missä kuljet - kotihoidon asiantuntija?</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/776"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Järvi-Saimaan Palvelut...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/022d7ead-f14b-4364-b649-2a164afa6180.jpeg" alt="Älykkäällä logistiikalla ja digiratkaisuilla 25 AinaAuki -palvelupistettä väljästi asutuille alueille" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/776">Älykkäällä logistiikalla ja digiratkaisuilla 25...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/778"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Hakkuutila Tom Himanen Oy</p>
+                  </div>
+                 <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/125cbb3c-0519-4c4e-86a5-89a83834e2a9.jpg" alt="Asperger-nuorten ohjelmointikielikylpy" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/778">Asperger-nuorten ohjelmointikielikylpy</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/779"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Vanhustyön keskusliitto...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/36c5c866-64e2-4745-8e92-4e93ca4bfa07.jpg" alt="Biohakkerointia peliin - Hyvinvointia vanhusten palvelutalossa" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/779">Biohakkerointia peliin - Hyvinvointia vanhusten...</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+			   <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/753"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Suomen Setlementtiliitto...</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Oma Osaaminen Näkyväksi" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/753">Oma Osaaminen Näkyväksi</a></p></div></div>
+			 </div>
+          </div>
+			
+			
+			      <div>
+            <div class="large-3 columns panels">
+              <div class="callout color-2 tag-130">
+                <div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/751"><!----> <!---->
+                  <h2>Ehdotus</h2>
+                  <!----> <!----> <!---->
+                  <div class="owner">
+                    <p>Minna Helynen & Merja Salminen...</p>
+                  </div>
+                  <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/89d342c2-3198-4b33-ba52-6491d28b2f1a.jpg" alt="SomeHaukku" class="img-responsive"></a></div>
+                <div>
+                  <p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/751">SomeHaukku - digivalmennusta Sofiakylän......</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+			
+			 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/770"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Suomen Setlementtiliitto...</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="validaatio, sähköinen työkalu osaamisen..." class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/770">Validaatio, sähköinen työkalu osaamisen...</a></p></div></div>
+			 </div>
+          </div>
+			
+			
+			 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/777"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Työnohjaus Mari Turja (+...</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Perhetyön palvelun kehittäminen" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/777">Perhetyön palvelun kehittäminen ja perhetyön...</a></p></div></div>
+			 </div>
+          </div>
+			
+						 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/736"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Mirva Saarinen, Sataedu</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Ohjaustyökalu ikäihmisen sähköiseen asiointiin" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/736">Ohjaustyökalu ikäihmisen sähköiseen asiointiin</a></p></div></div>
+			 </div>
+          </div>
+			
+			
 
+			
+				 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/780"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Tamora Oy</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/f38d9d71-9f44-45d4-8bb8-8dadec9a4e57.jpg" alt="Elämyksellinen Aamiainen" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/780">Elämyksellinen Aamiainen</a></p></div></div>
+			 </div>
+          </div>
+			
+			
+			 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/757"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Heidi Parviainen</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Ohjaustyökalu ikäihmisen sähköiseen asiointiin" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/757">Kotihoidon asiakas, oman näköinen elämä kotona</a></p></div></div>
+			 </div>
+          </div>
+			
+			 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/762"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Kuhmon kaupunki</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Biohakkerointia peliin - hyvinvointi vanhusten hoivakodissa" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/762">Biohakkerointia peliin - hyvinvointi vanhusten hoivakodissa</a></p></div></div>
+			 </div>
+          </div>
+			
+			 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/764"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Kuhmon kaupunki</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Hyvän elämän tosi-TV erityislasten silmin" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/764">Hyvän elämän tosi-TV erityislasten silmin</a></p></div></div>
+			 </div>
+          </div>
+			
+						 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/756"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Airo Island ry</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Robosauna" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/756">Robosauna</a></p></div></div>
+			 </div>
+          </div>
+			
+						 <div>
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/771"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Kuhmon kaupunki</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Nuorten pelilliset digitaidot" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/771">Nuorten pelilliset digitaidot</a></p></div></div>
+			 </div>
+          </div>
+			
+			
+			<div><div class="large-3 columns panels"><div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/772"><h2>Ehdotus</h2> <div class="owner"><p>Kuhmon kaupunki</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/829d3e9d-44d2-4d21-a341-70bc320943de.jpg" alt="Nuoret muutosvoimana" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/772">Nuoret muutosvoimana</a></p></div></div></div></div>
+			
+						 <div> 
+			        <div class="large-3 columns panels">
+			<div class="callout color-2 tag-123 tag-130"><div><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/767"><!----> <!----> <h2>Ehdotus</h2> <!----> <!----> <!----> <div class="owner"><p>Päijät-Hämeen...</p></div> <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_179,w_280/https://s3-eu-west-1.amazonaws.com/agitator-image-host/kokeilunpaikka/c95b9123-4625-42ce-9869-cbef210c8b51.jpg" alt="Alustava lääkeseuranta" class="img-responsive"></a></div> <div><p class="ingress"><a target="_parent" href="https://www.kokeilunpaikka.fi/fi/experiment/767">Avustava lääkeseuranta -sovellus</a></p></div></div>
+			 </div>
+          </div>
+			
+			
+			 
         </div>
-    </div> 
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- SMALL COL -->
+<!-- SMALL COL --> 
 
-{% endblock %}
+{% endblock %} 

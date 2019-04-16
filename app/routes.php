@@ -40,7 +40,7 @@ $routes->get('/{lang}/', function($lang) use($app) {
         $data['first_post']['slug'] = "none";
         $data['first_post']['featured_image'] = "none";
     }
- 
+
     $data['cat'] = 7;
     $data['posts'] = $wpAPI->getPostsIndex(5, $lang, $data['cat']);
 
@@ -81,6 +81,18 @@ $routes->get('/{lang}/list/', function() use($app) {
 $routes->get('/{lang}/leiki/', function() use($app) {
 
    return $app['twig']->render('leiki.html');
+
+});
+
+$routes->get('/{lang}/search/', function() use($app) {
+
+   return $app['twig']->render('leiki-search.html');
+
+});
+
+$routes->get('/{lang}/personal-widget/', function() use($app) {
+
+   return $app['twig']->render('leiki-user.html');
 
 });
 
@@ -365,7 +377,48 @@ $routes->get('/{lang}/digisotetaidot/', function($lang) use($app) {
 
     $data['title'] = $wpData[0]['title']['rendered'];
     $data['content'] = $wpData[0]['content']['rendered'];
-	
+
+    // Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+  });
+
+
+	$routes->get('/{lang}/hiilijalanjalki/', function($lang) use($app) {
+
+    $template = "accelerator8";
+    $slug = "hiilijalanjalki";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+
+
 		// Check for translations
     if (isset($wpData[0]['wpml_translations'])) {
 
@@ -379,10 +432,53 @@ $routes->get('/{lang}/digisotetaidot/', function($lang) use($app) {
            }
         }
     }
-	
+
     return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
+
+
+
+	$routes->get('/{lang}/kiertotaloushaku/', function($lang) use($app) {
+
+    $template = "accelerator7";
+    $slug = "kiertotaloushaku";
+
+    if (!ctype_alnum($template)) {
+        exit('template must be alphanum');
+    }
+
+    $wpAPI = new Karolina\WpAPI('http://cms.kokeilunpaikka.fi');
+
+    $data['posts'] = $wpAPI->getPostsIndex(10, $lang);
+
+    $client = new GuzzleHttp\Client();
+
+    $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/?slug='.$slug);
+    $wpData = json_decode($res->getBody(), true);
+
+    $data['title'] = $wpData[0]['title']['rendered'];
+    $data['content'] = $wpData[0]['content']['rendered'];
+
+
+		// Check for translations
+    if (isset($wpData[0]['wpml_translations'])) {
+
+        foreach ($wpData[0]['wpml_translations'] as $translation) {
+           if (substr($translation['locale'], 0,2) == $lang) {
+               $res = $client->request('GET', 'http://cms.kokeilunpaikka.fi/wp-json/wp/v2/pages/'.$translation['id']);
+               $wpData = json_decode($res->getBody(), true);
+               $data['title'] = $wpData['title']['rendered'];
+               $data['content'] = $wpData['content']['rendered'];
+
+           }
+        }
+    }
+
+    return $app['twig']->render('custom_pages/'.$template.'.html', $data);
+
+});
+
 
 
 $routes->get('/digisotetaidot/', function($lang) use($app) {
@@ -405,7 +501,7 @@ $routes->get('/digisotetaidot/', function($lang) use($app) {
 
     $data['title'] = $wpData[0]['title']['rendered'];
     $data['content'] = $wpData[0]['content']['rendered'];
-	
+
     return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
@@ -433,7 +529,7 @@ $routes->get('/{lang}/digisauna/', function($lang) use($app) {
 
     $data['title'] = $wpData[0]['title']['rendered'];
     $data['content'] = $wpData[0]['content']['rendered'];
-	
+
 		// Check for translations
     if (isset($wpData[0]['wpml_translations'])) {
 
@@ -447,7 +543,7 @@ $routes->get('/{lang}/digisauna/', function($lang) use($app) {
            }
         }
     }
-	
+
     return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
@@ -473,7 +569,7 @@ $routes->get('/digisauna/', function($lang) use($app) {
 
     $data['title'] = $wpData[0]['title']['rendered'];
     $data['content'] = $wpData[0]['content']['rendered'];
-	
+
     return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
@@ -587,9 +683,9 @@ $routes->get('/{lang}/tekoalyhaku/', function($lang) use($app) {
            }
         }
     }
-    
-    
-    
+
+
+
     return $app['twig']->render('custom_pages/'.$template.'.html', $data);
 
 });
@@ -627,6 +723,6 @@ $routes->get('/{lang}/page/{slug}/', function($lang, $slug) use($app) {
 
 
 });
- 
+
 
 return $routes;

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "register"
@@ -46,9 +46,7 @@ msgid "search"
 msgstr "Sökning"
 
 msgid "discl_not_register"
-msgstr ""
-"Din e-postadress eller användarnamn är felaktigt eller du har inte "
-"registrerat dig än."
+msgstr "Din e-postadress eller användarnamn är felaktigt eller du har inte registrerat dig än."
 
 msgid "error"
 msgstr "Fel"
@@ -203,15 +201,11 @@ msgid "Follow us on the Facebok page of Kokeilun Paikka"
 msgstr "Följ oss på Facebok sidan i Plats för försök"
 
 msgid ""
-"The Place of experiment is a service where we can all think and develop "
-"common experiments and get funding for them. The experiment stage moves from "
-"the idea / challenge to the suggestion, and onwards to the possible funding "
-"and implementation."
+"The Place of experiment is a service where we can all think and develop common experiments and get funding for them. The experiment stage moves from "
+"the idea / challenge to the suggestion, and onwards to the possible funding and implementation."
 msgstr ""
-" Kokeilunpaikka.fi kombinerar idéer, implementatörer, sparrare och "
-"finansiärer. Här kan du dela en idé, lägga fram förslag och experimentera "
-"med nätverksstöd. Här hittar du partners och potentiella finansiärer. Du kan "
-"också kommentera och sparra på andra experiment. Resultatet av experimenten "
+" Kokeilunpaikka.fi kombinerar idéer, implementatörer, sparrare och finansiärer. Här kan du dela en idé, lägga fram förslag och experimentera med "
+"nätverksstöd. Här hittar du partners och potentiella finansiärer. Du kan också kommentera och sparra på andra experiment. Resultatet av experimenten "
 "delas bland oss alla."
 
 msgid "Is your idea any good? You'll find out by experimenting"
@@ -307,9 +301,7 @@ msgid "using the new password."
 msgstr "använda det nya lösenordet."
 
 msgid "This token has already been used. Please resend reset password email."
-msgstr ""
-"Denna token har redan använts. Vänligen skicka e-postmeddelande för "
-"återställning av lösenord."
+msgstr "Denna token har redan använts. Vänligen skicka e-postmeddelande för återställning av lösenord."
 
 msgid "There was an error, you may need to start the"
 msgstr "Ett fel uppstod vid uppladdning av filen, var god försök"
@@ -320,20 +312,14 @@ msgstr "återställa processen"
 msgid "again."
 msgstr "igen."
 
-msgid ""
-"Enter your email address. You will receive a link to reset your password."
-msgstr ""
-"Ange din e-postadress. Här får du en länk för att återställa ditt lösenord."
+msgid "Enter your email address. You will receive a link to reset your password."
+msgstr "Ange din e-postadress. Här får du en länk för att återställa ditt lösenord."
 
 msgid "Send the reset email"
 msgstr "Skicka återställningsmejlet"
 
-msgid ""
-"The reset password email was sent successfully. Please follow the "
-"instructions provided in the email."
-msgstr ""
-"Vi har skickat en bekräftelse till din e-postadress. Följ instruktionerna i "
-"e-post och komma tillbaka till den här sidan."
+msgid "The reset password email was sent successfully. Please follow the instructions provided in the email."
+msgstr "Vi har skickat en bekräftelse till din e-postadress. Följ instruktionerna i e-post och komma tillbaka till den här sidan."
 
 msgid "Interests"
 msgstr "Räntor"
@@ -438,7 +424,7 @@ msgid "Who will take the experiment?"
 msgstr "Vem genomför försöket? "
 
 msgid "What is the budget of the experiment?"
-msgstr "Vad är försökets budget?"
+msgstr "Vad är försökets budget? Berätta här vad som inkluderas i din budget. Berätta också om du redan får finansiering någon annanstans ifrån."
 
 msgid "What is the planned schedule for the experiment?"
 msgstr "Vad är det planerade schemat för försöket?"
@@ -469,6 +455,9 @@ msgstr "Kampanj-ID:"
 
 msgid "Save funding"
 msgstr "Spara finansiering"
+
+msgid "Discussion board"
+msgstr "Diskussionsplattform"
 
 msgid "Did the experiment reach the required goals?"
 msgstr "Gick försöket till de önskade målen?"
@@ -581,12 +570,8 @@ msgstr "Redo?"
 msgid "Ready"
 msgstr "Redo"
 
-msgid ""
-"Click here to see your experiment in your own profile. You can also return "
-"to edit it. We'll publish the suggestions when they are checked."
-msgstr ""
-"Klicka här för att se ditt försöket i din egen profil. Du kan också "
-"återvända för att redigera den. Vi publicerar förslaget när de kontrolleras."
+msgid "Click here to see your experiment in your own profile. You can also return to edit it. We'll publish the suggestions when they are checked."
+msgstr "Klicka här för att se ditt försöket i din egen profil. Du kan också återvända för att redigera den. Vi publicerar förslaget när de kontrolleras."
 
 msgid "Support call"
 msgstr "Support"
@@ -594,11 +579,20 @@ msgstr "Support"
 msgid "Do you want to advance your experiment to the next stage?"
 msgstr "Vill du göra ditt försöket vidare till nästa fasen?"
 
+msgid "Do you want to move your experiment to the previous stage?"
+msgstr "Vill du göra ditt försöket vidare till föregående fasen?"
+
 msgid "Click here to move your experiment to the next stage"
 msgstr "Klicka här för att flytta ditt försöket till nästa fasen"
 
+msgid "Click here to move your experiment to the previous stage"
+msgstr "Klicka här för att flytta ditt försöket till föregående fasen"
+
 msgid "Move"
 msgstr "Flytta"
+
+msgid "Move to previous stage"
+msgstr "Flytta till föregående fasen"
 
 msgid "Most popular"
 msgstr "Mest populära"
@@ -676,7 +670,7 @@ msgid "Ended"
 msgstr "Slutade"
 
 msgid "News"
-msgstr "Nyheter"
+msgstr "Aktuellt"
 
 msgid "Artificial intelligence"
 msgstr "Artificiell intelligens"
@@ -685,25 +679,18 @@ msgid "Challenge search"
 msgstr "Utmaningssökning"
 
 msgid ""
-"Publish your experiment. You can edit it any time after publishing. Until "
-"you choose to publish it, your experiment can be found only in your own "
+"Publish your experiment. You can edit it any time after publishing. Until you choose to publish it, your experiment can be found only in your own "
 "profile or via the experiment url."
 msgstr ""
 
-msgid ""
-"Unpublish your experiment. After you unpublish it, your experiment can be "
-"found only in your own profile or via the experiment url."
+msgid "Unpublish your experiment. After you unpublish it, your experiment can be found only in your own profile or via the experiment url."
 msgstr ""
 
 msgid "Funding stage"
 msgstr ""
 
-msgid ""
-"What happens at the end of the experiment? (How can you scale-up the "
-"experiment and what does it require?"
-msgstr ""
-"Vad händer i slutet av försöket? (Hur kan du skala upp försöket och vad "
-"kräver det?"
+msgid "What happens at the end of the experiment? (How can you scale-up the experiment and what does it require?"
+msgstr "Vad händer i slutet av försöket? (Hur kan du skala upp försöket och vad kräver det?"
 
 msgid "Learn about the experiment stages"
 msgstr "Learn about the experiment stages"
@@ -716,7 +703,7 @@ msgstr "Daglig förvaltning"
 
 msgid "More communality"
 msgstr "Mer gemensamhet"
- 
+
 msgid "Environment and us"
 msgstr "Miljö och oss"
 
@@ -728,3 +715,42 @@ msgstr "Lämna ditt förslag"
 
 msgid "Kysy ja keskustele kokeiluhausta"
 msgstr "Fråga och diskutera denna utmaning"
+
+msgid "Tutustu palveluun"
+msgstr "Läs mer om tjänsten"
+
+msgid "Ohjeet"
+msgstr "Anvisningar"
+
+msgid "Pelisäännöt"
+msgstr "Spelregler"
+
+msgid "Hae rahoitusta"
+msgstr "Ansök om finansiering"
+
+msgid "Yhteystiedot"
+msgstr "Kontaktuppgifter"
+
+msgid "Watch more"
+msgstr "Se mer"
+
+msgid "created"
+msgstr "skapad"
+
+msgid "updated"
+msgstr "uppdaterad"
+
+msgid "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+msgstr "Plats för försök är en deltagande webbplattform som samlar ihop ideér, experiment och finansiärer."
+
+msgid "Puolita hiilijalanjälki!"
+msgstr "Hur halveras kolspåret?"
+
+msgid "Lue lisää"
+msgstr "Läs mera"
+
+msgid "Haluatko osallistua kokeiluhakuun?"
+msgstr "Will du delta i en försöksökning?"
+
+msgid "Aloita hiilijalanjälkikokeilu tästä!"
+msgstr "Starta Hur halveras kolspåret försök här!"

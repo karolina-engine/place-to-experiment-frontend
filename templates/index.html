@@ -5,34 +5,34 @@
     <div class="row front">
 
 		 <!-- INFO -->
-                <div class="large-4 medium-4 small-12 columns">
+                <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout info">
 						<h2>${'Is your idea any good? You\'ll find out by experimenting'|trans}</h2>
                         <p class="ingress">${'The Place of experiment is a service where we can all think and develop common experiments and get funding for them. The experiment stage moves from the idea / challenge to the suggestion, and onwards to the possible funding and implementation.'|trans}</p>
                     </div>
                 </div>
 
-		 <!-- ACCELERATOR 6 -->
-                <div class="large-4 medium-4 small-12 columns">
-                    <div class="primary callout info accelerator six">
+		 <!-- ACCELERATOR 7 -->
+             <div class="large-4 medium-6 small-12 columns">
+                    <div class="primary callout info accelerator eight">
 
-                 <a :href="rootUrl + '${lang}/digisotetaidot/'">
+                 <a :href="rootUrl + '${lang}/hiilijalanjalki/'">
 					<div class="maincontent">
-               <h2>${'Experiment search'|trans}</h2>
-               <h3>${'Digitaidot sotetyössä'|trans}</h3>
-                        <p>13.9.2018 - 15.10.2018</p>
+               <h2>${'Puolita hiilijalanjälki!'|trans}</h2>
+			   <h3>${'Experiment search'|trans}</h3>
 
+                        <p>30.1.2019 - 6.3.2019</p>
 
                 </div></a>
                   </div>
                 </div>
 
-	 
+
 
 
 
 		 <!-- NEWS -->
-                <div class="large-4 medium-4 small-12 columns">
+             <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout blog news">
                         <h1>${'News'|trans}</h1>
 
@@ -42,7 +42,7 @@
                             <p>
                                 <b>${posts[0].date_formatted}</b>
                                 <br>
-                                ${posts[0].excerpt|length > 150 ? posts[0].excerpt|slice(0, 150) ~ '...' : posts[0].excerpt}</p>
+                                ${posts[0].excerpt|length > 250 ? posts[0].excerpt|slice(0, 250) ~ '...' : posts[0].excerpt}</p>
                         </a>
 
                             {% if posts|length > 1 %}
@@ -66,7 +66,7 @@
 		<!--TWITTER-->
 
 
-                <div class="large-4 medium-4 small-12 columns">
+            <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout twit info">
 	<a class="twitter-timeline" data-width="307" data-height="420" data-link-color="#2d3264" href="https://twitter.com/kokeilunpaikka?"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -77,14 +77,14 @@
 	<!--BLOG-->
 
 
-		     <div class="large-4 medium-4 small-12 columns">
+		     <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout blog">
                         <h1>${'Blog'|trans}</h1>
 
                         <a :href="rootUrl + '${lang}/post/${first_post.id}/${first_post_cat}/${first_post.slug}/'">
 
                             <h2>${first_post.title|raw}</h2>
-                            <p>${first_post.date_formatted}: ${first_post.excerpt|length > 100 ? first_post.excerpt|slice(0, 100) ~ '...' : first_post.excerpt}</p>
+                            <p>${first_post.date_formatted}: ${first_post.excerpt|length > 200 ? first_post.excerpt|slice(0, 200) ~ '...' : first_post.excerpt}</p>
                             <div class="img_crop">
                                 {% if first_post.featured_image %}
                                 <img src="https://d1ncrxda1lmimh.cloudfront.net/karolina-fund/image/fetch/c_thumb,h_200,w_327/${first_post.featured_image}">
@@ -94,24 +94,21 @@
 
                     </div>
                 </div>
+  <!-- ACCELERATOR 7 -->
+            <div class="large-4 medium-6 small-12 columns">
+                   <div class="primary callout info accelerator seven">
 
+                <a :href="rootUrl + '${lang}/kiertotaloushaku/'">
+         <div class="maincontent">
+              <h2>${'Experiment search'|trans}</h2>
+        <h3>${'Kiertotaloushaku'|trans}</h3>
 
-		 <!-- ACCELERATOR 5 -->
-                <div class="large-4 medium-4 small-12 columns">
-                    <div class="primary callout info accelerator five">
+                       <p>11.12.2018 - 22.1.2019</p>
 
-                 <a :href="rootUrl + '${lang}/digisauna/'">
-					<div class="maincontent">
-               <h2>${'Idea search'|trans}</h2>
-               <h3>Digisauna</h3>
-                        <p>21.8.2018 - 31.10.2018</p>
+               </div></a>
+                 </div>
+               </div>
 
-
-                </div></a>
-                  </div>
-                </div>
-
-	
         <!--PROCESS PIPELINE -->
 
         <div class="large-12 columns process">
@@ -172,7 +169,7 @@
 
 
  	 <!-- ACCELERATOR 4 -->
-                <div class="large-4 medium-4 small-12 columns">
+             <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout info accelerator ai">
 
                  <a :href="rootUrl + '${lang}/tekoalyhaku/'">
@@ -185,19 +182,31 @@
                 </div></a>
                   </div>
                 </div>
-				
-				
-		<!-- accelerator 3 -->
-                <div class="large-4 medium-4 small-12 columns">
-                    <div class="primary callout info accelerator stea">
 
-                 <a :href="rootUrl + '${lang}/stea-ideahaku/'">
+
+				 <!-- video -->
+                <div class="large-4 medium-6 small-12 columns">
+                    <div class="primary callout info">
+					  <iframe width="310" height="185" src="https://www.youtube.com/embed/rX7TF6MD4fA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+					  <iframe width="310" height="185" src="https://www.youtube.com/embed/DY8XkHUgmuI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<p class="text-right"><a href="https://www.youtube.com/channel/UCZro9IfD9qvSy--RzfekI2g">${'Watch more'|trans}&Gt;</a></p>
+                    </div>
+                </div>
+
+
+
+
+		 <!-- ACCELERATOR 6 -->
+             <div class="large-4 medium-6 small-12 columns">
+                    <div class="primary callout info accelerator six">
+
+                 <a :href="rootUrl + '${lang}/digisotetaidot/'">
 					<div class="maincontent">
-               <h2>${'Idea search'|trans}</h2>
-               <h3>Vapaaehtois-<br>
-				toiminta</h3>
+               <h2>${'Experiment search'|trans}</h2>
+               <h3>${'Digitaidot sotetyössä'|trans}</h3>
+                        <p>13.9.2018 - 17.10.2018</p>
 
-					 <p>${'Ended'|trans}</p>
+
                 </div></a>
                   </div>
                 </div>
@@ -205,29 +214,22 @@
 
 
 
- <!-- experiment 1 -->
-                <div v-for="(experiment, index) in sortExperiments(sliceExperiments(experiments, 0, showLimit))">
+<!-- ACCELERATOR 5 -->
+                <div class="large-4 medium-6 small-12 columns">
+                    <div class="primary callout info accelerator five">
 
-                    <div v-if="index == 0">
+                 <a :href="rootUrl + '${lang}/digisauna/'">
+					<div class="maincontent">
+               <h2>${'Idea search'|trans}</h2>
+               <h3>Digisauna</h3>
+                      <p>${'Ended'|trans}</p>
 
-                        ${include('experiment_index_parts/experiment_card_front.html')}
 
-                    </div>
-
+                </div></a>
+                  </div>
                 </div>
 
 
-
- <!-- ACCELERATOR 1 -->
-                <div class="large-4 medium-4 small-12 columns">
-                    <div class="primary callout info accelerator">
-
-                 <a :href="rootUrl + '${lang}/kiertotalous/'">
-					<div class="maincontent"><h2>${'Experiment search'|trans}</h2>
-                   <h3>${'Circular economy'|trans}</h3>
-						<p>${'Living'|trans}<br>${'Food'|trans}<br>${'Transportation'|trans}</p></div></a>
-                    </div>
-                </div>
 
 
 
@@ -244,10 +246,25 @@
 
                 </div>
 
+						<!-- accelerator 3 -->
+                <div class="large-4 medium-6 small-12 columns">
+                    <div class="primary callout info accelerator stea">
+
+                 <a :href="rootUrl + '${lang}/stea-ideahaku/'">
+					<div class="maincontent">
+               <h2>${'Idea search'|trans}</h2>
+               <h3>Vapaaehtois-<br>
+				toiminta</h3>
+
+					 <p>${'Ended'|trans}</p>
+                </div></a>
+                  </div>
+                </div>
+
 
 	<!-- FACEBOOK -->
 
-            <div class="large-4 medium-4 small-12 columns">
+            <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout fb">
                         <div class="fb-like-box">
                             <h2>${'Follow us on the Facebok page of Kokeilun Paikka'|trans}</h2>
@@ -264,7 +281,7 @@
 
 
  <!-- accelerator 2 -->
-                <div class="large-4 medium-4 small-12 columns">
+                <div class="large-4 medium-6 small-12 columns">
                     <div class="primary callout info accelerator hack">
 
                  <a :href="rootUrl + '${lang}/hackforsociety/'">
@@ -278,7 +295,16 @@
                 </div>
 
 
+ <!-- experiment 1 -->
+                <div v-for="(experiment, index) in sortExperiments(sliceExperiments(experiments, 0, showLimit))">
 
+                    <div v-if="index == 0">
+
+                        ${include('experiment_index_parts/experiment_card_front.html')}
+
+                    </div>
+
+                </div>
 
 
 
@@ -355,4 +381,5 @@
 
 
     </div>
+
 {% endblock %}

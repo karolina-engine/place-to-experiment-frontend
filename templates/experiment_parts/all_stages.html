@@ -71,7 +71,7 @@
                         <div class="form-group">
                             <label>${'Experiment short description'|trans}:</label>
                             <div class="input-group" style="width:100%;">
-                                <input ref="customTextInputRef" placeholder="${'Experiment short description'|trans}" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required" data-vv-as="short description">
+                                <input ref="customTextInputRef" placeholder="${'Experiment short description'|trans}" type="text" name="custom_text" class="form-control" v-model="languageText" v-validate.initial data-vv-rules="required|max:300" data-vv-as="short description" maxlength="300">
                                 <div v-if="errors.has('custom_text')  && showErrors" class="input-group-addon alert-danger">
                                     <span>{{ errors.first('custom_text') }}</span>
                                 </div>

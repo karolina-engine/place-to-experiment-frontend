@@ -583,8 +583,14 @@ msgstr "Do you want to advance your experiment to the next stage?"
 msgid "Click here to move your experiment to the next stage"
 msgstr "Click here to move your experiment to the next stage"
 
+msgid "Click here to move your experiment to the previous stage"
+msgstr "Click here to move your experiment to the previous stage"
+
 msgid "Move"
 msgstr "Move"
+
+msgid "Move to previous stage"
+msgstr "Move to previous stage"
 
 msgid "Most popular"
 msgstr "Most popular"
@@ -711,3 +717,49 @@ msgstr "Digitaidot sotetyössä"
 
 msgid "Jätä ehdotus"
 msgstr "Jätä ehdotus"
+
+msgid "Kysy ja keskustele kokeiluhausta"
+msgstr "Kysy ja keskustele kokeiluhausta"
+
+msgid "Tutustu palveluun"
+msgstr "Tutustu palveluun"
+
+msgid "Ohjeet"
+msgstr "Ohjeet"
+
+msgid "Pelisäännöt"
+msgstr "Pelisäännöt"
+
+msgid "Hae rahoitusta"
+msgstr "Hae rahoitusta"
+
+msgid "Discussion board"
+msgstr "Discussion board"
+
+msgid "Yhteystiedot"
+msgstr "Yhteystiedot"
+
+msgid "Watch more"
+msgstr "Watch more"
+
+msgid "created"
+msgstr "created"
+
+msgid "updated"
+msgstr "updated"
+
+msgid "Lue lisää"
+msgstr "Lue lisää"
+
+msgid "Haluatko osallistua kokeiluhakuun?"
+msgstr "Haluatko osallistua kokeiluhakuun?"
+
+msgid "Aloita hiilijalanjälkikokeilu tästä!"
+msgstr "Aloita hiilijalanjälkikokeilu tästä!"
+
+
+msgid "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+msgstr "Kokeilun paikka on yhteisöllinen verkkoalusta, joka kokoaa yhteen ideoijat, sparraajat, kokeilujen toteuttajat ja rahoittajat. Tervetuloa mukaan!"
+
+msgid "Puolita hiilijalanjälki!"
+msgstr "Puolita hiilijalanjälki!"
